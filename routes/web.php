@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::group(['middleware'=>'auth'], function(){
+//    Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
+//    });
+//});
+Route::view('admin/example', 'admin.example');
+Route::view('admin/index', 'admin.index');
