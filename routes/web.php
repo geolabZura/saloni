@@ -19,5 +19,10 @@ Route::get('/', function () {
 //    Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
 //    });
 //});
+
 Route::view('admin/example', 'admin.example');
 Route::view('admin/index', 'admin.index');
+
+
+Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIcon@index']);
+
