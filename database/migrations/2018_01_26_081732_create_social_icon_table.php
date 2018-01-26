@@ -15,6 +15,7 @@ class CreateSocialIconTable extends Migration
     {
         Schema::create('social_icon', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('site_name');
             $table->text('link');
             $table->timestamps();
         });

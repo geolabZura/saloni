@@ -24,5 +24,6 @@ Route::view('admin/example', 'admin.example');
 Route::view('admin/index', 'admin.index');
 
 
-Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIcon@index']);
+Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIconController@index']);
+Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialIconController@addLinks']);
 

@@ -50,24 +50,8 @@
         @include('admin.partials.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-
         <div class="content-wrapper" style="min-height: 889px;">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    ChartJS
-                    <small>Preview sample</small>
-                </h1>
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-
-                    @yield('content')
-
-                </div>
-            </section>
+            @yield('content')
         </div>
 
 
@@ -112,3 +96,47 @@
 <script src="{{asset('/admin/dist/js/demo.js')}}"></script>
 </body>
 </html>
+
+
+
+<!--Header Content-->
+{{--<section class="content-header">--}}
+    {{--<h1>--}}
+        {{--ChartJS--}}
+        {{--<small>emma</small>--}}
+    {{--</h1>--}}
+{{--</section>--}}
+
+<!-- Main content -->
+
+{{--<!-- Main content -->--}}
+{{--<section class="content">--}}
+    {{--<div class="row">--}}
+        {{--<div class="col-xs-12">--}}
+            {{--<div class="box">--}}
+                {{--<div class="box-header">--}}
+                    {{--<h3 class="box-title">Hover Data Table</h3>--}}
+                {{--</div>--}}
+                {{--<!-- /.box-header -->--}}
+                {{--<div class="box-body">--}}
+                    {{--<div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">--}}
+                        {{--<div class="row"><div class="col-sm-6"></div>--}}
+                            {{--<div class="col-sm-6"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-sm-12">--}}
+                                {{--<table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">--}}
+                                    {{--<thead>--}}
+                                    {{--</thead>--}}
+                                    {{--<tbody>--}}
+                                    {{----}}
+                                    {{--</tbody>--}}
+                                {{--</table>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
