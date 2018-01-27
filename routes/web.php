@@ -30,3 +30,5 @@ Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialI
 //Service Categories Add, Edit, Delete
 Route::get('/admin/service', ['as'=>'admin.category', 'uses'=>'ServiceController@index']);
 Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@serviceAdd']);
+Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@serviceEdit']);
+Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete']);

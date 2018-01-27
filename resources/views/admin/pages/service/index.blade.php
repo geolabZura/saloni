@@ -52,6 +52,7 @@
             </div>
 
             <div class="col-xs-12">
+
                 <div class="box box-info">
 
                     <div class="box-header">
@@ -66,38 +67,33 @@
                             <table id="mytable" class="table table-bordred table-striped">
 
                                 <thead>
-                                    <th>Email</th>
-                                    <th>Contact</th>
+                                    <th>Service Name</th>
+                                    <th>Service Price</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td>Mohsin</td>
-                                        <td>Irshad</td>
-                                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                                        <td>isometric.mohsin@gmail.com</td>
-                                        <td>+923335586757</td>
-                                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                    </tr>
+                                    @if(!empty($services))
+                                        @foreach($services as $service)
+                                            <tr>
+                                                <td style="display: none;" class="service_id">{{$service->id}}</td>
+                                                <td class="service_name">{{$service->name}}</td>
+                                                <td class="service_price">{{$service->price}}</td>
+                                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
 
                             </table>
 
                             <div class="clearfix"></div>
 
-                            {{--<ul class="pagination pull-right">--}}
-                                {{--<li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>--}}
-                                {{--<li class="active"><a href="#">1</a></li>--}}
-                                {{--<li><a href="#">2</a></li>--}}
-                                {{--<li><a href="#">3</a></li>--}}
-                                {{--<li><a href="#">4</a></li>--}}
-                                {{--<li><a href="#">5</a></li>--}}
-                                {{--<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>--}}
-                            {{--</ul>--}}
+                            <div class="pull-right">
+                                {!! $services->render() !!}
+                            </div>
 
                         </div>
                     </div>
@@ -113,22 +109,31 @@
                             <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
                         </div>
                         <div class="modal-body">
-                            <div class="form-group">
-                                <input class="form-control " type="text" placeholder="Mohsin">
-                            </div>
-                            <div class="form-group">
 
-                                <input class="form-control " type="text" placeholder="Irshad">
-                            </div>
-                            <div class="form-group">
-                                <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+                            <form method="post" action="{{route('admin.service.edit')}}">
 
+                                {{ csrf_field() }}
 
-                            </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="hidden" name="editId">
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="editName">
+                                </div>
+
+                                <div class="form-group">
+
+                                    <input class="form-control" type="text" name="editPrice">
+                                </div>
+
+                                <div class="modal-footer ">
+                                    <button class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+                                </div>
+                            </form>
+
                         </div>
-                        <div class="modal-footer ">
-                            <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
-                        </div>
+
                     </div>
                     <!-- /.modal-content -->
                 </div>
@@ -150,7 +155,7 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                            <a style="text-decoration: none" href="{{route('admin.service.delete', $service->id)}}"><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
@@ -166,6 +171,17 @@
                 var elem = $('.serviceAdd');
                 elem.toggle();
             });
+
+            $('.edit').click(function(){
+                var mainElement = $(this).parent().parent().parent();
+                var serviceName = mainElement.find('.service_name').text();
+                var servicePrice = mainElement.find('.service_price').text();
+                var serviceId = mainElement.find('.service_id').text();
+
+                $("input[name=editId]").val(serviceId);
+                $("input[name=editName]").val(serviceName);
+                $("input[name=editPrice]").val(servicePrice);
+            })
         })();
     </script>
 @endsection
