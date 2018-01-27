@@ -23,7 +23,10 @@ Route::get('/', function () {
 Route::view('admin/example', 'admin.example');
 Route::view('admin/index', 'admin.index');
 
-
+//Social Icons Add Links
 Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIconController@index']);
 Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialIconController@addLinks']);
 
+//Service Categories Add, Edit, Delete
+Route::get('/admin/service', ['as'=>'admin.category', 'uses'=>'ServiceController@index']);
+Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@serviceAdd']);

@@ -51,6 +51,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="min-height: 889px;">
+            <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
             @yield('content')
         </div>
 
@@ -59,11 +60,10 @@
         @include('admin.partials.footer')
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery 3 -->
 <script src="{{asset('/admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('admin/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('/admin/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('/admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -94,6 +94,7 @@
 <script src="{{asset('/admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('/admin/dist/js/demo.js')}}"></script>
+
 </body>
 </html>
 

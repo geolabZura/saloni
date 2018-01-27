@@ -19,12 +19,19 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <!--treeview navigation need class .treeview-->
-            <li class="active treeview">
 
+            <li class="{{Request::is('admin/icon') ? 'active ' : ''}}">
                 <a href="{{route('admin.social')}}">
                     <i class="fa fa-dashboard"></i> <span>Social Site Links</span>
                 </a>
             </li>
+
+            <li class="{{Request::is('admin/service') ? 'active ' : ''}}">
+                <a href="{{route('admin.category')}}">
+                    <i class="fa fa-dashboard"></i> <span>Service Category</span>
+                </a>
+            </li>
+
 
         </ul>
     </section>

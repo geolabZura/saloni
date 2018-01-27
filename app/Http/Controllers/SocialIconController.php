@@ -26,7 +26,6 @@ class SocialIconController extends Controller
     public function addLinks(Request $request){
         $message = [];
 
-
         foreach ($request->all()['links'] as $key => $link){
 
             $id = substr($key, -1);
