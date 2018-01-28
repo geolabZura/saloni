@@ -38,6 +38,20 @@
                 </a>
             </li>
 
+
+            <li class="treeview {{(Request::is('admin/aboutus')  || Request::is('admin/aboutstaff')) ? 'active ' : ''}}">
+                <a href="">
+                    <i class="fa fa-table"></i> <span>Tables</span>
+                    <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                </a>
+
+                <ul class="treeview-menu">
+                    <li class="{{Request::is('admin/aboutus') ? 'active' : ''}}"><a href="{{route('admin.aboutus')}}"><i class="fa fa-circle-o"></i>About Us</a></li>
+                    <li class="{{Request::is('admin/aboutstaff') ? 'active' : ''}}"><a href=""><i class="fa fa-circle-o"></i>About Staff</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

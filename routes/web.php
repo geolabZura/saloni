@@ -37,3 +37,8 @@ Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>
 //Background images Edit
 Route::get('/admin/images', ['as'=>'admin.images', 'uses'=>'BackgroundImagesController@index']);
 Route::post('/admin/image/update', ['as'=>'admin.image.edit', 'uses'=>'BackgroundImagesController@imageEdit']);
+
+
+//About Us Add/Edit
+Route::get('/admin/aboutus', ['as'=>'admin.aboutus', 'uses'=>'AboutUsController@index']);
+Route::post('/admin/aboutus/edit', ['as'=>'admin.aboutus.edit', 'uses'=>'AboutUsController@aboutUsEdit']);
