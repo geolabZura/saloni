@@ -32,6 +32,11 @@
                 </a>
             </li>
 
+            <li class="{{Request::is('admin/images') ? 'active ' : ''}}">
+                <a href="{{route('admin.images')}}">
+                    <i class="fa fa-dashboard"></i> <span>Background Images</span>
+                </a>
+            </li>
 
         </ul>
     </section>
