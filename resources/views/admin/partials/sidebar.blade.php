@@ -26,7 +26,7 @@
                 </a>
             </li>
 
-            <li class="{{Request::is('admin/service') ? 'active ' : ''}}">
+            <li class="{{Request::is('admin.category') ? 'active ' : ''}}">
                 <a href="{{route('admin.category')}}">
                     <i class="fa fa-dashboard"></i> <span>Service Category</span>
                 </a>
@@ -49,9 +49,10 @@
 
                 <ul class="treeview-menu">
                     <li class="{{Request::is('admin/aboutus') ? 'active' : ''}}"><a href="{{route('admin.aboutus')}}"><i class="fa fa-circle-o"></i>About Us</a></li>
-                    <li class="{{Request::is('admin/aboutstaff') ? 'active' : ''}}"><a href=""><i class="fa fa-circle-o"></i>About Staff</a></li>
+                    <li class="{{Request::is('admin/aboutstaff') ? 'active' : ''}}"><a href="{{route('admin.aboutstaff')}}"><i class="fa fa-circle-o"></i>About Staff</a></li>
                 </ul>
             </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

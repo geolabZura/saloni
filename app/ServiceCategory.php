@@ -12,6 +12,14 @@ class ServiceCategory extends Model
         'name', 'price', 'created_at', 'updated_at'
     ];
 
+    public function services(){
+        return $this->belongsToMany(Service::class,
+            'service_category_base',
+            'category_id',
+            'service_id'
+            );
+    }
+
     public function add($service){
         $added_service = $this->create([
             'name'=>$service->name,

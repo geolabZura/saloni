@@ -29,7 +29,7 @@
                         <br/>
 
                         <div class="serviceAdd">
-                            <form method="post" action="{{route('admin.service.add')}}">
+                            <form method="post" action="{{route('admin.category.add')}}">
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
@@ -110,7 +110,7 @@
                         </div>
                         <div class="modal-body">
 
-                            <form method="post" action="{{route('admin.service.edit')}}">
+                            <form method="post" action="{{route('admin.category.edit')}}">
 
                                 {{ csrf_field() }}
 
@@ -155,7 +155,7 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <a style="text-decoration: none" href="{{route('admin.service.delete', $service->id)}}"><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
+                            <a style="text-decoration: none" href="{{route('admin.category.delete', !empty($service->id) ? $service->id : '' )}}"><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>

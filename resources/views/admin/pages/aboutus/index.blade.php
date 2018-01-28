@@ -29,17 +29,18 @@
 
                             <div class="form-group">
                                 <label for="aboutUsTitle">About Us Title</label>
-                                <input type="text" class="form-control" id="aboutUsTitle" name="title" placeholder="About Us Title" value="{{$about_us['title']}}">
+                                <input type="text" class="form-control" id="aboutUsTitle" name="title" placeholder="About Us Title" value="{{(isset($about_us['title'])) ? $about_us['title'] : ''}}">
                             </div>
 
                             <div class="form-group">
                                 <label for="aboutUsDescription">About Us Description</label>
-                                <input type="text" class="form-control" id="aboutUsDescription" name="description" placeholder="About Us Description" value="{{$about_us['description']}}">
+                                <input type="text" class="form-control" id="aboutUsDescription" name="description" placeholder="About Us Description" value="{{(isset($about_us['description'])) ? $about_us['description'] : ''}}">
                             </div>
 
                             <div class="form-group">
+                                @php($about_us_text =  (isset($about_us['text'])) ? $about_us['text'] : ' ')
                                 <label for="aboutUsText">About Us Text</label>
-                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'text', 'about_us_text'=>"{$about_us['text']}"])
+                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'text', 'about_us_text'=>"$about_us_text"])
                             </div>
 
                             <button class="btn btn-block btn-success btn-flat">Success</button>

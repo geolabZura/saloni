@@ -18,7 +18,7 @@ class ServiceCategoryController extends Controller
 
     public function index(){
         $data['services'] = $this->serviceCategory->paginate(10);
-        return view('admin.pages.service.index', $data);
+        return view('admin.pages.servicecategory.index', $data);
     }
 
     public function serviceAdd(ServiceRequest $request){
