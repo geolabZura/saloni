@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestServiceEdit;
 use App\Http\Requests\ServiceRequest;
-use App\Service;
+use App\ServiceCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class ServiceController extends Controller
+class ServiceCategoryController extends Controller
 {
     protected $serviceCategory;
 
     public function __construct(){
-        $this->serviceCategory = new Service();
+        $this->serviceCategory = new ServiceCategory();
     }
 
     public function index(){
@@ -26,9 +26,9 @@ class ServiceController extends Controller
         $service = $this->serviceCategory->add($request);
 
         if($service) {
-            $message['success'][] = "Service Added SuccessFully!";
+            $message['success'][] = "ServiceCategory Added SuccessFully!";
         }else{
-            $message['error'][] = "Service Not Added, Please Retry!";
+            $message['error'][] = "ServiceCategory Not Added, Please Retry!";
         }
 
         return redirect()->back()->with('message', $message);
@@ -39,9 +39,9 @@ class ServiceController extends Controller
         $edited_service = $this->serviceCategory->edit($request);
 
         if($edited_service) {
-            $message['success'][] = "Service Uploaded SuccessFully!";
+            $message['success'][] = "ServiceCategory Uploaded SuccessFully!";
         }else{
-            $message['error'][] = "Service Not Uploaded, Please Retry!";
+            $message['error'][] = "ServiceCategory Not Uploaded, Please Retry!";
         }
 
         return redirect()->back()->with('message', $message);
@@ -52,9 +52,9 @@ class ServiceController extends Controller
         $deleted_service = $this->serviceCategory->remove($id);
 
         if($deleted_service){
-            $message['success'][] = "Service Deleted SuccessFully!";
+            $message['success'][] = "ServiceCategory Deleted SuccessFully!";
         }else{
-            $message['error'][] = "Service Not Deleted, Please Retry!";
+            $message['error'][] = "ServiceCategory Not Deleted, Please Retry!";
         }
 
         return redirect()->back()->with('message', $message);

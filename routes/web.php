@@ -27,12 +27,13 @@ Route::view('admin/index', 'admin.index');
 Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIconController@index']);
 Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialIconController@addLinks']);
 
-//Service Categories Add, Edit, Delete
-Route::get('/admin/service', ['as'=>'admin.category', 'uses'=>'ServiceController@index']);
-Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@serviceAdd']);
-Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@serviceEdit']);
-Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete']);
+//ServiceCategory Categories Add, Edit, Delete
+Route::get('/admin/service', ['as'=>'admin.category', 'uses'=>'ServiceCategoryController@index']);
+Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceCategoryController@serviceAdd']);
+Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceCategoryController@serviceEdit']);
+Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceCategoryController@serviceDelete']);
 
 
 //Background images Edit
 Route::get('/admin/images', ['as'=>'admin.images', 'uses'=>'BackgroundImagesController@index']);
+Route::post('/admin/image/update', ['as'=>'admin.image.edit', 'uses'=>'BackgroundImagesController@imageEdit']);
