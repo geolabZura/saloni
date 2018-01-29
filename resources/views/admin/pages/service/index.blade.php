@@ -1,5 +1,12 @@
 @extends('admin.index')
 @section('content')
+@section('content')
+    <section class="content-header">
+        <h1>
+            Services
+            <small>Add, Delete, Edit</small>
+        </h1>
+    </section>
     <section class="content">
         <div class="row">
             <div class="col-md-12">
@@ -11,7 +18,7 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3>Edit Image</h3>
+                        <h3>Add Services</h3>
                     </div>
 
                     <div class="box-body">
@@ -25,7 +32,7 @@
 
                             <div class="form-group">
                                 <label>
-                                    Upload Service Image
+                                    Upload Staff Image
                                 </label>
 
                                 <div class="input-group">
@@ -40,7 +47,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="serviceTitle">Service Title</label>
+                                <label for="serviceTitle">Staff Title</label>
                                 <input type="text" class="form-control" id="serviceTitle" name="title"  value="">
                             </div>
 

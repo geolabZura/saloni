@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Services
+            Service Categories
             <small>Add, Delete, Edit</small>
         </h1>
     </section>
@@ -20,7 +20,7 @@
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <h3 class="box-title">Add Services</h3>
+                        <h3 class="box-title">Add Service Category</h3>
                     </div>
 
                     <div class="box-body">
@@ -33,12 +33,12 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
-                                    <label for="serviceName">Service Name</label>
+                                    <label for="serviceName">Service Category Name</label>
                                     <input type="text" class="form-control" id="serviceName" name="name" placeholder="Service Name">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="servicePrice">Service Price</label>
+                                    <label for="servicePrice">Service Category Price</label>
                                     <input type="text" class="form-control" id="servicePrice" name="price" placeholder="Service Price">
                                 </div>
 
@@ -56,8 +56,8 @@
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <h3 class="box-title">Show All Services</h3>
-                        <small>Edit/Delete Services</small>
+                        <h3 class="box-title">Show All Services Category</h3>
+                        <small>Edit/Delete Category</small>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

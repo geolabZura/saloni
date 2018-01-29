@@ -54,3 +54,6 @@ Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'Service
 Route::get('/admin/service/selector/{id}', ['as'=>'admin.service.load.selector', 'uses'=>'ServiceController@loadCategory']);
 Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete']);
 
+//Staff Add/Edit/Delete
+Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
+
