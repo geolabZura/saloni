@@ -46,3 +46,9 @@ Route::post('/admin/aboutus/edit', ['as'=>'admin.aboutus.edit', 'uses'=>'AboutUs
 //About Staff Add/Edit
 Route::get('/admin/aboutstaff', ['as'=>'admin.aboutstaff', 'uses'=>'AboutStaffController@index']);
 Route::post('/admin/aboutstaff/edit', ['as'=>'admin.aboutstaff.edit', 'uses'=>'AboutStaffController@aboutStaffEdit']);
+
+//Service Add/Edit/Delete
+Route::get('/admin/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
+Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAdd']);
+Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit']);
+

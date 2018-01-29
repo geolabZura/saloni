@@ -53,6 +53,12 @@
                 </ul>
             </li>
 
+
+            <li class="{{Request::is('admin/service') ? 'active ' : ''}}">
+                <a href="{{route('admin.service')}}">
+                    <i class="fa fa-dashboard"></i> <span>Services</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

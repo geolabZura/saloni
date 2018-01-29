@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{asset('/admin/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{asset('/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('/admin/bower_components/select2/dist/css/select2.css')}}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -51,6 +53,8 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="min-height: 889px;">
             <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
+            <script src="{{asset('/admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+
             @yield('content')
         </div>
 
@@ -85,6 +89,7 @@
 <script src="{{asset('/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 <!-- Slimscroll -->
 <script src="{{asset('/admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<!--Select2-->
 <!-- FastClick -->
 <script src="{{asset('/admin/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->

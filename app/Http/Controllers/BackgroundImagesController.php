@@ -34,9 +34,9 @@ class BackgroundImagesController extends Controller
 
             if(!empty($current_file_name) and !empty($file_name)) {
                 if ($current_file_name == $file_name) {
-
-                    $current_file->move(public_path('/image/'), time().'.'.$current_file->getClientOriginalName());
-                    $file_upload_response = $this->background_image->edit($files, public_path('/image/').$current_file->getClientOriginalName());
+                    $uploade_file_name = time().'.'.$current_file->getClientOriginalName();
+                    $current_file->move(public_path('/image/'), $uploade_file_name);
+                    $file_upload_response = $this->background_image->edit($files, public_path('/image/').$uploade_file_name);
 
                     if($file_upload_response){
                         $message['success'][] = 'File Uploaded Successfully!';

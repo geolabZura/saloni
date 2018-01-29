@@ -67,8 +67,8 @@
                             <table id="mytable" class="table table-bordred table-striped">
 
                                 <thead>
-                                    <th>Service Name</th>
-                                    <th>Service Price</th>
+                                    <th>Service Category Name</th>
+                                    <th>Service Category Price</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </thead>
@@ -92,7 +92,9 @@
                             <div class="clearfix"></div>
 
                             <div class="pull-right">
-                                {!! $services->render() !!}
+                                @if(!empty($services))
+                                    {!! $services->render() !!}
+                                @endif
                             </div>
 
                         </div>
@@ -169,7 +171,7 @@
         (function(){
             $('#addService').click(function(){
                 var elem = $('.serviceAdd');
-                elem.toggle();
+                elem.fadeToggle();
             });
 
             $('.edit').click(function(){

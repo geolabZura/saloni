@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestServiceEdit extends FormRequest
+class RequestServiceCategoryEdit extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class RequestServiceEdit extends FormRequest
     public function rules()
     {
         return [
-            'image'=>'nullable|mimes:jpeg,jpg,png|max:10000',
-            'editTitle'=>'required',
-            'category'=>'required'
+            'editName'=>'required',
+            'editPrice'=>'required|numeric'
         ];
     }
 }

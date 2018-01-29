@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RequestServiceEdit;
-use App\Http\Requests\ServiceRequest;
+use App\Http\Requests\RequestServiceCategoryEdit;
+use App\Http\Requests\RequestServiceCategory;
 use App\ServiceCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -21,7 +21,7 @@ class ServiceCategoryController extends Controller
         return view('admin.pages.servicecategory.index', $data);
     }
 
-    public function serviceAdd(ServiceRequest $request){
+    public function serviceAdd(RequestServiceCategory $request){
         $message = [];
         $service = $this->serviceCategory->add($request);
 
@@ -34,7 +34,7 @@ class ServiceCategoryController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function serviceEdit(RequestServiceEdit $request){
+    public function serviceEdit(RequestServiceCategoryEdit $request){
         $message = [];
         $edited_service = $this->serviceCategory->edit($request);
 

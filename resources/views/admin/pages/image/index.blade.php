@@ -68,7 +68,7 @@
 
     <script>
         (function() {
-            $('.add-photo').change(function(event){
+            $('.add-photo').change(function(){
                 var tmppath = $(this).val()
                 $(this).parent().parent().next().val(tmppath);
                 // console.log($(this).parent().parent().parent().find('.show'));

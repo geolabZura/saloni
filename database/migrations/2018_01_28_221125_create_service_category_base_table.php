@@ -14,7 +14,6 @@ class CreateServiceCategoryBaseTable extends Migration
     public function up()
     {
         Schema::create('service_category_base', function (Blueprint $table) {
-
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('service_id')->unsigned()->nullable();
 
