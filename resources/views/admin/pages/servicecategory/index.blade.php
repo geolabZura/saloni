@@ -80,8 +80,8 @@
                                                 <td style="display: none;" class="service_id">{{$service->id}}</td>
                                                 <td class="service_name">{{$service->name}}</td>
                                                 <td class="service_price">{{$service->price}}</td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                                <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id="{{$service->id}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                                <td><p data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{$service->id}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                             </tr>
                                         @endforeach
                                     @endif
@@ -157,7 +157,7 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <a style="text-decoration: none" href="{{route('admin.category.delete', !empty($service->id) ? $service->id : '' )}}"><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
+                            <a id="deleteUrl" style="text-decoration: none" href=""><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
@@ -184,6 +184,11 @@
                 $("input[name=editName]").val(serviceName);
                 $("input[name=editPrice]").val(servicePrice);
             })
+
+
+            $('.delete').click(function(){
+                $('#deleteUrl').attr('href', "/admin/category/delete/"+$(this).parent().data('id'));
+            });
         })();
     </script>
 @endsection

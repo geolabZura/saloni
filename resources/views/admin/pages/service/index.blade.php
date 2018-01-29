@@ -1,12 +1,5 @@
 @extends('admin.index')
 @section('content')
-    <section class="content-header">
-        <h1>
-            Edit Background Images
-            <small></small>
-        </h1>
-    </section>
-
     <section class="content">
         <div class="row">
             <div class="col-md-12">
@@ -53,7 +46,7 @@
 
                             <div class="form-group" >
                                 <label for="serviceCategory">Services Category</label>
-                                <select name="category[]" id="serviceCategory" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                <select name="category[]" id="serviceCategory" class="form-control select2 select2-hidden-accessible" tabindex="-1" multiple="" data-placeholder="" style="width: 100%;" aria-hidden="true">
                                     @if(!empty($categories))
                                         @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name.'/'.$category->price}}</option>
@@ -98,7 +91,7 @@
                                 @if(!empty($services))
                                     @foreach($services as $service)
                                         <tr>
-                                            <td style="display: none;" class="service_id"{{$service->id}}></td>
+                                            <td style="display: none;" class="service_id">{{$service->id}}</td>
                                             <td class="service_image"><img src="{{asset('/image/'.$service['image'])}}" width="100" height="100"></td>
                                             <td class="service_title">{{$service->title}}</td>
                                             <td class="service_category_name">
@@ -113,7 +106,7 @@
                                                 @endforeach
                                             </td>
                                             <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id="{{$service->id}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                            <td><p data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{$service->id}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                         </tr>
                                     @endforeach
                                 @endif
@@ -135,7 +128,7 @@
             </div>
 
 
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal fade" id="edit" role="dialog" tabindex="-1" aria-labelledby="edit" aria-hidden="true" style="overflow:hidden;">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -170,7 +163,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group" style="display: none">
+                                <div class="form-group" id="loadSelector">
 
                                 </div>
 
@@ -200,7 +193,7 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <a style="text-decoration: none" href=""><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
+                            <a id="deleteUrl" style="text-decoration: none" href=""><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
@@ -218,7 +211,7 @@
                 elem.fadeToggle();
             });
 
-            $('#serviceCategory, #serviceEditCategory').select2();
+            $('#serviceCategory').select2();
 
             $('#image').change(function(){
                 var tmppath = $(this).val();
@@ -230,13 +223,17 @@
                 var mainElement = $(this).parent().parent().parent();
                 var serviceName = mainElement.find('.service_title').text();
                 var serviceId = mainElement.find('.service_id').text();
+                var tmppath =mainElement.find('.service_image img').attr('src');
 
                 $("input[name=editId]").val(serviceId);
                 $("input[name=editTitle]").val(serviceName);
+                $("input[name=readonly_edit_image]").val(tmppath);
 
-                console.log($('#'+($(this).data('id'))));
-                $('#'+($(this).data('id'))).css({'display':'initial'})
+                $('#loadSelector').load('/admin/service/selector/'+$(this).parent().data('id'));
+            });
 
+            $('.delete').click(function(){
+                $('#deleteUrl').attr('href', "/admin/service/delete/"+$(this).parent().data('id'));
             });
 
             $('#imageEdit').change(function(){
@@ -244,9 +241,8 @@
                 $(this).parent().parent().next().val(tmppath);
             });
 
-            //aq loadi unda gaketdes
-
         })();
 
     </script>
+
 @endsection

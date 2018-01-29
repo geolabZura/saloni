@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestService;
 use App\Http\Requests\RequestServiceEdit;
+use App\Listeners\DeleteImage;
 use App\Service;
 use App\ServiceCategory;
+use function event;
 use Illuminate\Http\Request;
 use App\Events\Image;
+use function redirect;
+use function returnArgument;
 
 class ServiceController extends Controller
 {
@@ -50,6 +54,7 @@ class ServiceController extends Controller
         $message = [];
 
         if(!empty($current_item)){
+
             if(file_exists($file)) {
 
                 $image_path = event(new Image($file));
@@ -61,7 +66,9 @@ class ServiceController extends Controller
                 }else{
                     $message['error'][] = 'Something Wrong, Please Retry!';
                 }
-            }else{
+
+            }elseif(!empty($request->readonly_edit_image)){
+
                 $uploaded_service = $this->service->edit($request, false);
 
                 if ($uploaded_service) {
@@ -69,6 +76,8 @@ class ServiceController extends Controller
                 }else{
                     $message['error'][] = 'Something Wrong, Please Retry!';
                 }
+            }else{
+                $message['error'][] = 'Something Wrong, Please Retry!';
             }
         }else{
             $message['error'][] = 'Something Wrong, Please Retry!';
@@ -79,7 +88,7 @@ class ServiceController extends Controller
 
     public function loadCategory($id){
         $data['categories'] = $this->category->all();
-        $service = $this->where('id', $id)->first();
+        $service = $this->service->where('id', $id)->first();
 
         foreach ($service->categories as $category){
             $data['selected_category'][] = $category->id;
@@ -87,5 +96,18 @@ class ServiceController extends Controller
 
         return view('admin.pages.service.load', $data);
 
+    }
+
+    public function serviceDelete($id){
+        $message = [];
+        $deleted_service = $this->service->remove($id);
+
+        if($deleted_service){
+            $message['success'][] = "Service Deleted Successfully!";
+        }else{
+            $message['error'][] = "Service Do Not Deleted, Please Retry!";
+        }
+
+        return redirect()->back()->with('message', $message);
     }
 }

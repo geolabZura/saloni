@@ -10,7 +10,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class Image
+class Delete
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -20,9 +20,9 @@ class Image
      *
      * @return void
      */
-    public function __construct($upload_image_name)
+    public function __construct($image_name)
     {
-        $this->image = $upload_image_name;
+        $this->image = $image_name;
     }
 
     /**

@@ -26,7 +26,7 @@
                 </a>
             </li>
 
-            <li class="{{Request::is('admin.category') ? 'active ' : ''}}">
+            <li class="{{Request::is('admin/category') ? 'active ' : ''}}">
                 <a href="{{route('admin.category')}}">
                     <i class="fa fa-dashboard"></i> <span>Service Category</span>
                 </a>

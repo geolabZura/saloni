@@ -14,8 +14,13 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\Image' => [
-            'App\Listeners\UploadImage',
+            'App\Listeners\UploadImage'
         ],
+
+        'App\Events\Delete'=>[
+            'App\Listeners\DeleteImage'
+        ]
+
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\Delete;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
@@ -50,11 +51,26 @@ class Service extends Model
             ]);
         }
 
+
         if($upload_service){
-            $upload_service->categories()->attach($request->category);
+            $current_item->categories()->detach();
+            $current_item->categories()->attach($request->category);
             return true;
         }else{
             return false;
         }
+    }
+
+    public function remove($id){
+        $deletable_service = $this->find($id);
+
+        if(!is_null($deletable_service)){
+            event(new Delete($deletable_service->image));
+            $deletable_service->delete();
+
+            return true;
+        }
+
+        return false;
     }
 }
