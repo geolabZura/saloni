@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\Delete;
 use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
@@ -31,14 +32,13 @@ class Staff extends Model
     public function edit($request, $response){
         $current_item = $this->where('id', $request->editId)->first();
 
-        dd($request->upload_image);
         if($response) {
             $upload_staff= $current_item->update([
                 'image'=>$request->upload_image,
                 'name' => $request->editName,
                 'surname' => $request->editSurname,
-                'position'=>$request->position,
-                'description'=>$request->description
+                'position'=>$request->editPosition,
+                'description'=>$request->editDescription
             ]);
         }
         else{
@@ -57,4 +57,16 @@ class Staff extends Model
         }
     }
 
+    public function remove($id){
+        $deletable_staff = $this->find($id);
+
+        if(!is_null($deletable_staff)){
+            event(new Delete($deletable_staff->image));
+            $deletable_staff->delete();
+
+            return true;
+        }
+
+        return false;
+    }
 }

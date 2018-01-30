@@ -65,6 +65,12 @@
                     <i class="fa fa-dashboard"></i> <span>Staff</span>
                 </a>
             </li>
+
+            <li class="{{Request::is('admin/brand') ? 'active ' : ''}}">
+                <a href="{{route('admin.brand')}}">
+                    <i class="fa fa-dashboard"></i> <span>Brand</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

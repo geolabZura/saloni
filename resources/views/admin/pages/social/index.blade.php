@@ -23,7 +23,7 @@
 
                     <div class="box-body">
 
-                        <form method="post" action="{{route('admin.social.update')}}">
+                        <form method="post" action="{{route('admin.social.update')}}" >
 
                             {{ csrf_field() }}
 

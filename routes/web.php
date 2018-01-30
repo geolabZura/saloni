@@ -31,7 +31,7 @@ Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialI
 Route::get('/admin/category', ['as'=>'admin.category', 'uses'=>'ServiceCategoryController@index']);
 Route::post('/admin/category/add', ['as'=>'admin.category.add', 'uses'=>'ServiceCategoryController@serviceAdd']);
 Route::post('/admin/category/edit', ['as'=>'admin.category.edit', 'uses'=>'ServiceCategoryController@serviceEdit']);
-Route::get('/admin/category/delete/{id}', ['as'=>'admin.category.delete', 'uses'=>'ServiceCategoryController@serviceDelete']);
+Route::get('/admin/category/delete/{id}', ['as'=>'admin.category.delete', 'uses'=>'ServiceCategoryController@serviceDelete'])->where('id', '[0-9]+');
 
 
 //Background images Edit
@@ -52,9 +52,16 @@ Route::get('/admin/service', ['as'=>'admin.service', 'uses'=>'ServiceController@
 Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAdd']);
 Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit']);
 Route::get('/admin/service/selector/{id}', ['as'=>'admin.service.load.selector', 'uses'=>'ServiceController@loadCategory']);
-Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete']);
+Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete'])->where('id', '[0-9]+');
 
 //Staff Add/Edit/Delete
 Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
 Route::post('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAdd']);
 Route::post('/admin/staff/edit', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit']);
+Route::get('/admin/staff/delete/{id}', ['as'=>'admin.staff.delete', 'uses'=>'StaffController@staffDelete'])->where('id', '[0-9]+');
+
+//Brand Add/Edit/Delete
+Route::get('/admin/brand', ['as'=>'admin.brand', 'uses'=>'BrandController@index']);
+Route::post('/admin/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAdd']);
+Route::post('/admin/brand/edit', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEdit']);
+Route::get('/admin/brand/delete/{id}', ['as'=>'admin.brand.delete', 'uses'=>'BrandController@brandDelete'])->where('id', '[0-9]+');

@@ -18,7 +18,7 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3>Staff Add</h3>
+                        <h3 class="box-title">Staff Add</h3>
                     </div>
 
                     <div class="box-body">
@@ -66,8 +66,6 @@
                                 <label for="staffDescription">Staff Description</label>
                                 <input type="text" class="form-control" id="staffDescription" name="description"  value="">
                             </div>
-
-
 
                             <button class="btn btn-block btn-success btn-flat">Success</button>
 
@@ -144,7 +142,7 @@
                         </div>
                         <div class="modal-body">
 
-                            <form method="post" action="{{route('admin.staff.edit')}}">
+                            <form method="post" action="{{route('admin.staff.edit')}}" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
 
@@ -253,5 +251,10 @@
             var tmppath = $(this).val();
             $(this).parent().parent().next().val(tmppath);
         });
+
+        $('.delete').click(function(){
+            $('#deleteUrl').attr('href', "/admin/staff/delete/"+$(this).parent().data('id'));
+        });
+
     </script>
 @endsection

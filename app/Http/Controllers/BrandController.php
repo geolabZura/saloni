@@ -2,45 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Events\Image;
-use App\Http\Requests\RequestStaff;
-use App\Http\Requests\RequestStaffEdit;
-use App\Staff;
+use App\Http\Requests\RequestBrand;
+use App\Http\Requests\RequestBrandEdit;
 use Illuminate\Http\Request;
 
-class StaffController extends Controller
+class BrandController extends Controller
 {
-    public $staff;
-
+    public $brand;
+    
     public function __construct(){
-        $this->staff = new Staff();
+        $this->brand = new Brand();
     }
 
     public function index(){
-        $data['staffs'] = $this->staff->paginate(10);
-        return view('admin.pages.staff.index', $data);
+        $data['brands'] = $this->brand->paginate(10);
+        return view('admin.pages.brand.index', $data);
     }
 
-    public function staffAdd(RequestStaff $request){
+    public function brandAdd(RequestBrand $request){
         $file = $request->file('image');
         $message = [];
 
-        if(file_exists($file)){
+        if (file_exists($file)) {
             $image_path = event(new Image($file));
             $request['upload_image'] = $image_path[0];
-            $uploaded_staff = $this->staff->add($request);
+            $uploaded_brand = $this->brand->add($request);
         }
 
-        if($uploaded_staff){
-            $message['success'][] = "Staff Info Uploaded Successfully!";
-        }else{
+        if ($uploaded_brand) {
+            $message['success'][] = "Brand Info Uploaded Successfully!";
+        } else {
             $message['error'][] = "Something Wrong, Please Retry!";
         }
         return redirect()->back()->with('message', $message);
     }
 
-    public function staffEdit(RequestStaffEdit $request){
-        $current_item = $this->staff->where('id', $request->editId)->first();
+    public function brandEdit(RequestBrandEdit $request){  
+        
+        $current_item = $this->brand->where('id', $request->editId)->first();
         $file = $request->file('image');
         $message = [];
 
@@ -50,20 +51,20 @@ class StaffController extends Controller
 
                 $image_path = event(new Image($file));
                 $request['upload_image'] = $image_path[0];
-                $uploaded_staff = $this->staff->edit($request, true);
+                $uploaded_brand = $this->brand->edit($request, true);
 
-                if ($uploaded_staff) {
-                    $message['success'][] = "Staff Info Uploaded Successfully!";
+                if ($uploaded_brand) {
+                    $message['success'][] = "Brand Info Uploaded Successfully!";
                 }else{
                     $message['error'][] = 'Something Wrong, Please Retry!';
                 }
 
             }elseif(!empty($request->readonly_edit_image)){
 
-                $uploaded_staff = $this->staff->edit($request, false);
+                $uploaded_brand = $this->brand->edit($request, false);
 
-                if ($uploaded_staff) {
-                    $message['success'][] = "Service Uploaded Successfully!";
+                if ($uploaded_brand) {
+                    $message['success'][] = "Brand Uploaded Successfully!";
                 }else{
                     $message['error'][] = 'Something Wrong, Please Retry!';
                 }
@@ -76,17 +77,18 @@ class StaffController extends Controller
 
         return redirect()->back()->with('message', $message);
     }
-
-    public function staffDelete($id){
+    
+    public function brandDelete($id){
         $message = [];
-        $deleted_staff = $this->staff->remove($id);
+        $deleted_brand = $this->brand->remove($id);
 
-        if($deleted_staff){
-            $message['success'][] = "Staff Info Deleted Successfully!";
+        if($deleted_brand){
+            $message['success'][] = "Brand Info Deleted Successfully!";
         }else{
-            $message['error'][] = "Staff Info Do Not Deleted, Please Retry!";
+            $message['error'][] = "Brand Info Do Not Deleted, Please Retry!";
         }
 
         return redirect()->back()->with('message', $message);
     }
+
 }

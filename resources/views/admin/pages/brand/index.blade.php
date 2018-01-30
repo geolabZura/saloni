@@ -2,10 +2,11 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Services
+            Brand
             <small>Add, Delete, Edit</small>
         </h1>
     </section>
+
     <section class="content">
         <div class="row">
             <div class="col-md-12">
@@ -17,21 +18,21 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add Services</h3>
+                        <h3 class="box-title">Brand Add</h3>
                     </div>
 
                     <div class="box-body">
 
-                        <button type="button" class="btn btn-default btn-block btn-info" id="addService">Hide Add Content</button>
+                        <button type="button" class="btn btn-default btn-block btn-info" id="addBrand">Hide Add Content</button>
                         <br/>
 
-                        <form method="post" action="{{route('admin.service.add')}}" enctype="multipart/form-data" class="serviceAdd">
+                        <form method="post" action="{{route('admin.brand.add')}}" enctype="multipart/form-data" class="brandAdd">
 
                             {{csrf_field()}}
 
                             <div class="form-group">
                                 <label>
-                                    Upload Staff Image
+                                    Upload Brand Image
                                 </label>
 
                                 <div class="input-group">
@@ -46,20 +47,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="serviceTitle">Staff Title</label>
-                                <input type="text" class="form-control" id="serviceTitle" name="title"  value="">
+                                <label for="brandTitle">Brand Title</label>
+                                <input type="text" class="form-control" id="brandTitle" name="title"  value="">
                             </div>
 
-                            <div class="form-group" >
-                                <label for="serviceCategory">Services Category</label>
-                                <select name="category[]" id="serviceCategory" class="form-control select2 select2-hidden-accessible" tabindex="-1" multiple="" data-placeholder="" style="width: 100%;" aria-hidden="true">
-                                    @if(!empty($categories))
-                                        @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->name.'/'.$category->price}}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
+                            <div class="form-group">
+                                <label for="brandLink">Brand Link</label>
+                                <input type="text" class="form-control" id="brandLink" name="link"  value="">
                             </div>
+
                             <button class="btn btn-block btn-success btn-flat">Success</button>
 
                         </form>
@@ -68,14 +64,13 @@
                 </div>
             </div>
 
-
             <div class="col-xs-12">
 
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <h3 class="box-title">Show All Services</h3>
-                        <small>Edit/Delete Services</small>
+                        <h3 class="box-title">Show All Brand</h3>
+                        <small>Edit/Delete Brand</small>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -85,34 +80,23 @@
                             <table id="mytable" class="table table-bordred table-striped">
 
                                 <thead>
-                                <th>Service Image</th>
-                                <th>Service Title</th>
-                                <th>Service Category Name</th>
-                                <th>Service Category Price</th>
+                                <th>Brand Image</th>
+                                <th>Brand Title</th>
+                                <th>Brand Link</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                                 </thead>
 
                                 <tbody>
-                                @if(!empty($services))
-                                    @foreach($services as $service)
+                                @if(!empty($brands))
+                                    @foreach($brands as $brand)
                                         <tr>
-                                            <td style="display: none;" class="service_id">{{$service->id}}</td>
-                                            <td class="service_image"><img src="{{asset('/image/'.$service['image'])}}" width="100" height="100"></td>
-                                            <td class="service_title">{{$service->title}}</td>
-                                            <td class="service_category_name">
-                                                @foreach($service->categories as $category)
-                                                    @php($collect_selected_category[$service->id][] = $category->id)
-                                                    {{$category->name.', '}}
-                                                @endforeach
-                                            </td>
-                                            <td class="service_category_price">
-                                                @foreach($service->categories as $category)
-                                                    {{$category->price.', '}}
-                                                @endforeach
-                                            </td>
-                                            <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id="{{$service->id}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                            <td><p data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{$service->id}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                            <td style="display: none;" class="brand_id">{{$brand->id}}</td>
+                                            <td class="brand_image"><img src="{{asset('/image/'.$brand['image'])}}" width="100" height="100"></td>
+                                            <td class="brand_title">{{$brand->title}}</td>
+                                            <td class="brand_link">{{$brand->link}}</td>
+                                            <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id="{{$brand->id}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                            <td><p data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{$brand->id}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                         </tr>
                                     @endforeach
                                 @endif
@@ -123,16 +107,15 @@
                             <div class="clearfix"></div>
 
                             <div class="pull-right">
-                                {{--@if(!empty($services))--}}
-                                    {{--{!! $services->render() !!}--}}
-                                {{--@endif--}}
+                                @if(!empty($brands))
+                                    {!! $brands->render() !!}
+                                @endif
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
-
 
             <div class="modal fade" id="edit" role="dialog" tabindex="-1" aria-labelledby="edit" aria-hidden="true" style="overflow:hidden;">
                 <div class="modal-dialog">
@@ -143,17 +126,12 @@
                         </div>
                         <div class="modal-body">
 
-                            <form method="post" action="{{route('admin.service.edit')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('admin.brand.edit')}}" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
                                     <input class="form-control" type="hidden" name="editId">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input class="form-control" type="text" name="editTitle">
                                 </div>
 
                                 <div class="form-group">
@@ -169,8 +147,14 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group" id="loadSelector">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input class="form-control" type="text" name="editTitle">
+                                </div>
 
+                                <div class="form-group">
+                                    <label>Link</label>
+                                    <input class="form-control" type="text" name="editLink">
                                 </div>
 
                                 <div class="modal-footer ">
@@ -210,44 +194,38 @@
     </section>
 
     <script>
-        (function(){
+        $('#addBrand').click(function(){
+            $('.brandAdd').fadeToggle();
+        });
 
-            $('#addService').click(function(){
-                var elem = $('.serviceAdd');
-                elem.fadeToggle();
-            });
-
-            $('#serviceCategory').select2();
-
-            $('#image').change(function(){
-                var tmppath = $(this).val();
-                $(this).parent().parent().next().val(tmppath);
-            });
+        $('#image').change(function(){
+            var tmppath = $(this).val();
+            $(this).parent().parent().next().val(tmppath);
+        });
 
 
-            $('.edit').click(function(){
-                var mainElement = $(this).parent().parent().parent();
-                var serviceName = mainElement.find('.service_title').text();
-                var serviceId = mainElement.find('.service_id').text();
-                var tmppath =mainElement.find('.service_image img').attr('src');
+        $('.edit').click(function(){
+            var mainElement = $(this).parent().parent().parent();
+            var brandId = mainElement.find('.brand_id').text();
+            var brandTitle = mainElement.find('.brand_title').text();
+            var brandLink = mainElement.find('.brand_link').text();
+            var tmppath = mainElement.find('.brand_image img').attr('src');
 
-                $("input[name=editId]").val(serviceId);
-                $("input[name=editTitle]").val(serviceName);
-                $("input[name=readonly_edit_image]").val(tmppath);
+            $("input[name=editId]").val(brandId);
+            $("input[name=editTitle]").val(brandTitle);
+            $("input[name=editLink]").val(brandLink);
+            $("input[name=readonly_edit_image]").val(tmppath);
 
-                $('#loadSelector').load('/admin/service/selector/'+$(this).parent().data('id'));
-            });
+        });
 
-            $('.delete').click(function(){
-                $('#deleteUrl').attr('href', "/admin/service/delete/"+$(this).parent().data('id'));
-            });
+        $('#imageEdit').change(function(){
+            var tmppath = $(this).val();
+            $(this).parent().parent().next().val(tmppath);
+        });
 
-            $('#imageEdit').change(function(){
-                var tmppath = $(this).val();
-                $(this).parent().parent().next().val(tmppath);
-            });
-
-        })();
+        $('.delete').click(function(){
+            $('#deleteUrl').attr('href', "/admin/brand/delete/"+$(this).parent().data('id'));
+        });
 
     </script>
 
