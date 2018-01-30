@@ -56,4 +56,5 @@ Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>
 
 //Staff Add/Edit/Delete
 Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
-
+Route::post('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAdd']);
+Route::post('/admin/staff/edit', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit']);

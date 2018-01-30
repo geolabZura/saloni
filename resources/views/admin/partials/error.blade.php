@@ -1,5 +1,4 @@
 @if(\Session::has('message') || $errors->any())
-
     @if(\Session::has('message'))
         @php($message = \Session::get('message'))
     @endif

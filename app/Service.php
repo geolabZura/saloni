@@ -22,7 +22,6 @@ class Service extends Model
     }
 
     public function add($request){
-//        dd($request->all());
         $upload_service = $this->create([
             'image'=>$request->upload_image,
             'title'=>$request->title
