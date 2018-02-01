@@ -2,15 +2,13 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Special Offer
-            <small>Add, Edit, Delete</small>
+            Staff
+            <small>Add, Delete, Edit</small>
         </h1>
     </section>
 
     <section class="content">
-
         <div class="row">
-
             <div class="col-md-12">
 
                 @include('admin.partials.error')
@@ -18,31 +16,30 @@
                 @include('admin.partials.success')
 
                 <div class="col-md-4" style="padding-left: 0 !important; padding-right: 0 !important;">
-                    <a href="{{route('admin.offer')}}">
+                    <a href="{{route('admin.staff')}}">
                         <button type="button" class="btn btn-block btn-primary btn-flat">
-                            <i class="fa  fa-arrow-circle-left"></i> Go Back Special Offer List Page
+                            <i class="fa  fa-arrow-circle-left"></i>  Go Back Staff List Page
                         </button>
                     </a>
                 </div>
                 <br/>
                 <br/>
 
-
                 <div class="box box-info">
 
-                    <div class="box-header">
-                        <h3 class="box-title">Edit Special Offer Item</h3>
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Staff Add</h3>
                     </div>
-
 
                     <div class="box-body">
 
-                        <form method="post" action="{{route('admin.offer.edit', $offer)}}" enctype="multipart/form-data" class="offerAdd">
-                            {{ csrf_field() }}
+                        <form method="post" action="{{route('admin.staff.add')}}" enctype="multipart/form-data" class="staffAdd">
+
+                            {{csrf_field()}}
 
                             <div class="form-group">
                                 <label>
-                                    Upload Special Special Offer Image
+                                    Upload Staff Image
                                 </label>
 
                                 <div class="input-group">
@@ -51,30 +48,36 @@
                                             Browse… <input type="file" id="image" name="image" class="add-photo">
                                         </span>
                                     </span>
-                                    <input type="text" class="form-control" readonly name="readonly_image" value="{{$offer->image}}">
+                                    <input type="text" class="form-control" readonly name="readonly_image" value="">
                                 </div>
-                                {{--<img class="col-md-12" src="{{asset('image/'.$offer->image)}}" class="show">--}}
+                                <img src="" class="show">
                             </div>
 
                             <div class="form-group">
-                                <label for="offerUsTitle">Special Offer Us Title</label>
-                                <input type="text" class="form-control" id="offerUsTitle" name="editTitle" placeholder="Special Offer Us Title" value="{{$offer->title}}">
+                                <label for="staffName">Staff Name</label>
+                                <input type="text" class="form-control" id="staffName" name="name"  value="">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="staffSurname">Staff Surname</label>
+                                <input type="text" class="form-control" id="staffSurname" name="surname"  value="">
                             </div>
 
                             <div class="form-group">
-                                <label for="offerUsText">Special Offer Us Description</label>
-                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'editDescription', 'about_us_text'=>$offer->description])
+                                <label for="staffPosition">Staff Position</label>
+                                <input type="text" class="form-control" id="staffPosition" name="position"  value="">
                             </div>
 
-                            <div class="col-md-12" style="padding-left: 2px !important; padding-right: 2px !important;">
-                                <button class="btn btn-block btn-success btn-flat"> Upload Edited Item</button>
+                            <div class="form-group">
+                                <label for="staffDescription">Staff Description</label>
+                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'description', 'about_us_text'=>''])
                             </div>
 
-                            {{--<div class="col-md-6" style="padding-left: 2px !important; padding-right: 2px !important;">--}}
-                                {{--<button class="btn btn-block btn-success btn-flat">Edit Item And Redi rect Back</button>--}}
-                            {{--</div>--}}
+                            <button class="btn btn-block btn-success btn-flat">Success</button>
 
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -87,6 +90,5 @@
             var tmppath = $(this).val();
             $(this).parent().parent().next().val(tmppath);
         });
-
     </script>
 @endsection

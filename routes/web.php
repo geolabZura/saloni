@@ -56,8 +56,13 @@ Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>
 
 //Staff Add/Edit/Delete
 Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
+
+Route::get('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAddPage']);
 Route::post('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAdd']);
-Route::post('/admin/staff/edit', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit']);
+
+Route::get('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEditPage'])->where('id', '[0-9]+');
+Route::post('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit'])->where('id', '[0-9]+');
+
 Route::get('/admin/staff/delete/{id}', ['as'=>'admin.staff.delete', 'uses'=>'StaffController@staffDelete'])->where('id', '[0-9]+');
 
 //Brand Add/Edit/Delete

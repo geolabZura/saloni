@@ -7,6 +7,7 @@ use App\Http\Requests\RequestStaff;
 use App\Http\Requests\RequestStaffEdit;
 use App\Staff;
 use Illuminate\Http\Request;
+use function view;
 
 class StaffController extends Controller
 {
@@ -19,6 +20,10 @@ class StaffController extends Controller
     public function index(){
         $data['staffs'] = $this->staff->paginate(10);
         return view('admin.pages.staff.index', $data);
+    }
+
+    public function staffAddPage(){
+        return view('admin.pages.staff.add');
     }
 
     public function staffAdd(RequestStaff $request){
@@ -39,8 +44,14 @@ class StaffController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function staffEdit(RequestStaffEdit $request){
-        $current_item = $this->staff->where('id', $request->editId)->first();
+    public function staffEditPage($id){
+        $data['staff'] = $this->staff->where('id', $id)->first();
+        return view('admin.pages.staff.edit', $data);
+    }
+
+    public function staffEdit(RequestStaffEdit $request, $id){
+        $current_item = $this->staff->where('id', $id)->first();
+        $request->editId = $id;
         $file = $request->file('image');
         $message = [];
 
