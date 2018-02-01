@@ -1,6 +1,6 @@
 @extends('admin.index')
 @section('content')
-        <section class="content-header">
+    <section class="content-header">
             <h1>
                 Special Offer Us
                 <small>Add, Edit, Delete</small>

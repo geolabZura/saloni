@@ -48,8 +48,10 @@ class SpecialOfferController extends Controller
         return view('admin.pages.offer.edit', $data);
     }
 
-    public function offerEdit(RequestSpecialOfferEdit $request){
-        $current_item = $this->offer->where('id', $request->editId)->first();
+    public function offerEdit(RequestSpecialOfferEdit $request, $id){
+
+        $current_item = $this->offer->where('id', $id)->first();
+        $request->editId = $id;
         $file = $request->file('image');
         $message = [];
 

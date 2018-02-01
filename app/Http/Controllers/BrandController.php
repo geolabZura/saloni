@@ -7,6 +7,7 @@ use App\Events\Image;
 use App\Http\Requests\RequestBrand;
 use App\Http\Requests\RequestBrandEdit;
 use Illuminate\Http\Request;
+use function view;
 
 class BrandController extends Controller
 {
@@ -19,6 +20,10 @@ class BrandController extends Controller
     public function index(){
         $data['brands'] = $this->brand->paginate(10);
         return view('admin.pages.brand.index', $data);
+    }
+
+    public function brandAddPage(){
+        return view('admin.pages.brand.add');
     }
 
     public function brandAdd(RequestBrand $request){
@@ -39,9 +44,14 @@ class BrandController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function brandEdit(RequestBrandEdit $request){  
-        
-        $current_item = $this->brand->where('id', $request->editId)->first();
+    public function brandEditPage($id){
+        $data['brand'] = $this->brand->where('id', $id)->first();
+        return view('admin.pages.brand.edit', $data);
+    }
+
+    public function brandEdit(RequestBrandEdit $request, $id){
+        $current_item = $this->brand->where('id', $id)->first();
+        $request->editId = $id;
         $file = $request->file('image');
         $message = [];
 
