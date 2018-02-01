@@ -71,6 +71,14 @@
                     <i class="fa fa-dashboard"></i> <span>Brand</span>
                 </a>
             </li>
+
+
+            <li class="{{Request::is('admin/offer') ? 'active ' : ''}}">
+                <a href="{{route('admin.offer')}}">
+                    <i class="fa fa-dashboard"></i> <span>Offer</span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

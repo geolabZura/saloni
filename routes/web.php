@@ -65,3 +65,15 @@ Route::get('/admin/brand', ['as'=>'admin.brand', 'uses'=>'BrandController@index'
 Route::post('/admin/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAdd']);
 Route::post('/admin/brand/edit', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEdit']);
 Route::get('/admin/brand/delete/{id}', ['as'=>'admin.brand.delete', 'uses'=>'BrandController@brandDelete'])->where('id', '[0-9]+');
+
+
+//Special Offer Add/Edit/Delete
+Route::get('/admin/offer', ['as'=>'admin.offer', 'uses'=>'SpecialOfferController@index']);
+
+Route::get('/admin/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAddPage']);
+Route::post('/admin/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAdd']);
+
+Route::get('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEditPage'])->where('id', '[0-9]+');
+Route::post('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEdit'])->where('id', '[0-9]+');
+
+Route::get('/admin/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'SpecialOfferController@offerDelete'])->where('id', '[0-9]+');
