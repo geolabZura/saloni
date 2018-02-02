@@ -79,6 +79,12 @@
                 </a>
             </li>
 
+            <li class="{{Request::is('admin/gallery') ? 'active ' : ''}}">
+                <a href="{{route('admin.gallery')}}">
+                    <i class="fa fa-dashboard"></i> <span>Images Gallery</span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

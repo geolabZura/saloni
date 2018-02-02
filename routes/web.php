@@ -87,3 +87,6 @@ Route::get('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'Special
 Route::post('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEdit'])->where('id', '[0-9]+');
 
 Route::get('/admin/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'SpecialOfferController@offerDelete'])->where('id', '[0-9]+');
+
+//Image Gallery Add/Delete
+Route::get('/admin/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@index']);
