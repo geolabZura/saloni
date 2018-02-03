@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Staff
+            Services
             <small>Add, Delete, Edit</small>
         </h1>
     </section>
@@ -16,9 +16,9 @@
                 @include('admin.partials.success')
 
                 <div class="col-md-4" style="padding-left: 0 !important; padding-right: 0 !important;">
-                    <a href="{{route('admin.staff')}}">
+                    <a href="{{route('admin.service')}}">
                         <button type="button" class="btn btn-block btn-primary btn-flat">
-                            <i class="fa  fa-arrow-circle-left"></i>  Go Back Staff List Page
+                            <i class="fa  fa-arrow-circle-left"></i>  Go Back Service List Page
                         </button>
                     </a>
                 </div>
@@ -28,12 +28,12 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Staff Add</h3>
+                        <h3 class="box-title">Add Services</h3>
                     </div>
 
                     <div class="box-body">
 
-                        <form method="post" action="{{route('admin.staff.add')}}" enctype="multipart/form-data" class="staffAdd">
+                        <form method="post" action="{{route('admin.service.add')}}" enctype="multipart/form-data" class="serviceAdd">
 
                             {{csrf_field()}}
 
@@ -53,26 +53,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="staffName">Staff Name</label>
-                                <input type="text" class="form-control" id="staffName" name="name"  value="">
+                                <label for="serviceTitle">Staff Title</label>
+                                <input type="text" class="form-control" id="serviceTitle" name="title"  value="">
                             </div>
 
-
-                            <div class="form-group">
-                                <label for="staffSurname">Staff Surname</label>
-                                <input type="text" class="form-control" id="staffSurname" name="surname"  value="">
+                            <div class="form-group" >
+                                <label for="serviceCategory">Services Category</label>
+                                <select name="category[]" id="serviceCategory" class="form-control select2 select2-hidden-accessible" tabindex="-1" multiple="" data-placeholder="" style="width: 100%;" aria-hidden="true">
+                                    @if(!empty($categories))
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}"> {{$category->name.'/'.$category->price}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
-
-                            <div class="form-group">
-                                <label for="staffPosition">Staff Position</label>
-                                <input type="text" class="form-control" id="staffPosition" name="position"  value="">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="staffDescription">Staff Description</label>
-                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'description', 'about_us_text'=>''])
-                            </div>
-
                             <button class="btn btn-block btn-success btn-flat">Success</button>
 
                         </form>
@@ -83,11 +77,6 @@
         </div>
     </section>
     <script>
-        $('.wysihtml5-toolbar').css({'display':'none'});
-
-        $('#image').change(function(){
-            var tmppath = $(this).val();
-            $(this).parent().parent().next().val(tmppath);
-        });
+        $('#serviceCategory').select2();
     </script>
 @endsection

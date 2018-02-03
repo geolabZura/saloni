@@ -51,7 +51,7 @@
                                 @foreach($brands as $brand)
                                     <tr>
                                         <td style="display: none;" class="brand_id">{{$brand->id}}</td>
-                                        <td class="brand_image"><img src="{{asset('/image/'.$brand['image'])}}" width="100" height="100"></td>
+                                        <td class="brand_image"><img src="{{asset('/image/'.$brand['image'])}}" style="width:100px; height:auto;"</td>
                                         <td class="brand_title">{{$brand->title}}</td>
                                         <td class="brand_link">{{$brand->link}}</td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="{{route('admin.brand.edit',$brand->id)}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></p></td>

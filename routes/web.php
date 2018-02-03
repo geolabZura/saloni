@@ -47,12 +47,18 @@ Route::post('/admin/aboutus/edit', ['as'=>'admin.aboutus.edit', 'uses'=>'AboutUs
 Route::get('/admin/aboutstaff', ['as'=>'admin.aboutstaff', 'uses'=>'AboutStaffController@index']);
 Route::post('/admin/aboutstaff/edit', ['as'=>'admin.aboutstaff.edit', 'uses'=>'AboutStaffController@aboutStaffEdit']);
 
+
 //Service Add/Edit/Delete
 Route::get('/admin/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
+
+Route::get('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAddPage']);
 Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAdd']);
-Route::post('/admin/service/edit', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit']);
-Route::get('/admin/service/selector/{id}', ['as'=>'admin.service.load.selector', 'uses'=>'ServiceController@loadCategory']);
+
+Route::get('/admin/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEditPage'])->where('id', '[0-9]+');
+Route::post('/admin/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit'])->where('id', '[0-9]+');
+
 Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete'])->where('id', '[0-9]+');
+
 
 //Staff Add/Edit/Delete
 Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
@@ -64,6 +70,7 @@ Route::get('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffCo
 Route::post('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit'])->where('id', '[0-9]+');
 
 Route::get('/admin/staff/delete/{id}', ['as'=>'admin.staff.delete', 'uses'=>'StaffController@staffDelete'])->where('id', '[0-9]+');
+
 
 //Brand Add/Edit/Delete
 Route::get('/admin/brand', ['as'=>'admin.brand', 'uses'=>'BrandController@index']);
@@ -87,6 +94,7 @@ Route::get('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'Special
 Route::post('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEdit'])->where('id', '[0-9]+');
 
 Route::get('/admin/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'SpecialOfferController@offerDelete'])->where('id', '[0-9]+');
+
 
 //Image Gallery Add/Delete
 Route::get('/admin/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@index']);

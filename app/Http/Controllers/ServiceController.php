@@ -24,10 +24,13 @@ class ServiceController extends Controller
     }
 
     public function index(){
-        $data['categories'] = $this->category->all();
         $data['services'] = $this->service->paginate(10);
-
         return view('admin.pages.service.index', $data);
+    }
+
+    public function serviceAddPage(){
+        $data['categories'] = $this->category->all();
+        return view('admin.pages.service.add', $data);
     }
 
     public function ServiceAdd(RequestService $request){
@@ -48,8 +51,20 @@ class ServiceController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function ServiceEdit(RequestServiceEdit $request){
-        $current_item = $this->service->where('id', $request->editId)->first();
+    public function ServiceEditPage($id){
+        $data['categories'] = $this->category->all();
+        $data['service'] = $this->service->where('id', $id)->first();
+
+        foreach ($data['service']->categories as $category){
+            $data['service_category'][] = $category->id;
+        }
+
+        return view('admin.pages.service.edit', $data);
+    }
+
+    public function ServiceEdit(RequestServiceEdit $request, $id){
+        $current_item = $this->service->where('id', $id)->first();
+        $request->editId = $id;
         $file = $request->file('image');
         $message = [];
 
@@ -84,18 +99,6 @@ class ServiceController extends Controller
         }
 
         return redirect()->back()->with('message', $message);
-    }
-
-    public function loadCategory($id){
-        $data['categories'] = $this->category->all();
-        $service = $this->service->where('id', $id)->first();
-
-        foreach ($service->categories as $category){
-            $data['selected_category'][] = $category->id;
-        }
-
-        return view('admin.pages.service.load', $data);
-
     }
 
     public function serviceDelete($id){

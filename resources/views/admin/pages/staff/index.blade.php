@@ -53,7 +53,7 @@
                                     @foreach($staffs as $staff)
                                         <tr>
                                             <td style="display: none;" class="staff_id">{{$staff->id}}</td>
-                                            <td class="staff_image"><img src="{{asset('/image/'.$staff['image'])}}" width="100" height="100"></td>
+                                            <td class="staff_image"><img src="{{asset('/image/'.$staff['image'])}}" style="width:100px; height:auto;"></td>
                                             <td class="staff_name">{{$staff->name}}</td>
                                             <td class="staff_surname">{{$staff->surname}}</td>
                                             <td class="staff_position">{{$staff->position}}</td>
@@ -104,9 +104,12 @@
     </section>
 
     <script>
+        (function(){
 
-        $('.delete').click(function(){
-            $('#deleteUrl').attr('href', $(this).data('id'));
-        });
+            $('.delete').click(function(){
+                $('#deleteUrl').attr('href', $(this).data('id'));
+            });
+
+        })();
     </script>
 @endsection
