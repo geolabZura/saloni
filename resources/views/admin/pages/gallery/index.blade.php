@@ -11,36 +11,28 @@
         <div class="row">
             <div class="col-md-12">
 
+
+                <div class="col-md-4" style="padding-left: 2px !important; padding-right: 2px !important;">
+                    <a href="{{route('admin.gallery.add')}}">
+                        <button type="button" class="btn btn-block btn-primary btn-flat">
+                            <i class="fa  fa-plus"></i> Add New Gallery
+                        </button>
+                    </a>
+                </div>
+                <br/>
+                <br/>
+
                 <div class="box box-info">
 
                     <div class="box-header">
-                        <h3 class="box-title">Show All Services</h3>
-                        <small>Edit/Delete Services</small>
+                        <h3 class="box-title">Show All Gallery Images</h3>
+                        <small>Edit/Delete Gallery Images</small>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
 
                         <div class="container gal-container">
-                            <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#1">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/1.jpg">
-                                    </a>
-                                    <div class="modal fade" id="1" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/1.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the first one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
                                 <div class="box">
                                     <a href="#" data-toggle="modal" data-target="#2">
@@ -201,26 +193,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#10">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/10.jpg">
-                                    </a>
-                                    <div class="modal fade" id="10" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/10.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the tenth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
                                 <div class="box">
                                     <a href="#" data-toggle="modal" data-target="#11">

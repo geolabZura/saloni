@@ -98,3 +98,6 @@ Route::get('/admin/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'Spe
 
 //Image Gallery Add/Delete
 Route::get('/admin/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@index']);
+
+Route::get('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAddPage']);
+Route::post('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAdd']);
