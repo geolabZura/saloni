@@ -13,45 +13,15 @@
 
             <div class="col-md-12">
 
-                @include('admin.partials.error')
-
-                @include('admin.partials.success')
-
-                <div class="box box-info">
-
-                    <div class="box-header">
-                        <h3 class="box-title">Add Service Category</h3>
-                    </div>
-
-                    <div class="box-body">
-
-                        <button type="button" class="btn btn-default btn-block btn-info" id="addService">Hide Add Content</button>
-                        <br/>
-
-                        <div class="serviceAdd">
-                            <form method="post" action="{{route('admin.category.add')}}">
-                                {{ csrf_field() }}
-
-                                <div class="form-group">
-                                    <label for="serviceName">Service Category Name</label>
-                                    <input type="text" class="form-control" id="serviceName" name="name" placeholder="Service Name">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="servicePrice">Service Category Price</label>
-                                    <input type="text" class="form-control" id="servicePrice" name="price" placeholder="Service Price">
-                                </div>
-
-                                <button class="btn btn-block btn-success btn-flat">Success</button>
-
-                            </form>
-                        </div>
-
-                    </div>
+                <div class="col-md-4" style="padding-left: 2px !important; padding-right: 2px !important;">
+                    <a href="{{route('admin.category.add')}}">
+                        <button type="button" class="btn btn-block btn-primary btn-flat">
+                            <i class="fa fa-plus"></i> Add New Service Category
+                        </button>
+                    </a>
                 </div>
-            </div>
-
-            <div class="col-xs-12">
+                <br/>
+                <br/>
 
                 <div class="box box-info">
 
@@ -80,11 +50,11 @@
                                                 <td style="display: none;" class="service_id">{{$service->id}}</td>
                                                 <td class="service_name">{{$service->name}}</td>
                                                 <td class="service_price">{{$service->price}}</td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id="{{$service->id}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                                <td><p data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{$service->id}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                                <td><p data-placement="top" data-toggle="tooltip" title="Edit" data-id=""><a href="{{route('admin.category.edit', $service->id)}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></p></td>
+                                                <td><p class="delete" data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{route('admin.category.delete',$service->id)}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                             </tr>
                                         @endforeach
-                                    @endif
+                                    @endif 
                                 </tbody>
 
                             </table>
@@ -101,48 +71,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                            <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
-                        </div>
-                        <div class="modal-body">
-
-                            <form method="post" action="{{route('admin.category.edit')}}">
-
-                                {{ csrf_field() }}
-
-                                <div class="form-group">
-                                    <input class="form-control" type="hidden" name="editId">
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="editName">
-                                </div>
-
-                                <div class="form-group">
-
-                                    <input class="form-control" type="text" name="editPrice">
-                                </div>
-
-                                <div class="modal-footer ">
-                                    <button class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
-                                </div>
-                            </form>
-
-                        </div>
-
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-
-
 
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                 <div class="modal-dialog">
@@ -169,25 +97,8 @@
 
     <script>
         (function(){
-            $('#addService').click(function(){
-                var elem = $('.serviceAdd');
-                elem.fadeToggle();
-            });
-
-            $('.edit').click(function(){
-                var mainElement = $(this).parent().parent().parent();
-                var serviceName = mainElement.find('.service_name').text();
-                var servicePrice = mainElement.find('.service_price').text();
-                var serviceId = mainElement.find('.service_id').text();
-
-                $("input[name=editId]").val(serviceId);
-                $("input[name=editName]").val(serviceName);
-                $("input[name=editPrice]").val(servicePrice);
-            })
-
-
             $('.delete').click(function(){
-                $('#deleteUrl').attr('href', "/admin/category/delete/"+$(this).parent().data('id'));
+                $('#deleteUrl').attr('href', $(this).data('id'));
             });
         })();
     </script>

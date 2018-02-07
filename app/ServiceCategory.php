@@ -34,8 +34,8 @@ class ServiceCategory extends Model
 
         if(!is_null($editable_service)) {
             $edited_service = $editable_service->update([
-                'name' => $service->editName,
-                'price' => $service->editPrice
+                'name' => $service->name,
+                'price' => $service->price
             ]);
 
             return $edited_service;

@@ -6,6 +6,7 @@ use App\Http\Requests\RequestServiceCategoryEdit;
 use App\Http\Requests\RequestServiceCategory;
 use App\ServiceCategory;
 use Illuminate\Http\Request;
+use function view;
 
 class ServiceCategoryController extends Controller
 {
@@ -18,6 +19,10 @@ class ServiceCategoryController extends Controller
     public function index(){
         $data['services'] = $this->serviceCategory->paginate(10);
         return view('admin.pages.servicecategory.index', $data);
+    }
+
+    public function serviceAddPage(){
+        return view('admin.pages.servicecategory.add');
     }
 
     public function serviceAdd(RequestServiceCategory $request){
@@ -33,7 +38,14 @@ class ServiceCategoryController extends Controller
         return redirect()->back()->with('message', $message);
     }
 
-    public function serviceEdit(RequestServiceCategoryEdit $request){
+    public function serviceEditPage($id){
+        $data['service'] = $this->serviceCategory->where('id', $id)->first();
+        return view('admin.pages.servicecategory.edit', $data);
+    }
+
+    public function serviceEdit(RequestServiceCategory $request, $id){
+        $current_item = $this->serviceCategory->where('id', $id)->first();
+        $request->editId = $id;
         $message = [];
         $edited_service = $this->serviceCategory->edit($request);
 
