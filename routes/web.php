@@ -101,3 +101,10 @@ Route::get('/admin/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@
 
 Route::get('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAddPage']);
 Route::post('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAdd']);
+
+Route::get('/admin/gallery/delete/{id}', ['as'=>'admin.gallery.delete', 'uses'=>'GalleryController@galleryDelete'])->where('id', '[0-9]+');
+
+
+//Contact Add/Delete/Edit
+Route::get('/admin/contact', ['as'=>'admin.contact', 'uses'=>'ContactController@index']);
+Route::post('/admin/contact/update', ['as'=>'admin.contact.update', 'uses'=>'ContactController@contactUpdate']);

@@ -30,18 +30,18 @@
                 <div class="box box-info">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Brand Add</h3>
+                        <h3 class="box-title">Image Add</h3>
                     </div>
 
                     <div class="box-body">
 
-                        <form method="post" action="{{route('admin.brand.add')}}" enctype="multipart/form-data" class="brandAdd">
+                        <form method="post" action="{{route('admin.gallery.add')}}" enctype="multipart/form-data" class="brandAdd">
 
                             {{csrf_field()}}
 
                             <div class="form-group">
                                 <label>
-                                    Upload Brand Image
+                                    Upload Image Image
                                 </label>
 
                                 <div class="input-group">

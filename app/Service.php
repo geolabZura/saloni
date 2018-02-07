@@ -21,6 +21,14 @@ class Service extends Model
             );
     }
 
+    public function contacts(){
+        return $this->belongsToMany(Contact::class,
+            'contact_service',
+            'service_id',
+            'contact_id'
+        );
+    }
+
     public function add($request){
         $upload_service = $this->create([
             'image'=>$request->upload_image,

@@ -85,6 +85,12 @@
                 </a>
             </li>
 
+            <li class="{{Request::is('admin/contact') ? 'active ' : ''}}">
+                <a href="{{route('admin.contact')}}">
+                    <i class="fa fa-dashboard"></i> <span>Contacts</span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

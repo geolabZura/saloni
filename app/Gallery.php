@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\Delete;
 use App\Http\Requests\RequestImageUpload;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,4 +27,16 @@ class Gallery extends Model
         }
     }
 
+    public function remove($id){
+        $deletable_gallery_image = $this->find($id);
+
+        if(!is_null($deletable_gallery_image)){
+            event(new Delete($deletable_gallery_image->image));
+            $deletable_gallery_image->delete();
+
+            return true;
+        }
+
+        return false;
+    }
 }

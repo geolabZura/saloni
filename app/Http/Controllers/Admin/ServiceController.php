@@ -51,6 +51,7 @@ class ServiceController extends Controller
     public function ServiceEditPage($id){
         $data['categories'] = $this->category->all();
         $data['service'] = $this->service->where('id', $id)->first();
+        $data['service_category'] = [];
 
         foreach ($data['service']->categories as $category){
             $data['service_category'][] = $category->id;

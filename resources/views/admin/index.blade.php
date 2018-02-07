@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" href="{{asset('/admin/bower_components/select2/dist/css/select2.css')}}">
 
+    <link rel="stylesheet" href="{{asset('/admin/plugins/timepicker/bootstrap-timepicker.min.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.min.css">
 
     <link rel="stylesheet" href="{{asset('/admin/style.css')}}">
@@ -58,6 +60,12 @@
         <div class="content-wrapper" style="min-height: 889px;">
             <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
             <script src="{{asset('/admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+            <script src="{{asset('/admin/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+
+
+            <script src="{{asset('/admin/plugins/input-mask/jquery.inputmask.js')}}"></script>
+            <script src="{{asset('/admin/plugins/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
+            <script src="{{asset('/admin/plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
 
             @yield('content')
         </div>
@@ -84,9 +92,7 @@
 <script src="{{asset('/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{asset('/admin/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('/admin/bower_components/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('/admin/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+
 <!-- datepicker -->
 <script src="{{asset('/admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Bootstrap WYSIHTML5 -->
@@ -97,6 +103,8 @@
 <!-- FastClick -->
 <script src="{{asset('/admin/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
+
+
 <script src="{{asset('/admin/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('/admin/dist/js/pages/dashboard.js')}}"></script>

@@ -2,330 +2,87 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Staff
-            <small>Add, Delete, Edit</small>
+            Image Gallery
+            <small>Add, Delete</small>
         </h1>
     </section>
 
     <section class="content">
+
         <div class="row">
             <div class="col-md-12">
 
 
+                @include('admin.partials.error')
+
+                @include('admin.partials.success')
+
                 <div class="col-md-4" style="padding-left: 2px !important; padding-right: 2px !important;">
                     <a href="{{route('admin.gallery.add')}}">
                         <button type="button" class="btn btn-block btn-primary btn-flat">
-                            <i class="fa  fa-plus"></i> Add New Gallery
+                            <i class="fa  fa-plus"></i> Add New Gallery IMage
                         </button>
                     </a>
                 </div>
-                <br/>
-                <br/>
 
-                <div class="box box-info">
+            </div>
+        </div>
 
-                    <div class="box-header">
-                        <h3 class="box-title">Show All Gallery Images</h3>
-                        <small>Edit/Delete Gallery Images</small>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
+        <div class="container gal-container">
+            @foreach($images as $image)
+                <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+                    <div class="box">
+                        <a href="#" data-toggle="modal" data-target="#2">
+                            <img src="{{asset('/image/'.$image->image)}}">
+                        </a>
 
-                        <div class="container gal-container">
+                        <div class="modal fade" id="2" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <div class="modal-body">
+                                        <img src="{{asset('/image/'.$image->image)}}">
 
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#2">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/2.jpg">
-                                    </a>
-                                    <div class="modal fade" id="2" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/2.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the second one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#3">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/3.jpg">
-                                    </a>
-                                    <div class="modal fade" id="3" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/3.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the third one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#4">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/4.jpg">
-                                    </a>
-                                    <div class="modal fade" id="4" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/4.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the fourth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#5">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/5.jpg">
-                                    </a>
-                                    <div class="modal fade" id="5" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/5.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the fifth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#6">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/6.jpg">
-                                    </a>
-                                    <div class="modal fade" id="6" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/6.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the sixth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#7">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/7.jpg">
-                                    </a>
-                                    <div class="modal fade" id="7" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/7.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the seventh one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#8">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/8.jpg">
-                                    </a>
-                                    <div class="modal fade" id="8" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/8.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the eighth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#9">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/9.jpg">
-                                    </a>
-                                    <div class="modal fade" id="9" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/9.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the ninth one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#11">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/11.jpg">
-                                    </a>
-                                    <div class="modal fade" id="11" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/11.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the leventh one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#12">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/12.jpg">
-                                    </a>
-                                    <div class="modal fade" id="12" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/12.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the 12th one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#13">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/13.jpg">
-                                    </a>
-                                    <div class="modal fade" id="13" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/13.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the 13th one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#14">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/14.jpg">
-                                    </a>
-                                    <div class="modal fade" id="14" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/14.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the 14th one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#15">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/15.jpg">
-                                    </a>
-                                    <div class="modal fade" id="15" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/15.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the 15th one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                                <div class="box">
-                                    <a href="#" data-toggle="modal" data-target="#16">
-                                        <img src="http://nabeel.co.in/files/bootsnipp/gallery/16.jpg">
-                                    </a>
-                                    <div class="modal fade" id="16" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                <div class="modal-body">
-                                                    <img src="http://nabeel.co.in/files/bootsnipp/gallery/16.jpg">
-                                                </div>
-                                                <div class="col-md-12 description">
-                                                    <h4>This is the 16th one on my Gallery</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div style="padding: 0 !important;">
+
+                        <p class="delete" data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{route('admin.gallery.delete', $image->id)}}">
+                            <button type="button" class="btn btn-block btn-danger btn-flat" data-title="Delete" data-toggle="modal" data-target="#delete" >Delete Image</button>
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+
+                    </div>
+                    <div class="modal-footer ">
+                        <a id="deleteUrl" style="text-decoration: none" href=""><button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button></a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="col-md-10 col-md-offset-1 text-center">
 
-                <h6>Coded with <i class="fa fa-heart red"></i> by <a href="http://www.nabeel.co.in" target="_blank">Nabeel Kondotty</a></h6>
-            </div>
-        </div>
-    </footer>
+    <script>
+        $('.delete').click(function(){
+            $('#deleteUrl').attr('href', $(this).data('id'));
+        });
+    </script>
 @endsection

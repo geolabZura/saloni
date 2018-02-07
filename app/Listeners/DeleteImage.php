@@ -3,11 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\Delete;
-use function file_exists;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use function public_path;
-use function unlink;
+
 
 class DeleteImage
 {
@@ -33,6 +31,5 @@ class DeleteImage
         if(file_exists($file_full_path)){
             unlink($file_full_path);
         }
-
     }
 }

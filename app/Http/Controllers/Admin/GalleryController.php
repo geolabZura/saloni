@@ -16,7 +16,8 @@ class GalleryController extends Controller
     }
 
     public function index(){
-        return view('admin.pages.gallery.index');
+        $data['images'] = $this->gallery->paginate(15);
+        return view('admin.pages.gallery.index', $data);
     }
 
     public function galleryAddPage(){
@@ -34,10 +35,23 @@ class GalleryController extends Controller
         }
 
         if($uploaded_gallery){
-            $message['success'][] = "Image Uploade Successfully!";
+            $message['success'][] = "Image Upload Successfully!";
         }else{
             $message['error'][] = "Something Wrong, Please Retry!";
         }
+        return redirect()->back()->with('message', $message);
+    }
+
+    public function galleryDelete($id){
+        $message =[];
+        $deleted_gallery_image = $this->gallery->remove($id);
+
+        if($deleted_gallery_image){
+            $message['success'][] = "ServiceCategory Deleted SuccessFully!";
+        }else{
+            $message['error'][] = "ServiceCategory Not Deleted, Please Retry!";
+        }
+
         return redirect()->back()->with('message', $message);
     }
 }
