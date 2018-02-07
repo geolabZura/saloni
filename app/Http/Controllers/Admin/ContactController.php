@@ -41,7 +41,7 @@ class ContactController extends Controller
             ]);
         }else{
             $updated = $this->contact->create([
-                
+
             ]);
         }
 
