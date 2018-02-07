@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestService;
 use App\Http\Requests\RequestServiceEdit;
-use App\Listeners\DeleteImage;
 use App\Service;
 use App\ServiceCategory;
-use function event;
 use Illuminate\Http\Request;
 use App\Events\Image;
-use function redirect;
-use function returnArgument;
+
 
 class ServiceController extends Controller
 {

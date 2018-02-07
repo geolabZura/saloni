@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestSocialLink;
 use App\SocialIcon;
-use function get_headers;
 use Illuminate\Http\Request;
-use function redirect;
-use function substr;
-use function ucfirst;
 
 class SocialIconController extends Controller
 {

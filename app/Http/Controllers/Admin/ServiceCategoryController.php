@@ -6,7 +6,6 @@ use App\Http\Requests\RequestServiceCategoryEdit;
 use App\Http\Requests\RequestServiceCategory;
 use App\ServiceCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class ServiceCategoryController extends Controller
 {

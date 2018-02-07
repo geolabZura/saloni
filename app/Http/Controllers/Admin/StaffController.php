@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Admin\Controllers;
 
 use App\Events\Image;
 use App\Http\Requests\RequestStaff;
 use App\Http\Requests\RequestStaffEdit;
 use App\Staff;
 use Illuminate\Http\Request;
-use function view;
 
 class StaffController extends Controller
 {

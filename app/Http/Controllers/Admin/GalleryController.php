@@ -6,12 +6,11 @@ use App\Events\Image;
 use App\Gallery;
 use App\Http\Requests\RequestImageUpload;
 use Illuminate\Http\Request;
-use function view;
 
 class GalleryController extends Controller
 {
     public $gallery;
-    
+
     public function __construct(){
         $this->gallery = new Gallery();
     }

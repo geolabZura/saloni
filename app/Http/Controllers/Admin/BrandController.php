@@ -7,7 +7,6 @@ use App\Events\Image;
 use App\Http\Requests\RequestBrand;
 use App\Http\Requests\RequestBrandEdit;
 use Illuminate\Http\Request;
-use function view;
 
 class BrandController extends Controller
 {
