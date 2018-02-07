@@ -9,7 +9,7 @@ class Contact extends Model
     protected $table = 'contact';
 
     protected $fillable = [
-        'city', 'telephone', 'mail', 'work_from', 'work_to'
+        'city', 'telephone', 'mail', 'work_from', 'work_to', 'created_at', 'updated_at'
     ];
 
     public function services(){

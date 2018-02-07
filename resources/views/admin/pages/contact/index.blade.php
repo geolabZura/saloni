@@ -49,7 +49,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-phone"></i>
                                     </div>
-                                    <input type="text" id="tel" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9(999) 999-9999&quot;" data-mask="" value="{{!empty($contact->telephone) ? $contact->telephone : ''}}">
+                                    <input type="text" id="tel" class="form-control" name="telephone" data-inputmask="&quot;mask&quot;: &quot;9(999) 999-9999&quot;" data-mask="" value="{{!empty($contact->telephone) ? $contact->telephone : ''}}">
                                 </div>
                             </div>
 

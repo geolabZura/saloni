@@ -19,12 +19,16 @@ class BackgroundImages extends Seeder
     public function run()
     {
         foreach ($this->position_names as $name) {
-            \Illuminate\Support\Facades\DB::table('background_images')->insert([
-                'position_name' => $name,
-                'image'         => '',
-                'created_at'    => \Carbon\Carbon::now(),
-                'updated_at'    => \Carbon\Carbon::now()
-            ]);
+            $exist_row = \Illuminate\Support\Facades\DB::table('background_images')->where('position_name', $name)->first();
+            if(empty($exist_row)) {
+                \Illuminate\Support\Facades\DB::table('background_images')->insert([
+                    'position_name' => $name,
+                    'image' => '',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now()
+                ]);
+            }
         }
+
     }
 }

@@ -37,12 +37,30 @@ class ContactController extends Controller
 
         if(!empty($exist_contact)) {
             $updated = $exist_contact->update([
-
+                'city'=>!empty($request->city) ? $request->city : '',
+                'telephone'=>!empty($request->telephone) ? $request->telephone : '',
+                'mail'=>!empty($request->mail) ? $request->mail : '',
+                'work_from'=>!empty($request->work_from) ? $request->work_from : '',
+                'work_to'=>!empty($request->work_to) ? $request->work_to : ''
             ]);
-        }else{
+
+            if (!empty($request->category)) {
+                $exist_contact->services()->detach();
+                $exist_contact->services()->attach($request->category);
+            }
+
+        }else {
             $updated = $this->contact->create([
-
+                'city' => !empty($request->city) ? $request->city : '',
+                'telephone' => !empty($request->telephone) ? $request->telephone : '',
+                'mail' => !empty($request->mail) ? $request->mail : '',
+                'work_from' => !empty($request->work_from) ? $request->work_from : '',
+                'work_to' => !empty($request->work_to) ? $request->work_to : ''
             ]);
+
+            if (!empty($request->category)) {
+                $updated->services()->attach($request->category);
+            }
         }
 
         if($updated){

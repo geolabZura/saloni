@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Admin\Controllers;
+namespace App\Http\Controllers;
 
 use App\Events\Image;
 use App\Http\Requests\RequestStaff;

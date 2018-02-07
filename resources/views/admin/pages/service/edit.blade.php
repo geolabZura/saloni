@@ -77,5 +77,10 @@
     </section>
     <script>
         $('#serviceCategory').select2();
+
+        $('#image').change(function(){
+            var tmppath = $(this).val();
+            $(this).parent().parent().next().val(tmppath);
+        });
     </script>
 @endsection
