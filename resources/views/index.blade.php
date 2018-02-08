@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/site/css/styles.css')}}">
 </head>
 
-<body>
+<body style="	background-image: url({{ !empty($body_image) ? asset('/image/'.$body_image) : ''}});">
     {{--header menu, about us content--}}
     @include('site.partials.header.header')
 
@@ -42,8 +42,8 @@
 <script type="application/javascript" src="{{asset('/site/js/bootstrap.bundle.min.js')}}"></script>
 <script type="application/javascript" src="https://api-maps.yandex.ru/2.1/?lang=en_US"></script>
 <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-
 <script src="{{asset('/site/js/script.js')}}"></script>
+
 </body>
 </html>
 

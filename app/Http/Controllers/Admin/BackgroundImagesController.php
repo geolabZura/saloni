@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\BackgroundImage;
+use App\Events\Image;
 use App\Http\Requests\RequestBackgroundImage;
+use App\Listeners\UploadImage;
 use Illuminate\Http\Request;
 
 class BackgroundImagesController extends Controller
@@ -34,11 +36,11 @@ class BackgroundImagesController extends Controller
 
             if(!empty($current_file_name) and !empty($file_name)) {
                 if ($current_file_name == $file_name) {
-                    $uploade_file_name = time().'.'.$current_file->getClientOriginalName();
-                    $current_file->move(public_path('/image/'), $uploade_file_name);
-                    $file_upload_response = $this->background_image->edit($files, public_path('/image/').$uploade_file_name);
 
-                    if($file_upload_response){
+                    $file_upload_response = event(new Image($current_file))[0];
+                    $file_name_write_base_responce = $this->background_image->edit($files, $file_upload_response);
+
+                    if($file_name_write_base_responce){
                         $message['success'][] = 'File Uploaded Successfully!';
                     }else{
                         $message['error'][] = 'Something Wrong, Please Connect Site Administrator!';

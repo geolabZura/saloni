@@ -1,4 +1,4 @@
-<header class="HeaderMain PageHeight" id="HeaderID">
+<header class="HeaderMain PageHeight" id="HeaderID" style="background-image: url({{ !empty($home_page_image) ? asset('/image/'.$home_page_image) : ''}});">
     <div class="container-fluid Filter " id="navbar">
         <div class="row">
             <div class="container">
@@ -49,39 +49,12 @@
                     </div><!-- .LogoWrapper-->
                 </div><!--.row-->
 
-                {{--calke--}}
-                <div class="row justify-content-center">
-                    <section class="col-md-8 col-sm-12 HeaderContent text-center">
-                        <h1 class="text-uppercase Title">клуб красоты и курорт в городе</h1>
-                        <p class="HeaderContentText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                            eiusmod
-                            tempor incididunt ut labore et dolore magna
-                        </p>
-                        <button class="text-uppercase">подробнее</button>
-                    </section>
-                </div><!-- .row -->
-                <!-- <div class="Menu red"> -->
+                {{--about us content--}}
+                @include('site.partials.header.aboutus')
 
-                {{--calke--}}
-                <div id="BurgerToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                {{--burger menu--}}
+                @include('site.partials.header.burger')
 
-                <nav id="collapsibleNavbar">
-                    <ul>
-                        <li><a href="#HeaderID">Улавная страница</a></li>
-                        <li><a href="#SlideID">Услуги</a></li>
-                        <li><a href="#SpecialistID">Специалисты</a></li>
-                        <li><a href="#OffersID">Предложение</a></li>
-                        <li><a href="#GalleryID">Галерея</a></li>
-                        <li><a href="#ContactID">Коннтакты</a></li>
-                    </ul>
-                </nav>
-
-                <!-- </div> -->
             </div><!--.Container -->
         </div>
     </div><!-- .Filter, .container-fluid -->

@@ -50,7 +50,7 @@
                                             </span>
                                             <input type="text" class="form-control" readonly name="readonly_{{$image->position_name}}" value="{{$image->image}}">
                                         </div>
-                                        <img src="" class="show">
+                                        {{--<img src="" class="show">--}}
                                     </div>
 
                                 @endforeach

@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', ['as'=>'site.main', 'uses'=>'MainPageController@index']);
 
 //Route::group(['middleware'=>'auth'], function(){
 //    Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
 //    });
 //});
+
+
 
 Route::view('admin/example', 'admin.example');
 Route::view('admin/index', 'admin.index');

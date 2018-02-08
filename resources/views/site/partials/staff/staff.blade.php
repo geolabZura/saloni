@@ -2,8 +2,6 @@
     <div class="container-fluid Filter">
         <div class="container SpecialistContent">
             <div class="row">
-
-                {{--about staff--}}
                 <section class=" col-md-6 col-sm-12 LeftSection text-center">
                     <div class="LeftContent">
                         <h3 class="text-uppercase Title">наши специалисты</h3>
@@ -16,60 +14,63 @@
                     </div>
                     <button class="text-uppercase SpecialistButton">все специалисты</button>
                 </section>
-
-                {{--each staff mini information--}}
                 <section class="col-md-4 col-sm-12 RightSection offset-md-2 ">
                     <div class="RightContent">
-                        <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active">
-                                    <img class="d-block img-fluid RightSlide" src="images/S2.jpg" alt="First slide">
-                                    <div class="RightSlideText text-center">
-                                        <h3 class="text-capitalize SlideName">
-                                            иванова наталия
-                                        </h3>
-                                        <p class="text-uppercase Profession">
-                                            consultant aaaaa
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid RightSlide" src="images/S1.jpg" alt="Second slide">
-                                    <div class="RightSlideText text-center">
-                                        <h3 class="text-capitalize SlideName">
-                                            иванова наталия
-                                        </h3>
-                                        <p class="text-uppercase Profession">
-                                            consultant aaaaa
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block img-fluid RightSlide" src="images/S3.jpg" alt="Third slide">
-                                    <div class="RightSlideText text-center">
-                                        <h3 class="text-capitalize SlideName">
-                                            иванова наталия
-                                        </h3>
-                                        <p class="text-uppercase Profession">
-                                            consultant aaaaa
-                                        </p>
-                                    </div>
-                                </div>
+                        <div class="RightContentInner">
+                            <div class="stuffSLide active">
+                                <img class="d-block img-fluid RightSlide" src="images/S2.jpg" alt="First slide">
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                               data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
+                            <div class="stuffSLide">
+                                <img class="d-block img-fluid RightSlide" src="images/S1.jpg" alt="Second slide">
+                            </div>
+                            <div class="stuffSLide">
+                                <img class="d-block img-fluid RightSlide" src="images/S3.jpg" alt="Third slide">
+                            </div>
+
+                            <a class="prev" onclick="plusStaffSlides(-1)">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     viewBox="0 0 100 100" version="1.1" x="0px" y="0px">
+                                    <path d="M68.232233,61.767767 C69.2085438,62.7440777 70.7914562,62.7440777 71.767767,61.767767 C72.7440777,60.7914562 72.7440777,59.2085438 71.767767,58.232233 L51.767767,38.232233 C50.7914562,37.2559223 49.2085438,37.2559223 48.232233,38.232233 L28.232233,58.232233 C27.2559223,59.2085438 27.2559223,60.7914562 28.232233,61.767767 C29.2085438,62.7440777 30.7914562,62.7440777 31.767767,61.767767 L49.9997921,43.5357418 L68.232233,61.767767 Z"
+                                          transform="translate(50.000000, 50.000000) rotate(-90.000000) translate(-50.000000, -50.000000) "/>
+                                </svg>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                               data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                            <a class="next" onclick="plusStaffSlides(1)">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     viewBox="0 0 100 100" version="1.1" x="0px" y="0px">
+                                    <path d="M68.232233,61.767767 C69.2085438,62.7440777 70.7914562,62.7440777 71.767767,61.767767 C72.7440777,60.7914562 72.7440777,59.2085438 71.767767,58.232233 L51.767767,38.232233 C50.7914562,37.2559223 49.2085438,37.2559223 48.232233,38.232233 L28.232233,58.232233 C27.2559223,59.2085438 27.2559223,60.7914562 28.232233,61.767767 C29.2085438,62.7440777 30.7914562,62.7440777 31.767767,61.767767 L49.9997921,43.5357418 L68.232233,61.767767 Z"
+                                          transform="translate(50.000000, 50.000000) rotate(90.000000) translate(-50.000000, -50.000000) "/>
+                                </svg>
                             </a>
+                        </div>
+                        <div class="text-center ThumbrnailContainer">
+                            <div class="RightSlideText cursor text-center " onclick="currentStaffSlide(1)" >
+                                <h3 class="text-capitalize SlideName">
+                                    иванова наталия 111
+                                </h3>
+                                <p class="text-uppercase Profession">
+                                    consultant aaaaa
+                                </p>
+                            </div>
+                            <div class="RightSlideText cursor text-center" onclick="currentStaffSlide(2)">
+                                <h3 class="text-capitalize SlideName">
+                                    иванова наталия 222
+                                </h3>
+                                <p class="text-uppercase Profession">
+                                    consultant bbbb
+                                </p>
+                            </div>
+                            <div class="RightSlideText cursor text-center" onclick="currentStaffSlide(3)">
+                                <h3 class="text-capitalize SlideName">
+                                    иванова наталия 3333
+                                </h3>
+                                <p class="text-uppercase Profession">
+                                    consultant ccc
+                                </p>
+                            </div>
                         </div>
                     </div><!-- .RightContent-->
                 </section>
             </div><!-- .row -->
         </div><!--.Container -->
     </div>
-</div><!--Spcialist-->
+</div><!-- .Spcialist-->
