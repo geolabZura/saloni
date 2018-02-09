@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\AboutStaff;
 use App\AboutUs;
 use App\BackgroundImage;
 use App\Service;
+use App\Staff;
 use Illuminate\Http\Request;
 
 class MainPageController extends Controller
@@ -12,32 +14,26 @@ class MainPageController extends Controller
     protected $background_images;
     protected $about_us;
     protected $service;
+    protected $about_staff;
+    protected $staff;
 
     public function __construct(){
         $this->background_images = new BackgroundImage();
         $this->about_us = new AboutUs();
         $this->service = new Service();
+        $this->about_staff = new AboutStaff();
+        $this->staff = new Staff();
     }
     public function index(){
         $background_images = $this->background_images->all();
-        $data['services'] = $this->service->all();
-        $service_count = 1;
-        $service_index_split_count = 0;
 
         foreach ($background_images as $images) {
             $data[$images->position_name] = $images->image;
         }
-//
-//        foreach ($services as $service){
-//            if($service_count>3){
-//                $service_index_split_count++;
-//                $service_count=1;
-//                $data['services'][$service_index_split_count][] = $service;
-//            }else{
-//                $service_count++;
-//                $data['services'][$service_index_split_count][] = $service;
-//            }
-//        }
+
+        $data['services'] = $this->service->all();
+        $data['staffs'] = $this->staff->all();
+        $data['about_staff'] = $this->about_staff->first();
         $data['about_us'] = $this->about_us->first();
 
         return view('index', $data);

@@ -24,7 +24,7 @@
     @include('site.partials.slider')
 
     {{--staff content--}}
-    @include('site.partials.staff.staff')
+    @include('site.partials.staff')
 
     {{-- brand content--}}
     @include('site.partials.brand')

@@ -33,8 +33,9 @@
                             </div>
 
                             <div class="form-group">
+                                @php($about_staff =  isset($about_staff['description']) ? $about_staff['description'] : '')
                                 <label for="aboutStaffDescription">About Staff Description</label>
-                                <input type="text" class="form-control" id="aboutStaffDescription" name="description" placeholder="About Staff Description" value="{{isset($about_staff['description']) ? $about_staff['description'] : ''}}">
+                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'description', 'about_us_text'=>"$about_staff"])
                             </div>
 
                             <button class="btn btn-block btn-success btn-flat">Success</button>
@@ -45,4 +46,10 @@
                 </div>
             </div>
         </div>
+    </section>
+    <script>
+        (function(){
+            $('.wysihtml5-toolbar').css({'display':'none'});
+        })();
+    </script>
 @endsection
