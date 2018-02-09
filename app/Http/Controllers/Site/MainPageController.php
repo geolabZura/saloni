@@ -6,6 +6,7 @@ use App\AboutStaff;
 use App\AboutUs;
 use App\BackgroundImage;
 use App\Brand;
+use App\Contact;
 use App\Gallery;
 use App\Service;
 use App\SpecialOffer;
@@ -22,6 +23,7 @@ class MainPageController extends Controller
     protected $offer;
     protected $brand;
     protected $gallery;
+    protected $contact;
 
     public function __construct(){
         $this->background_images = new BackgroundImage();
@@ -32,7 +34,7 @@ class MainPageController extends Controller
         $this->offer = new SpecialOffer();
         $this->brand = new Brand();
         $this->gallery = new Gallery();
-
+        $this->contact = new Contact();
     }
 
     public function index(){
@@ -49,8 +51,10 @@ class MainPageController extends Controller
         $data['about_us'] = $this->about_us->first();
         $data['brands'] = $this->brand->orderBy('created_at', 'desc')->limit(5)->get();
         $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(10)->get();
+        $data['contact'] = $this->contact->first();
 
-        return view('index', $data);
+//        dd($data['contact']);
+        return view('site.main', $data);
     }
 
 }

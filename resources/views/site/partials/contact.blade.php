@@ -1,27 +1,28 @@
 <div class="Contact PageHeight" id="ContactID">
     <div class="container-fluid Filter">
         <div class="row FooterRow justify-content-center">
-            <div class="col-md-4 ContactTride ">
-                <div class="ContactTrideContent">
-                    <ul class="ContactList text-uppercase">
-                        <li><a href="#">парикмахерский зал</a></li>
-                        <li><a href="#">косметалогия</a></li>
-                        <li><a href="#">епилация</a></li>
-                        <li><a href="#">спа</a></li>
-                        <li><a href="#">ногтевой сервис</a></li>
-                        <li><a href="#">аппаратные методики</a></li>
-                    </ul>
+            @if(!empty($contact))
+                <div class="col-md-4 ContactTride ">
+                    <div class="ContactTrideContent">
+                        <ul class="ContactList text-uppercase">
+                            @if(!empty($contact->services))
+                                @foreach($contact->services as $service)
+                                    <li><a href="#">{{$service->title}}</a></li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 ContactTride">
-                <div class="ContactTrideContent SecondTride">
-                    <ul class="ContactList text-uppercase text-center">
-                        <li>6(499)123-45-78</li>
-                        <li>Москва, Щукинская</li>
-                        <li>Ежедневно с 10-00 до 20-00</li>
-                    </ul>
+                <div class="col-md-4 ContactTride">
+                    <div class="ContactTrideContent SecondTride">
+                        <ul class="ContactList text-uppercase text-center">
+                            <li>{{$contact->telephone}}</li>
+                            <li>{{$contact->city}}</li>
+                            <li>Ежедневно с {{$contact->work_from}} до {{$contact->work_to}}</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            @endif
             <div class="col-md-4 ContactTride ">
                 <div class="ContactTrideContent">
                     <div id="map" style="width: inherit; height: inherit;"></div>

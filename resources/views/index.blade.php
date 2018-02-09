@@ -14,29 +14,8 @@
 </head>
 
 <body style="	background-image: url({{ !empty($body_image) ? asset('/image/'.$body_image) : ''}});">
-    {{--header menu, about us content--}}
-    @include('site.partials.header.header')
-
-    {{--footer menu content--}}
-    @include('site.partials.footer')
-
-    {{--slider services content--}}
-    @include('site.partials.slider')
-
-    {{--staff content--}}
-    @include('site.partials.staff')
-
-    {{-- brand content--}}
-    @include('site.partials.brand')
-
-    {{--offers content--}}
-    @include('site.partials.offer')
-
-    {{--gallery image content--}}
-    @include('site.partials.gallery')
-
-    {{--contact and map content--}}
-    @include('site.partials.contact')
+    {{--main content--}}
+    @yield('content');
 <script type="application/javascript" src="{{asset('/site/js/jquery-3.3.1.min.js')}}"></script>
 <script type="application/javascript" src="{{asset('/site/js/bootstrap.min.js')}}"></script>
 <script type="application/javascript" src="{{asset('/site/js/bootstrap.bundle.min.js')}}"></script>

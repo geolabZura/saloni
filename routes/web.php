@@ -12,6 +12,7 @@
 */
 
 Route::get('/', ['as'=>'site.main', 'uses'=>'MainPageController@index']);
+Route::get('/offer/{id}', ['as'=>'admin.offer', 'uses'=>'OfferController@index'])->where('id', '[0-9]+');
 
 //Route::group(['middleware'=>'auth'], function(){
 //    Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
