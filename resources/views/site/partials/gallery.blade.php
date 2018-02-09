@@ -2,10 +2,15 @@
     <div class="container-fluid Filter">
         <div class="row justify-content-center">
             <div class="col-md-9  BigimageContainer">
-                <div class="mySlides PageHeight" style="background-image: url(images/1.jpg);"></div>
-                <div class="mySlides PageHeight" style="background-image: url(images/2.jpg)"></div>
-                <div class="mySlides PageHeight" style="background-image: url(images/3.jpg)"></div>
-
+                @if(!empty($gallery_images))
+                    @foreach($gallery_images as $image)
+                        @if($loop->iteration<4)
+                            <div class="mySlides PageHeight" style="background-image: url({{asset('/image/'.$image->image)}});"></div>
+                        @else
+                            @break
+                        @endif
+                    @endforeach
+                @endif
                 <a class="prev" onclick="plusSlides(-1)">
                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                          viewBox="0 0 100 100" version="1.1" x="0px" y="0px">
@@ -25,12 +30,17 @@
 
             <div class="col-md-3 text-center ThumbrnailContainer">
                 <h2 class="text-uppercase Title">галерея</h2>
-                <div class="SmallImg cursor" style="background-image: url(images/1.jpg)"
-                     onclick="currentSlide(1)"></div>
-                <div class="SmallImg cursor" style="background-image: url(images/2.jpg)"
-                     onclick="currentSlide(2)"></div>
-                <div class="SmallImg cursor" style="background-image: url(images/3.jpg)"
-                     onclick="currentSlide(3)"></div>
+                @if(!empty($gallery_images))
+                    @php($count = 1)
+                    @foreach($gallery_images as $image)
+                        @if($loop->iteration<4)
+                            <div class="SmallImg cursor" style="background-image: url({{asset('/image/'.$image->image)}})" onclick="currentSlide({{$count}})"></div>
+                            @php($count++)
+                        @else
+                            @break
+                        @endif
+                    @endforeach
+                @endif
                 <button class="text-uppercase GalleryButton">все фотографии</button>
             </div>
         </div>

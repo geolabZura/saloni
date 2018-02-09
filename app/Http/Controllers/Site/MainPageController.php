@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\AboutStaff;
 use App\AboutUs;
 use App\BackgroundImage;
+use App\Brand;
+use App\Gallery;
 use App\Service;
 use App\SpecialOffer;
 use App\Staff;
@@ -18,6 +20,8 @@ class MainPageController extends Controller
     protected $about_staff;
     protected $staff;
     protected $offer;
+    protected $brand;
+    protected $gallery;
 
     public function __construct(){
         $this->background_images = new BackgroundImage();
@@ -26,6 +30,9 @@ class MainPageController extends Controller
         $this->about_staff = new AboutStaff();
         $this->staff = new Staff();
         $this->offer = new SpecialOffer();
+        $this->brand = new Brand();
+        $this->gallery = new Gallery();
+
     }
 
     public function index(){
@@ -40,6 +47,8 @@ class MainPageController extends Controller
         $data['offers'] = $this->offer->orderBy('created_at', 'desc')->limit(5)->get();
         $data['about_staff'] = $this->about_staff->first();
         $data['about_us'] = $this->about_us->first();
+        $data['brands'] = $this->brand->orderBy('created_at', 'desc')->limit(5)->get();
+        $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(10)->get();
 
         return view('index', $data);
     }

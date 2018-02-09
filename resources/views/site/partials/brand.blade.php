@@ -11,12 +11,12 @@
                         our brands
                     </h3>
                     <ul class="text-uppercase BrandList">
-                        <li><a href="#">algotherm</a></li>
-                        <li><a href="#">comfort zone</a></li>
-                        <li><a href="#">tanamera</a></li>
-                        <li><a href="#">masura</a></li>
-                        <li><a href="#">senscience</a></li>
-                        <li><a href="#">kerastase</a></li>
+                        @if(!empty($brands))
+                            @foreach($brands as $brand)
+
+                                <li><a href="{{$brand->link}}">{{$brand->title}}</a></li>
+                            @endforeach
+                        @endif
                     </ul>
                     <button class="text-uppercase BrandButton">все бренды</button>
                 </div>
