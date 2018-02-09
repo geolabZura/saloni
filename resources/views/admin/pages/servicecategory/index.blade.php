@@ -54,7 +54,7 @@
                                                 <td><p class="delete" data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{route('admin.category.delete',$service->id)}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                             </tr>
                                         @endforeach
-                                    @endif 
+                                    @endif
                                 </tbody>
 
                             </table>
