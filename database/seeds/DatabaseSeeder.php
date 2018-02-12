@@ -11,10 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-
         $this->call(SocialIcons::class);
         $this->call(BackgroundImages::class);
-
+        $this->call(UserAdminAcount::class);
     }
 }

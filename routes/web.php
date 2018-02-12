@@ -11,107 +11,115 @@
 |
 */
 
+//Site Main Page
 Route::get('/', ['as'=>'site.main', 'uses'=>'MainPageController@index']);
-Route::get('/offer/{id}', ['as'=>'admin.offer', 'uses'=>'OfferController@index'])->where('id', '[0-9]+');
-
-//Route::group(['middleware'=>'auth'], function(){
-//    Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function() {
-//    });
-//});
-
-
-
 Route::view('admin/example', 'admin.example');
-Route::view('admin/index', 'admin.index');
 
-//Social Icons Add Links
-Route::get('/admin/icon', ['as'=>'admin.social','uses'=>'SocialIconController@index']);
-Route::post('/admin/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialIconController@addLinks']);
+//Offers Page
+Route::get('/offer/{id}', ['as'=>'admin.offer', 'uses'=>'OfferController@index'])->where('id', '[0-9]+');\
 
-//ServiceCategory Categories Add, Edit, Delete
-Route::get('/admin/category', ['as'=>'admin.category', 'uses'=>'ServiceCategoryController@index']);
+//Login Page
+Route::get('/login', ['as'=>'login', 'uses'=>'UserController@index']);
+Route::post('/login', ['as'=>'login', 'uses'=>'UserController@login']);
 
-Route::get('/admin/category/add', ['as'=>'admin.category.add', 'uses'=>'ServiceCategoryController@serviceAddPage']);
-Route::post('/admin/category/add', ['as'=>'admin.category.add', 'uses'=>'ServiceCategoryController@serviceAdd']);
+//Admin Login Page
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
 
-Route::get('/admin/category/edit/{id}', ['as'=>'admin.category.edit', 'uses'=>'ServiceCategoryController@serviceEditPage'])->where('id', '[0-9]+');
-Route::post('/admin/category/edit/{id}', ['as'=>'admin.category.edit', 'uses'=>'ServiceCategoryController@serviceEdit'])->where('id', '[0-9]+');
-
-Route::get('/admin/category/delete/{id}', ['as'=>'admin.category.delete', 'uses'=>'ServiceCategoryController@serviceDelete'])->where('id', '[0-9]+');
+    //Admin Main Page
+    Route::get('/main', ['as'=>'admin.main', 'uses'=>'AdminController@index']);
 
 
-//Background images Edit
-Route::get('/admin/images', ['as'=>'admin.images', 'uses'=>'BackgroundImagesController@index']);
-Route::post('/admin/image/update', ['as'=>'admin.image.edit', 'uses'=>'BackgroundImagesController@imageEdit']);
+    //Social Icons Add Links
+    Route::get('/icon', ['as'=>'admin.social','uses'=>'SocialIconController@index']);
+    Route::post('/icon/update', ['as'=>'admin.social.update', 'uses'=>'SocialIconController@addLinks']);
 
 
-//About Us Add/Edit
-Route::get('/admin/aboutus', ['as'=>'admin.aboutus', 'uses'=>'AboutUsController@index']);
-Route::post('/admin/aboutus/edit', ['as'=>'admin.aboutus.edit', 'uses'=>'AboutUsController@aboutUsEdit']);
+    //ServiceCategory Categories Add, Edit, Delete
+    Route::get('/category', ['as'=>'admin.category', 'uses'=>'ServiceCategoryController@index']);
+
+    Route::get('/category/add', ['as'=>'admin.category.add', 'uses'=>'ServiceCategoryController@serviceAddPage']);
+    Route::post('/category/add', ['as'=>'admin.category.add', 'uses'=>'ServiceCategoryController@serviceAdd']);
+
+    Route::get('/category/edit/{id}', ['as'=>'admin.category.edit', 'uses'=>'ServiceCategoryController@serviceEditPage'])->where('id', '[0-9]+');
+    Route::post('/category/edit/{id}', ['as'=>'admin.category.edit', 'uses'=>'ServiceCategoryController@serviceEdit'])->where('id', '[0-9]+');
+
+    Route::get('/category/delete/{id}', ['as'=>'admin.category.delete', 'uses'=>'ServiceCategoryController@serviceDelete'])->where('id', '[0-9]+');
 
 
-//About Staff Add/Edit
-Route::get('/admin/aboutstaff', ['as'=>'admin.aboutstaff', 'uses'=>'AboutStaffController@index']);
-Route::post('/admin/aboutstaff/edit', ['as'=>'admin.aboutstaff.edit', 'uses'=>'AboutStaffController@aboutStaffEdit']);
+    //Background images Edit
+    Route::get('/images', ['as'=>'admin.images', 'uses'=>'BackgroundImagesController@index']);
+    Route::post('/image/update', ['as'=>'admin.image.edit', 'uses'=>'BackgroundImagesController@imageEdit']);
 
 
-//Service Add/Edit/Delete
-Route::get('/admin/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
-
-Route::get('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAddPage']);
-Route::post('/admin/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAdd']);
-
-Route::get('/admin/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEditPage'])->where('id', '[0-9]+');
-Route::post('/admin/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit'])->where('id', '[0-9]+');
-
-Route::get('/admin/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete'])->where('id', '[0-9]+');
+    //About Us Add/Edit
+    Route::get('/aboutus', ['as'=>'admin.aboutus', 'uses'=>'AboutUsController@index']);
+    Route::post('/aboutus/edit', ['as'=>'admin.aboutus.edit', 'uses'=>'AboutUsController@aboutUsEdit']);
 
 
-//Staff Add/Edit/Delete
-Route::get('/admin/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
-
-Route::get('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAddPage']);
-Route::post('/admin/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAdd']);
-
-Route::get('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEditPage'])->where('id', '[0-9]+');
-Route::post('/admin/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit'])->where('id', '[0-9]+');
-
-Route::get('/admin/staff/delete/{id}', ['as'=>'admin.staff.delete', 'uses'=>'StaffController@staffDelete'])->where('id', '[0-9]+');
+    //About Staff Add/Edit
+    Route::get('/aboutstaff', ['as'=>'admin.aboutstaff', 'uses'=>'AboutStaffController@index']);
+    Route::post('/aboutstaff/edit', ['as'=>'admin.aboutstaff.edit', 'uses'=>'AboutStaffController@aboutStaffEdit']);
 
 
-//Brand Add/Edit/Delete
-Route::get('/admin/brand', ['as'=>'admin.brand', 'uses'=>'BrandController@index']);
+    //Service Add/Edit/Delete
+    Route::get('/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
 
-Route::get('/admin/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAddPage']);
-Route::post('/admin/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAdd']);
+    Route::get('/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAddPage']);
+    Route::post('/service/add', ['as'=>'admin.service.add', 'uses'=>'ServiceController@ServiceAdd']);
 
-Route::get('/admin/brand/edit/{id}', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEditPage'])->where('id', '[0-9]+');
-Route::post('/admin/brand/edit/{id}', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEdit'])->where('id', '[0-9]+');
+    Route::get('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEditPage'])->where('id', '[0-9]+');
+    Route::post('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@ServiceEdit'])->where('id', '[0-9]+');
 
-Route::get('/admin/brand/delete/{id}', ['as'=>'admin.brand.delete', 'uses'=>'BrandController@brandDelete'])->where('id', '[0-9]+');
-
-
-//Special Offer Add/Edit/Delete
-Route::get('/admin/offer', ['as'=>'admin.offer', 'uses'=>'SpecialOfferController@index']);
-
-Route::get('/admin/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAddPage']);
-Route::post('/admin/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAdd']);
-
-Route::get('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEditPage'])->where('id', '[0-9]+');
-Route::post('/admin/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEdit'])->where('id', '[0-9]+');
-
-Route::get('/admin/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'SpecialOfferController@offerDelete'])->where('id', '[0-9]+');
+    Route::get('/service/delete/{id}', ['as'=>'admin.service.delete', 'uses'=>'ServiceController@serviceDelete'])->where('id', '[0-9]+');
 
 
-//Image Gallery Add/Delete
-Route::get('/admin/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@index']);
+    //Staff Add/Edit/Delete
+    Route::get('/staff', ['as'=>'admin.staff', 'uses'=>'StaffController@index']);
 
-Route::get('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAddPage']);
-Route::post('/admin/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAdd']);
+    Route::get('/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAddPage']);
+    Route::post('/staff/add', ['as'=>'admin.staff.add', 'uses'=>'StaffController@staffAdd']);
 
-Route::get('/admin/gallery/delete/{id}', ['as'=>'admin.gallery.delete', 'uses'=>'GalleryController@galleryDelete'])->where('id', '[0-9]+');
+    Route::get('/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEditPage'])->where('id', '[0-9]+');
+    Route::post('/staff/edit/{id}', ['as'=>'admin.staff.edit', 'uses'=>'StaffController@staffEdit'])->where('id', '[0-9]+');
+
+    Route::get('/staff/delete/{id}', ['as'=>'admin.staff.delete', 'uses'=>'StaffController@staffDelete'])->where('id', '[0-9]+');
 
 
-//Contact Add/Delete/Edit
-Route::get('/admin/contact', ['as'=>'admin.contact', 'uses'=>'ContactController@index']);
-Route::post('/admin/contact/update', ['as'=>'admin.contact.update', 'uses'=>'ContactController@contactUpdate']);
+    //Brand Add/Edit/Delete
+    Route::get('/brand', ['as'=>'admin.brand', 'uses'=>'BrandController@index']);
+
+    Route::get('/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAddPage']);
+    Route::post('/brand/add', ['as'=>'admin.brand.add', 'uses'=>'BrandController@brandAdd']);
+
+    Route::get('/brand/edit/{id}', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEditPage'])->where('id', '[0-9]+');
+    Route::post('/brand/edit/{id}', ['as'=>'admin.brand.edit', 'uses'=>'BrandController@brandEdit'])->where('id', '[0-9]+');
+
+    Route::get('/brand/delete/{id}', ['as'=>'admin.brand.delete', 'uses'=>'BrandController@brandDelete'])->where('id', '[0-9]+');
+
+
+    //Special Offer Add/Edit/Delete
+    Route::get('/offer', ['as'=>'admin.offer', 'uses'=>'SpecialOfferController@index']);
+
+    Route::get('/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAddPage']);
+    Route::post('/offer/add', ['as'=>'admin.offer.add', 'uses'=>'SpecialOfferController@offerAdd']);
+
+    Route::get('/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEditPage'])->where('id', '[0-9]+');
+    Route::post('/offer/edit/{id}', ['as'=>'admin.offer.edit', 'uses'=>'SpecialOfferController@offerEdit'])->where('id', '[0-9]+');
+
+    Route::get('/offer/delete/{id}', ['as'=>'admin.offer.delete', 'uses'=>'SpecialOfferController@offerDelete'])->where('id', '[0-9]+');
+
+
+    //Image Gallery Add/Delete
+    Route::get('/gallery', ['as'=>'admin.gallery', 'uses'=>'GalleryController@index']);
+
+    Route::get('/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAddPage']);
+    Route::post('/gallery/add', ['as'=>'admin.gallery.add', 'uses'=>'GalleryController@galleryAdd']);
+
+    Route::get('/gallery/delete/{id}', ['as'=>'admin.gallery.delete', 'uses'=>'GalleryController@galleryDelete'])->where('id', '[0-9]+');
+
+
+    //Contact Add/Delete/Edit
+    Route::get('/contact', ['as'=>'admin.contact', 'uses'=>'ContactController@index']);
+    Route::post('/contact/update', ['as'=>'admin.contact.update', 'uses'=>'ContactController@contactUpdate']);
+
+});
