@@ -9,7 +9,8 @@
                             {{ !empty($about_staff->description) ? $about_staff->description : ''}}
                         </p>
                     </div>
-                    <button class="text-uppercase SpecialistButton">все специалисты</button>
+                    {{--aq unda iyo route--}}
+                    <a  href="AllStaff.html" class="text-uppercase SpecialistButton button">все специалисты</a>
                 </section>
                 <section class="col-md-4 col-sm-12 RightSection offset-md-2 ">
                     <div class="RightContent">

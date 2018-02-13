@@ -109,7 +109,7 @@
             button.stop(true, true).animate({
                 opacity: 0
             }, 150).queue(function (next) {
-                button.text("mence");
+                button.text("меньше");
                 next();
             }).animate({
                 opacity: 1

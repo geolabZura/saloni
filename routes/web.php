@@ -22,6 +22,9 @@ Route::get('/offer/{id}', ['as'=>'admin.offer', 'uses'=>'OfferController@index']
 Route::get('/login', ['as'=>'login', 'uses'=>'UserController@index']);
 Route::post('/login', ['as'=>'login', 'uses'=>'UserController@login']);
 
+//Logout
+Route::get('/logout', ['as'=>'logout', 'uses'=>'UserController@logout']);
+
 //Admin Login Page
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
 

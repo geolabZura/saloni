@@ -53,7 +53,7 @@
                         </div>
                     @elseif($loop->iteration%2==0)
                         <div class="PageHeight SlideSectionContainerSlide">
-                            <section class="SlideTride">
+                            <section class="SlideTride text-center">
                                 <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
 
                                 <div class="TrideText">
@@ -70,8 +70,8 @@
                                             @endif
                                         @endforeach
                                     @endif
-                                    <button class="text-uppercase">ВСЕ УСЛУГИ</button>
-                                </div><!--.TrideText -->
+                                    {{--aq unda iyos offerebis page route--}}
+                                    <a class="text-uppercase button" href="offer.html">ВСЕ УСЛУГИ</a>                                </div><!--.TrideText -->
                             </section>
                         </div>
                     @endif

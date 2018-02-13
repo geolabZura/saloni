@@ -10,6 +10,6 @@
             {{ (!empty($about_us) && !empty($about_us->text)) ? $about_us->text : ''}}
         </p>
 
-        <button  class="text-uppercase " id="headerButton" >подробнее</button>
+        <button  class="text-uppercase button" id="headerButton" >подробнее</button>
     </section>
 </div><!-- .row -->

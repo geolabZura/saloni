@@ -20,4 +20,10 @@ class UserController extends Controller
             return redirect()->back()->with('message', $message);
         }
     }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->route('site.main');
+    }
 }
