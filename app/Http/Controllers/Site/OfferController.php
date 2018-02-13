@@ -14,7 +14,8 @@ class OfferController extends Controller
     }
 
     public function index($id){
-        $data['offer'] = $this->offer->where('id', $id)->first();
+        $data['offers'] = $this->offer->where('id', $id)->first();
+        dd($data);
         return view('site.offer', $data);
     }
 }

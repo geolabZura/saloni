@@ -45,6 +45,7 @@ class MainPageController extends Controller
         }
 
         $data['services'] = $this->service->orderBy('created_at', 'desc')->get();
+//        dd($data['services']);
         $data['staffs'] = $this->staff->orderBy('created_at', 'desc')->get();
         $data['offers'] = $this->offer->orderBy('created_at', 'desc')->limit(5)->get();
         $data['about_staff'] = $this->about_staff->first();

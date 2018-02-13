@@ -7,7 +7,7 @@
                     <h3 class="text-uppercase Title">СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ</h3>
                     <ul class="text-capitalize text-left BrandList">
                         @foreach($offers as $offer)
-                            <li><a href="">{{$offer->title}}</a></li>
+                            <li><a href="{{route('site.single.offer', $offer->id)}}">{{$offer->title}}</a></li>
                         @endforeach
                     </ul>
                     <button class="text-uppercase BrandButton"> все спецпредложение</button>

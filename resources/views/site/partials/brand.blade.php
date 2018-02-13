@@ -18,7 +18,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    <button class="text-uppercase BrandButton">все бренды</button>
+                    <a  href="{{route('site.brand')}}" class=" text-uppercase BrandButton button">все бренды</a>
                 </div>
             </div>
         </div>

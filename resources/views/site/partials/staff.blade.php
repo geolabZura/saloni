@@ -10,7 +10,7 @@
                         </p>
                     </div>
                     {{--aq unda iyo route--}}
-                    <a  href="AllStaff.html" class="text-uppercase SpecialistButton button">все специалисты</a>
+                    <a  href="{{route('site.all.staff')}}" class="text-uppercase SpecialistButton button">все специалисты</a>
                 </section>
                 <section class="col-md-4 col-sm-12 RightSection offset-md-2 ">
                     <div class="RightContent">

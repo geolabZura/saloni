@@ -19,7 +19,7 @@ class ContactController extends Controller
     }
 
     public function index(){
-        $data['services'] = $this->service->all();
+        $data['services'] = $this->service->take(6)->get();
         $data['contact'] = $this->contact->first();
         $data['service_id_array'] = [];
 

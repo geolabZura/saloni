@@ -16,7 +16,20 @@ Route::get('/', ['as'=>'site.main', 'uses'=>'MainPageController@index']);
 Route::view('admin/example', 'admin.example');
 
 //Offers Page
-Route::get('/offer/{id}', ['as'=>'admin.offer', 'uses'=>'OfferController@index'])->where('id', '[0-9]+');\
+Route::get('/offer/{id}', ['as'=>'site.offer', 'uses'=>'OfferController@index'])->where('id', '[0-9]+');
+
+//Service Page
+Route::get('/service/{id}', ['as'=>'site.service', 'uses'=>'ServicePageController@index'])->where('id', '[0-9]+');
+
+//Staff Page
+Route::get('/allstaff/', ['as'=>'site.all.staff', 'uses'=>'StaffPageController@allStaff']);
+Route::get('/singlestaff/{id}' , ['as'=>'site.single.staff', 'uses'=>'StaffPageController@singleStaff'])->where('id', '[0-9]+');
+
+//Brand Page
+Route::get('/brand', ['as'=>'site.brand', 'uses'=>'BrandPageController@index']);
+
+//Special Offer Page
+Route::get('/singlespecial/{id}', ['as'=>'site.single.offer', 'uses'=>'SpecialOfferPageController@singleSpecialOffer'])->where('id', '[0-9]+');
 
 //Login Page
 Route::get('/login', ['as'=>'login', 'uses'=>'UserController@index']);

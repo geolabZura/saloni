@@ -5,16 +5,17 @@
             <div class="row ">
                 <section class="col-md-4 fixed  SlideTride offerTitle">
                     <div class="TrideText">
-                        <h1 class="text-center Title ">{{$service_name}}</h1>
+                        <h1 class="text-center Title "> СПА Зона</h1>
                     </div><!--.TrideText -->
-                    <div class="SliderImgDiv" style="background-image:url(images/uslugi1.jpg)"></div>
+                    <div class="SliderImgDiv" style="background-image: url({{ !empty($home_page_image) ? asset('/image/'.$home_page_image) : ''}});"></div>
                 </section>
-                <div class="col-md-6 offset-md-4 OffersList clearfix">
+                <!--shevvale-->
+                <div class="col-md-7 offset-md-4 col-sm-12 OffersList TopFilter clearfix">
                     <nav class="offerPageList">
                         <ul>
-                            @if(!empty($offers))
-                                @foreach($offers as $offer)
-                                    <li> $offer-><span class="Price">99999</span></li>
+                            @if(!empty($categories))
+                                @foreach($categories as $category)
+                                    <li> {{$category->name}}<span class="Price">{{$category->price}}</span></li>
                                 @endforeach
                             @endif
                         </ul>
