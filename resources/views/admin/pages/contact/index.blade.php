@@ -61,7 +61,7 @@
                             <div class="form-group">
                                 <label for="timepicker2">Working Hours From</label>
                                 <div class="input-group bootstrap-timepicker timepicker">
-                                    <input id="timepicker1" type="text" class="form-control input-small" readonly name="start_from" value="{{!empty($contact->work_from) ? $contact->work_from : ''}}">
+                                    <input id="timepicker1" type="text" class="form-control input-small" readonly name="work_from" value="{{!empty($contact->work_from) ? $contact->work_from : ''}}">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="form-group">
                                 <label for="timepicker2">Working Hours To</label>
                                 <div class="input-group bootstrap-timepicker timepicker">
-                                    <input id="timepicker2" type="text" class="form-control input-small" readonly name="start_to" value="{{!empty($contact->work_to) ? $contact->work_to : ''}}">
+                                    <input id="timepicker2" type="text" class="form-control input-small" readonly name="work_to" value="{{!empty($contact->work_to) ? $contact->work_to : ''}}">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                 </div>
                             </div>
@@ -87,10 +87,11 @@
     <script>
         //Timepicker
         $('#timepicker1, #timepicker2').timepicker({
-            use24hours: true
+            showMeridian: false,
+            format:'HH:mm:ss'
         });
 
-        $('[data-mask]').inputmask()
+        $('[data-mask]').inputmask();
 
 
         $('#serviceCategory').select2();

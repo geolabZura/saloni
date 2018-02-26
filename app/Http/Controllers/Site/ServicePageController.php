@@ -19,7 +19,7 @@ class ServicePageController extends Controller
         foreach ($service->categories as $category){
             $data['categories'][] = $category;
         }
-        $data['service_name'] = $service->title;
+        $data['service'] = $service;
         return view('site.service', $data);
     }
 }

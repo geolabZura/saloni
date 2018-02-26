@@ -67,7 +67,7 @@
 
                             <div class="form-group">
                                 <label>Description</label>
-                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'description', 'about_us_text'=>$staff->description])
+                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'editDescription', 'about_us_text'=>$staff->description])
 
                             </div>
 

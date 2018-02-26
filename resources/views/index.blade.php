@@ -14,14 +14,16 @@
 </head>
 
 <body style="	background-image: url({{ !empty($body_image) ? asset('/image/'.$body_image) : ''}});">
+
     {{--main content--}}
     @yield('content');
-<script type="application/javascript" src="{{asset('/site/js/jquery-3.3.1.min.js')}}"></script>
-<script type="application/javascript" src="{{asset('/site/js/bootstrap.min.js')}}"></script>
-<script type="application/javascript" src="{{asset('/site/js/bootstrap.bundle.min.js')}}"></script>
-<script type="application/javascript" src="https://api-maps.yandex.ru/2.1/?lang=en_US"></script>
-<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-<script src="{{asset('/site/js/script.js')}}"></script>
+
+    <script type="application/javascript" src="{{asset('/site/js/jquery-3.3.1.min.js')}}"></script>
+    <script type="application/javascript" src="{{asset('/site/js/bootstrap.min.js')}}"></script>
+    <script type="application/javascript" src="{{asset('/site/js/bootstrap.bundle.min.js')}}"></script>
+    <script type="application/javascript" src="https://api-maps.yandex.ru/2.1/?lang=en_US"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script src="{{asset('/site/js/script.js')}}"></script>
 
 </body>
 </html>

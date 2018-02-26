@@ -13,5 +13,6 @@
         <li><a href="#OffersID">Предложение</a></li>
         <li><a href="#GalleryID">Галерея</a></li>
         <li><a href="#ContactID">Коннтакты</a></li>
+        <li><a href="{{route('login')}}">Login</a></li>
     </ul>
 </nav>
