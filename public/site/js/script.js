@@ -202,7 +202,7 @@
                 success:function(data){
                     for(var $i=0; $i<data.images.length; $i++){
                         $("<div class='mySlides PageHeight' style='background-image: url("+"/image/"+data.images[$i]['image']+")'></div>").insertBefore('.BigimageContainer .prev');
-                        $("<div class='SmallImg cursor' style='background-image: url("+"/image/"+data.images[$i]['image']+")' onclick='currentSlide("+offset+")'></div>").insertBefore('.SmallImg:last');
+                        $("<div class='SmallImg cursor' style='background-image: url("+"/image/"+data.images[$i]['image']+")' onclick='currentSlide("+offset+")'></div>").insertAfter('.SmallImg:last');
                         offset++;
                     }
                     offset = data.offset;
