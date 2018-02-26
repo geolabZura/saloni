@@ -50,9 +50,11 @@
                                         <h3 class="text-capitalize SlideName">
                                             {{(!empty($staff->name) && !empty($staff->surname)) ? $staff->name.' '.$staff->surname : ''}}
                                         </h3>
-                                        <p class="text-uppercase Profession">
-                                            {{!empty($staff->position) ? $staff->position : ''}}
-                                        </p>
+                                        <a href="{{route('site.single.staff', $staff->id)}}">
+                                            <p class="text-uppercase Profession">
+                                                {{!empty($staff->position) ? $staff->position : ''}}
+                                            </p>
+                                        </a>
                                     </div>
                                 @endforeach
                             @endif
