@@ -28,7 +28,7 @@
 
             </div>
 
-            <div class="col-md-3 text-center ThumbrnailContainer">
+            <div class="col-md-3 text-center ThumbrnailContainer" style="overflow-y: scroll">
                 <h2 class="text-uppercase Title">галерея</h2>
                 @if(!empty($gallery_images))
                     @php($count = 1)
@@ -41,7 +41,7 @@
                         @endif
                     @endforeach
                 @endif
-                <a href="#" class="text-uppercase button">все фотографии</a>
+                <a class="text-uppercase button" id="gallery_image">все фотографии</a>
             </div>
         </div>
     </div>

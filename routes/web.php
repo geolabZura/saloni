@@ -33,6 +33,8 @@ Route::get('/brand/{id}', ['as'=>'site.single.brand', 'uses'=>'BrandPageControll
 Route::get('/special', ['as'=>'site.special.offer', 'uses'=>'SpecialOfferPageController@index']);
 Route::get('/singlespecial/{id}', ['as'=>'site.single.offer', 'uses'=>'SpecialOfferPageController@singleSpecialOffer'])->where('id', '[0-9]+');
 
+//get loaded gallery images
+Route::get('/gallery/{offset}', ['as'=>'site.gallery.image', 'uses'=>'MainPageController@galleryImage'])->where('offset', '[0-9]+');
 //Login Page
 Route::get('/login', ['as'=>'login', 'uses'=>'UserController@index']);
 Route::post('/login', ['as'=>'login', 'uses'=>'UserController@login']);

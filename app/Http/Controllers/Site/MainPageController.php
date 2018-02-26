@@ -45,17 +45,22 @@ class MainPageController extends Controller
         }
 
         $data['services'] = $this->service->orderBy('created_at', 'desc')->get();
-//        dd($data['services']);
         $data['staffs'] = $this->staff->orderBy('created_at', 'desc')->get();
         $data['offers'] = $this->offer->orderBy('created_at', 'desc')->limit(5)->get();
         $data['about_staff'] = $this->about_staff->first();
         $data['about_us'] = $this->about_us->first();
         $data['brands'] = $this->brand->orderBy('created_at', 'desc')->limit(5)->get();
-        $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(10)->get();
+        $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(2)->get();
         $data['contact'] = $this->contact->first();
 
-//        dd($data['contact']);
         return view('site.main', $data);
+    }
+
+    public function galleryImage($offset){
+        $data['images'] = $this->gallery->orderBy('created_at', 'desc')->skip($offset)->take(2)->get();
+        $data['offset'] = $offset+2;
+
+        return $data;
     }
 
 }
