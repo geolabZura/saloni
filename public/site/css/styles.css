@@ -1055,7 +1055,7 @@ body{
 
 	/* .Slide */
 	.Slide .PageHeight{
-		height: auto;
+		min-height: inherit;
 	}
 	.Slide .PageHeight:after{
 		clear: both;
