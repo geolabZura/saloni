@@ -1,36 +1,33 @@
-<div class="Contact PageHeight" id="ContactID">
-    <div class="container-fluid Filter">
+<div class="Contact PageHeight Filter" id="ContactID">
+    <div class="container-fluid">
         <div class="row FooterRow justify-content-center">
             @if(!empty($contact))
-                <div class="col-md-4 ContactTride ">
-                    <div class="ContactTrideContent">
-                        <ul class="ContactList text-uppercase">
-                            @if(!empty($contact->services))
-                                @foreach($contact->services as $service)
-                                    <li><a href="#">{{$service->title}}</a></li>
-                                @endforeach
-                            @endif
-                        </ul>
-                    </div>
+                <div class="col-md-4 col-sm-7 ContactPadding ">
+                    <ul class="ContactList  ContactTrideContent text-uppercase">
+                        @if(!empty($contact->services))
+                            @foreach($contact->services as $service)
+                                <li><a href="{{route('site.service', $service->id)}}">{{$service->title}}</a></li>
+                            @endforeach
+                        @endif
+                    </ul>
                 </div>
-                <div class="col-md-4 ContactTride">
-                    <div class="ContactTrideContent SecondTride">
-                        <ul class="ContactList text-uppercase text-center">
-                            <li>{{$contact->telephone}}</li>
-                            <li>{{$contact->city}}</li>
-                            <li>Ежедневно с {{$contact->work_from}} до {{$contact->work_to}}</li>
-                        </ul>
-                    </div>
+                <div class="col-md-4 col-sm-7 ContactPadding  ">
+                    <ul class="ContactList ContactTrideContent SecondTride text-uppercase text-center">
+                        <li>{{$contact->telephone}}</li>
+                        <li>{{$contact->city}}</li>
+                        <li>Ежедневно с {{$contact->work_from}} до {{$contact->work_to}}</li>
+                    </ul>
                 </div>
+
             @endif
-            <div class="col-md-4 ContactTride ">
+            <div class="col-md-4 col-sm-7 ContactPadding">
                 <div class="ContactTrideContent">
                     <div id="map" style="width: inherit; height: inherit;"></div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row FooterRow">
+            <div class="row FooterRow FooterLogoContainer">
                 <svg class="FooterLogo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 501.4 234.7" enable-background="new 0 0 501.4 234.7" xml:space="preserve">
 					<path  d="M286,43.4L332.4,96c0.8,0.9,1.7,1.2,2.8,1.2c0.9,0,1.7-0.1,2.5-0.7c1.5-1.4,1.9-3.3,0.6-4.8L296,43.9

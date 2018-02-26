@@ -3,11 +3,16 @@
         <div class="container SpecialistContent">
             <div class="row">
                 <section class=" col-md-6 col-sm-12 LeftSection text-center">
-                    <div class="LeftContent">
-                        <h3 class="text-uppercase Title">{{ !empty($about_staff->title) ?  $about_staff->title : ''}}</h3>
+                    <div class="LeftContent"  id="scrollId">
+
+                        <div class="force-overflow"></div>
+
+                        <h3 class="text-uppercase Title Truncate">{{ !empty($about_staff->title) ?  $about_staff->title : ''}}</h3>
+
                         <p class="SectionText text-left">
                             {{ !empty($about_staff->description) ? $about_staff->description : ''}}
                         </p>
+
                     </div>
                     {{--aq unda iyo route--}}
                     <a  href="{{route('site.all.staff')}}" class="text-uppercase SpecialistButton button">все специалисты</a>

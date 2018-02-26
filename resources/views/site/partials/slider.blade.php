@@ -9,21 +9,25 @@
                         <div class="PageHeight SlideSectionContainerSlide">
                             <section class="SlideTride text-center">
                                 <div class="TrideText">
-                                    <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
-                                    @if(!empty($service->categories))
-                                        @foreach($service->categories as $category)
-                                            @if($loop->iteration>3)
-                                                @break
-                                            @else
-                                                <p class="TrideList">
-                                                    {{$category->name}}
-                                                    <span class="Price">{{$category->price}}</span>
-                                                </p>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                    {{--aq unda iyos offerebis page route--}}
-                                    <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
+                                    <div class="forcentering">
+                                        <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
+                                        @if(!empty($service->categories))
+                                            @foreach($service->categories as $category)
+                                                @if($loop->iteration>3)
+                                                    @break
+                                                @else
+                                                    <div class="TrideList">
+                                                        <p class="Truncate">
+                                                            {{$category->name}}
+                                                        </p>
+                                                        <span class="Price">{{$category->price}}</span>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                        {{--aq unda iyos offerebis page route--}}
+                                        <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
+                                    </div>
                                 </div>
                                 <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
                             </section>
@@ -33,20 +37,24 @@
                             <section class="SlideTride text-center">
                                 <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
                                 <div class="TrideText">
-                                    <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
-                                    @if(!empty($service->categories))
-                                        @foreach($service->categories as $category)
-                                            @if($loop->iteration>3)
-                                                @break
-                                            @else
-                                                <p class="TrideList">
-                                                    {{$category->name}}
-                                                    <span class="Price">{{$category->price}}</span>
-                                                </p>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                    <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
+                                    <div class="forcentering">
+                                        <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
+                                        @if(!empty($service->categories))
+                                            @foreach($service->categories as $category)
+                                                @if($loop->iteration>3)
+                                                    @break
+                                                @else
+                                                    <div class="TrideList">
+                                                        <p class="Truncate">
+                                                            {{$category->name}}
+                                                        </p>
+                                                        <span class="Price">{{$category->price}}</span>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                        <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
+                                    </div>
                                 </div><!--.TrideText -->
                             </section>
                         </div>
@@ -56,3 +64,4 @@
         </div>
     </div>
 </div>
+

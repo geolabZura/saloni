@@ -41,7 +41,7 @@
                         @endif
                     @endforeach
                 @endif
-                <a href="#" class="text-uppercase GalleryButton button">все фотографии</a>
+                <a href="#" class="text-uppercase button">все фотографии</a>
             </div>
         </div>
     </div>
