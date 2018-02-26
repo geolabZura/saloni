@@ -98,7 +98,7 @@
 
 
     // Header
-     $('#headerButton').click(function (){
+    function seeMore() {
         var x = $("#Long");
         var y = $("#Short");
         var button = $('#headerButton');
@@ -126,7 +126,7 @@
                 opacity: 1
             }, 150);
         }
-    });
+    }
 
     // gallery slider
 

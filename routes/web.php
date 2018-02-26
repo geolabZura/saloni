@@ -27,8 +27,10 @@ Route::get('/singlestaff/{id}' , ['as'=>'site.single.staff', 'uses'=>'StaffPageC
 
 //Brand Page
 Route::get('/brand', ['as'=>'site.brand', 'uses'=>'BrandPageController@index']);
+Route::get('/brand/{id}', ['as'=>'site.single.brand', 'uses'=>'BrandPageController@singleBrand'])->where('id', '[0-9]+');
 
 //Special Offer Page
+Route::get('/special', ['as'=>'site.special.offer', 'uses'=>'SpecialOfferPageController@index']);
 Route::get('/singlespecial/{id}', ['as'=>'site.single.offer', 'uses'=>'SpecialOfferPageController@singleSpecialOffer'])->where('id', '[0-9]+');
 
 //Login Page

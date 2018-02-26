@@ -17,4 +17,8 @@ class BrandPageController extends Controller
         $data['brands'] = $this->brand->all();
         return view('site.brand', $data);
     }
+
+    public function singleBrand($id){
+        $data['brand'] = $this->brand->where('id', $id)->firstOrFail();
+    }
 }

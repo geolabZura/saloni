@@ -51,11 +51,10 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd"  d="M0,187.9c172.9-28.6,282,91.7,501.4,19.5
                                     C438,230,405.6,235.7,335,234.5C194,232.2,131,169.6,0,187.9"/>
                                 </svg>
-                                <a href="{{$brand->link}}" style="text-decoration: none;">
-                                    <p class="card-text BrandTitle text-center">
-                                        {{$brand->title}}
-                                    </p>
-                                </a>
+
+                                <p class="card-text BrandTitle text-center">
+                                    {{$brand->title}}
+                                </p>
                             </div>
                         @endforeach
                     @endif

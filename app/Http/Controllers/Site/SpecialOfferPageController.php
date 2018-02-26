@@ -13,6 +13,12 @@ class SpecialOfferPageController extends Controller
         $this->offer = new SpecialOffer();
     }
 
+    public function index()
+    {
+        $data['special_offers'] = $this->offer->orderBy('created_at', 'desc')->get();
+        return view('site.singlespecialoffer', $data);
+    }
+
     public function singleSpecialOffer($id){
         $data['special_offer'] = $this->offer->where('id', $id)->first();
         return view('site.singlespecialoffer', $data);

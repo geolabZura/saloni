@@ -9,9 +9,9 @@
 
                         <h3 class="text-uppercase Title Truncate">{{ !empty($about_staff->title) ?  $about_staff->title : ''}}</h3>
 
-                        <p class="SectionText text-left">
-                            {{ !empty($about_staff->description) ? $about_staff->description : ''}}
-                        </p>
+                        <div class="SectionText text-left">
+                            {!! !empty($about_staff->description) ? $about_staff->description : '' !!}
+                        </div>
 
                     </div>
                     {{--aq unda iyo route--}}

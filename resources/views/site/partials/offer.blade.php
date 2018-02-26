@@ -10,7 +10,7 @@
                             <li><a href="{{route('site.single.offer', $offer->id)}}">{{$offer->title}}</a></li>
                         @endforeach
                     </ul>
-                    <a href="" class="text-uppercase BrandButton button"> все спецпредложение</a>
+                    <a href="{{route('site.special.offer')}}" class="text-uppercase BrandButton button"> все спецпредложение</a>
                 </section>
             </div>
         </div>
