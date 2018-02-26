@@ -407,21 +407,6 @@ body{
 #scrollId::-webkit-scrollbar-thumb
 {    background-color: #487385;
 }
-#scrollId::-moz-scrollbar-track
-{
-	border: none ;
-	background-color: transparent;
-}
-
-#scrollId::-moz-scrollbar
-{
-	width: 10px;
-	background-color: transparent;
-}
-
-#scrollId::-moz-scrollbar-thumb
-{    background-color: #487385;
-}
 
 .LeftSection{
 }
