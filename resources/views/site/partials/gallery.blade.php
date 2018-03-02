@@ -30,18 +30,20 @@
 
             <div class="col-md-3 text-center ThumbrnailContainer">
                 <h2 class="text-uppercase Title">галерея</h2>
-                @if(!empty($gallery_images))
-                    @php($count = 1)
-                    @foreach($gallery_images as $image)
-                        @if($loop->iteration<4)
-                            <div class="SmallImg cursor" style="background-image: url({{asset('/image/'.$image->image)}})" onclick="currentSlide({{$count}})"></div>
-                            @php($count++)
-                        @else
-                            @break
-                        @endif
-                    @endforeach
-                @endif
-                <a class="text-uppercase button" id="gallery_image">все фотографии</a>
+                <div class="SmallImgContainer scrollClass">
+                    @if(!empty($gallery_images))
+                        @php($count = 1)
+                        @foreach($gallery_images as $image)
+                            @if($loop->iteration<4)
+                                <div class="SmallImg cursor" style="background-image: url({{asset('/image/'.$image->image)}})" onclick="currentSlide({{$count}})"></div>
+                                @php($count++)
+                            @else
+                                @break
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+                <a class="text-uppercase button" id="gallery_image" style="color: white;">все фотографии</a>
             </div>
         </div>
     </div>

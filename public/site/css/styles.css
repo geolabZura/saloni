@@ -1,706 +1,710 @@
 *{
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 .green{
-	background-color: green;
+    background-color: green;
 }
 .red{
-	background-color: red;
+    background-color: red;
 }
 .mist{
-	background-color: mistyrose;
+    background-color: mistyrose;
 }
 .coral{
-	background-color: coral;
+    background-color: coral;
 }
 
 .Filter{
-	height: inherit;
-	background-color: rgba(65, 180, 242,0.3);
+    height: inherit;
+    background-color: rgba(65, 180, 242,0.3);
 }
 .PageHeight , .Gallery .GalleryHeight{
-	height: calc(100vh - 55px);
+    height: calc(100vh - 55px);
 }
 .Truncate{
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body{
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 .button{
-	background-color: #48567D;
-	border:1px solid #fff;
-	box-sizing: border-box;
-	padding: 0.2vw 0.7vw;
-	height: auto;
-	font-size: 1.6vw;
-	color: #fff;
-	cursor:pointer;
-	text-decoration: none;
+    background-color: #48567D;
+    border:1px solid #fff;
+    box-sizing: border-box;
+    padding: 0.2vw 0.7vw;
+    height: auto;
+    font-size: 1.6vw;
+    color: #fff;
+    cursor:pointer;
+    text-decoration: none;
 }
 .button:hover{
-	text-decoration: none;
-	color: #fff;
-	background-color: #0056b3;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0056b3;
 }
 
 .HeaderMain{
-	background-size: cover;
-	background-position: bottom;
-	background-attachment: fixed;
-	transition: 1s;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    transition: 1s;
 }
 .LogoWrapper{
-	margin-top: 3vw;
+    margin-top: 3vw;
 }
 .LogoWrapper .HeaderLogo{
-	width: 14vw;
-	fill: #16164F;
+    width: 14vw;
+    fill: #16164F;
 }
 .HeaderContent{
-	margin-top: 10vh;
-	background-color: rgba(93, 120, 163,0.6);
-	color: #fff;
-	padding:1.7vw 0.8vw;
-	opacity: 1;
+    margin-top: 10vh;
+    background-color: rgba(93, 120, 163,0.6);
+    color: #fff;
+    padding:1.7vw 0.8vw;
+    opacity: 1;
 }
 .HeaderContent .Title{
-	font-weight: 100;
-	font-size: 2.5vw;
+    font-weight: 100;
+    font-size: 2.5vw;
 }
 .HeaderContent .Title:after{
-	display: block;
-	content: "";
-	font-size: 0;
-	height: 3px;
-	width: 68%;
-	background-color: rgba(178,197,214,0.7);
-	margin:auto;
-	margin-top: 5px;
+    display: block;
+    content: "";
+    font-size: 0;
+    height: 3px;
+    width: 68%;
+    background-color: rgba(178,197,214,0.7);
+    margin:auto;
+    margin-top: 5px;
 }
 .HeaderContent .HeaderContentText{
-	font-size: 3vh;
+    font-size: 3vh;
 }
 #Long{
-	max-height: 30vh;
-	display: none;
-	font-size: 3vh;
-	overflow-y: scroll;
+    max-height: 30vh;
+    display: none;
+    font-size: 3vh;
+    overflow-y: scroll;
 }
 #Short{
-	display: block;
+    display: block;
 }
 #BurgerToggle{
-	margin-left:auto;
-	width: 40px;
-	height: 35px;
-	position: fixed;
-	right: 10vw;
-	top: 3vw;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
-	transform: rotate(0deg);
-	-webkit-transition: .5s ease-in-out;
-	-moz-transition: .5s ease-in-out;
-	-o-transition: .5s ease-in-out;
-	transition: .5s ease-in-out;
-	cursor: pointer;
-	box-sizing: content-box;
-	z-index: 1000;
+    margin-left:auto;
+    width: 40px;
+    height: 35px;
+    position: fixed;
+    right: 10vw;
+    top: 3vw;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    box-sizing: content-box;
+    z-index: 1000;
 }
 #BurgerToggle span{
-	display: inline-block;
-	position: fixed;
-	height: 7px;
-	width: 100%;
-	background: #16164F;
-	border-radius: 9px;
-	opacity: 1;
-	left: 0;
+    display: inline-block;
+    position: fixed;
+    height: 7px;
+    width: 100%;
+    background: #16164F;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
 
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
-	transform: rotate(0deg);
-	-webkit-transition: .25s ease-in-out;
-	-moz-transition: .25s ease-in-out;
-	-o-transition: .25s ease-in-out;
-	transition: .25s ease-in-out;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
 #BurgerToggle span:nth-child(1) {
-	top: 0px;
+    top: 0px;
 }
 #BurgerToggle span:nth-child(2),#BurgerToggle span:nth-child(3) {
-	top: 12px;
+    top: 12px;
 }
 #BurgerToggle span:nth-child(4) {
-	top: 24px;
+    top: 24px;
 }
 #BurgerToggle.rotated span:nth-child(1) {
-	top: 18px;
-	width: 0%;
-	left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 #BurgerToggle.rotated span:nth-child(2) {
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	transition: 1s;
-	background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 1s;
+    background-color: #fff;
 }
 #BurgerToggle.rotated span:nth-child(3) {
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-	transition: 1s;
-	background-color: #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    transition: 1s;
+    background-color: #fff;
 }
 #BurgerToggle.rotated span:nth-child(4) {
-	top: 18px;
-	width: 0%;
-	left: 50%;
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 #navbar{
-	transition: 1s;
+    transition: 1s;
 }
 #navbar.open {
-	position: fixed;
-	z-index: 10000;
-	background-color: rgba(9, 9, 31, 0.9);
+    position: fixed;
+    z-index: 10000;
+    background-color: rgba(9, 9, 31, 0.9);
 }
 #navbar.open .HeaderContent{
-	opacity: 0;
-	display: none;
-	transition: 1s;
+    opacity: 0;
+    display: none;
+    transition: 1s;
 }
 #collapsibleNavbar {
-	height: 0;
-	overflow: hidden;
-	width: 100%;
-	position: relative;
-	top: 0;
-	left: 0;
-	text-align: center;
-	z-index: 100000;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 100000;
 }
 #collapsibleNavbar ul {
-	position: absolute;
-	list-style-type: none;
-	margin: auto;
-	left: 0;
-	right: 0;
-	top: 0;
-	transition: 1s;
+    position: absolute;
+    list-style-type: none;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 1s;
 }
 #collapsibleNavbar ul li{
-	font-size: 2.4vw;
-	padding: 5px 0;
+    font-size: 2.4vw;
+    padding: 5px 0;
 }
 #collapsibleNavbar ul li a{
-	color: #fff;
+    color: #fff;
 }
 #navbar.open #collapsibleNavbar {
-	height: calc(100vh - 140px);
+    height: calc(100vh - 140px);
 }
 /* .Footer */
 .Footer{
-	position: fixed;
-	bottom: 0;
-	border-top: 5px solid #B2C5D6;
-	box-sizing: border-box;
-	padding-bottom: 15px;
-	padding-top: 15px;
-	background-color: #4F7090;
-	color: #fff;
-	font-size: 17px;
-	z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    border-top: 5px solid #B2C5D6;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #4F7090;
+    color: #fff;
+    font-size: 17px;
+    z-index: 1000;
 }
 .Footer .row .FooterTride span{
-	position: relative;
+    position: relative;
 }
 .Footer .row .FooterTride span:before{
-	width: 15px;
-	height: 15px;
-	content: "";
-	font-size: 0;
-	display: block;
-	background-color: #B2C5D6;
-	position: absolute;
-	left: -25px;
-	top: 50%;
-	transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    content: "";
+    font-size: 0;
+    display: block;
+    background-color: #B2C5D6;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /*Social*/
 .SocialContainer{
-	position: absolute;
-	top: 40vh;
-	transform: translateY(-50%);
-	left: auto;
-	right: 3vw;
+    position: absolute;
+    top: 40vh;
+    transform: translateY(-50%);
+    left: auto;
+    right: 3vw;
 
 }
 .SocialContainer ul{
-	list-style-type:none;
+    z-index: 1000000;
+    list-style-type:none;
 }
 .SocialContainer ul li{
-	padding: 15px;
+    padding: 15px;
 }
 .SocialContainer ul a .SocialIcons{
-	width:40px;
-	height:40px;
+    width:40px;
+    height:40px;
 }
-
+.Contact .BottomIcons{
+    display: none;
+}
 /* .Slide */
 .Slide{
 }
 .SlideSectionContainer{
-	height: inherit;
-	position: relative;
+    height: inherit;
+    position: relative;
 }
 .SlideSectionContainerSlide {
-	width: 100%;
-	font-size: 0;
+    width: 100%;
+    font-size: 0;
 }
 .SlideTride{
-	width: 100%;
-	height: inherit;
-	background-color: #B2C5D6;
-	color: #fff;
-	padding: 0;
-	overflow: hidden;
-	display: inline-block;
+    width: 100%;
+    height: inherit;
+    background-color: #B2C5D6;
+    color: #fff;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
 }
 .TrideText{
-	height: 50%;
-	font-weight: 100;
-	max-width: 300px;
-	position: relative;
-	padding-top: 0.5%;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
+    height: 50%;
+    font-weight: 100;
+    max-width: 300px;
+    position: relative;
+    padding-top: 0.5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 .SliderImgDiv{
-	height: 50%;
-	background: transparent no-repeat center;
-	background-size: cover;
+    height: 50%;
+    background: transparent no-repeat center;
+    background-size: cover;
 }
 .TrideTitle{
-	font-weight: 200;
-	padding: 2%;
-	padding-top: 0;
-	font-size: 1.7vw;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    font-weight: 200;
+    padding: 2%;
+    padding-top: 0;
+    font-size: 1.7vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .TrideList{
-	font-size: 1.3vw;
-	padding: 7px;
-	padding-bottom: 5px;
-	position: relative;
-	word-wrap: break-word; /*gadayavs shemdeg xazze sityva*/
-	text-align: left;
+    font-size: 1.3vw;
+    padding: 7px;
+    padding-bottom: 5px;
+    position: relative;
+    word-wrap: break-word; /*gadayavs shemdeg xazze sityva*/
+    text-align: left;
 }
 .Truncate{
-	max-width: 200px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .TrideList .Price{
-	position: absolute;
-	right: 5%;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: 0 auto;
-	padding-bottom: 5px;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    padding-bottom: 5px;
 }
 .TrideList:after{
-	content: "";
-	display: block;
-	font-size: 0;
-	height: 3px;
-	width: 80%;
-	background-color: #fff;
-	margin: 0 auto;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 0;
+    content: "";
+    display: block;
+    font-size: 0;
+    height: 3px;
+    width: 80%;
+    background-color: #fff;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
 }
 .TrideText .button{
-	position: relative;
-	font-size: 1.4vw;
-	top: 15px;
+    position: relative;
+    font-size: 1.4vw;
+    top: 15px;
 }
 .forcentering{
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .Slide .Truncate{
-	max-width: 200px;
+    max-width: 200px;
 }
 .owl-next , .owl-prev{
-	position: absolute;
-	fill: rgba(9,9,31,0.9);
-	top: 50%;
-	right: 0;
-	left: auto;
-	transform: translateY(-50%);
-	width: 5vw;
-	background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    fill: rgba(9,9,31,0.9);
+    top: 50%;
+    right: 0;
+    left: auto;
+    transform: translateY(-50%);
+    width: 5vw;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 .owl-prev{
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 .owl-prev:hover,
 .owl-next:hover {
-	background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .owl-nav .owl-prev.disabled,
 .owl-nav .owl-next.disabled {
-	opacity: 0.3;
+    opacity: 0.3;
 }
 /*Specialist*/
 
 .Specialist{}
 .SpecialistContent{
-	height: inherit;
+    height: inherit;
 }
 .LeftContent{
-	padding: 5vh;
-	background-color: rgba(164,196,208,0.8);
-	margin-top: 20vh;
-	color: #fff;
-	word-wrap: break-word;
-	height: 50vh;
-	overflow-y: scroll;
+    padding: 5vh;
+    background-color: rgba(164,196,208,0.8);
+    margin-top: 20vh;
+    color: #fff;
+    word-wrap: break-word;
+    height: 50vh;
+    overflow-y: scroll;
 }
 
 .scrollClass::-webkit-scrollbar-track
 {
-	border: none ;
-	background-color: transparent;
+    border: none ;
+    background-color: transparent;
 }
 
 .scrollClass::-webkit-scrollbar
 {
-	width: 10px;
-	background-color: transparent;
+    width: 10px;
+    background-color: transparent;
 }
 
 .scrollClass::-webkit-scrollbar-thumb
 {    background-color: #487385;
 }
+
 .LeftSection{
 }
 .LeftContent .Title{
-	font-size: 30px;
-	font-weight: 200;
+    font-size: 30px;
+    font-weight: 200;
 
-	position: relative;
+    position: relative;
 }
 .LeftContent .SectionText{
-	font-weight: 100;
-	font-size: 19px;
-	margin-top: 20px;
+    font-weight: 100;
+    font-size: 19px;
+    margin-top: 20px;
 }
 .LeftContent .Title:after{
-	display: block;
-	content: "";
-	font-size: 0;
-	height: 3px;
-	width: 55%;
-	background-color: rgba(255,255,255,0.7);
-	margin:auto;
-	margin-top: 20px;
+    display: block;
+    content: "";
+    font-size: 0;
+    height: 3px;
+    width: 55%;
+    background-color: rgba(255,255,255,0.7);
+    margin:auto;
+    margin-top: 20px;
 }
 .SpecialistButton{
-	position: relative;
-	top: 40px;
-	margin-top: 80px;
-	padding: 5px 25px;
-	background-color: #487385;
-	font-size: 17px;
-	border:1px solid #fff;
-	z-index: 1;
+    position: relative;
+    top: 40px;
+    margin-top: 80px;
+    padding: 5px 25px;
+    background-color: #487385;
+    font-size: 17px;
+    border:1px solid #fff;
+    z-index: 1;
 }
 .Specialist .Truncate{
-	max-width: 100%;
+    max-width: 100%;
 }
 .RightContent{
-	margin-top: 20vh;
+    margin-top: 20vh;
 }
 .RightSlide{
-	background-color: blue;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 275px;
-	height: 275px;
-	border-radius: 50%;
-	overflow: hidden;
+    background-color: blue;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 .RightSlideText{
-	margin-top: 10px;
-	width: 100%;
-	background-color: rgba(164,196,208,0.8);
-	color: white;
-	display: none;
+    margin-top: 10px;
+    width: 100%;
+    background-color: rgba(164,196,208,0.8);
+    color: white;
+    display: none;
 
 }
 .active,
 .RightSlideText:hover {
-	display: block;
+    display: block;
 }
 .RightContent .arrow{
-	fill: rgba(9,9,31,0.9);
-	width: 50px;
+    fill: rgba(9,9,31,0.9);
+    width: 50px;
 }
 .RightContent .RightContentInner {
-	position: relative;
+    position: relative;
 }
 
 .RightContent .RightContentInner .prev,
 .RightContent .RightContentInner .next {
-	top: 50%;
-	left: 30px;
-	right: auto;
+    top: 50%;
+    left: 30px;
+    right: auto;
 
-	position: absolute;
-	transform: translateY(-50%);
+    position: absolute;
+    transform: translateY(-50%);
 
-	display: inline-block;
-	padding: 0;
-	font-size: 0;
+    display: inline-block;
+    padding: 0;
+    font-size: 0;
 }
 .RightContent .RightContentInner .next{
-	left: auto;
-	right: 30px;
+    left: auto;
+    right: 30px;
 }
 .RightContent a:hover{
-	background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
 }
 .RightContent .arrow:hover{
-	background-color: rgba(255,255,255,0);
+    background-color: rgba(255,255,255,0);
 }
 
 .RightSlideText .SlideName{
-	font-weight: 100;
+    font-weight: 100;
 }
 .RightSlideText .Profession{
-	font-weight: 100;
-	font-size: 17px;
+    font-weight: 100;
+    font-size: 17px;
 }
 
 
 /*Brands*/
 
 .smallCircle{
-	transform: translateY(5vh);
-	width: 30%;
-	height: 0;
-	padding-bottom: 30%;
-	border-radius: 50%;
+    transform: translateY(5vh);
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    border-radius: 50%;
 
 
-	background-size:cover;
-	background-position: center;
+    background-size:cover;
+    background-position: center;
 }
 .BigCircle{
-	position: relative;
-	transform: translate(10vh,-10vh);
-	width: 50%;
-	height: 0;
-	padding-bottom: 50%;
-	border-radius: 50%;
+    position: relative;
+    transform: translate(10vh,-10vh);
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+    border-radius: 50%;
 
-	background-size:cover;
-	background-position: center;
+    background-size:cover;
+    background-position: center;
 }
 .BrandListContainer{
-	margin-top: 45vh;
-	transform: translateY(-50%);
-	color: #fff;
+    margin-top: 45vh;
+    transform: translateY(-50%);
+    color: #fff;
 }
 .BrandList{
-	list-style-type: none;
-	font-size: 18px;
-	max-height: 40vh;
-	overflow: hidden;
+    list-style-type: none;
+    font-size: 18px;
+    max-height: 40vh;
+    overflow: hidden;
 }
 .BrandList li{
-	padding: 5px 0;
+    padding: 5px 0;
 }
 .BrandList li a{
-	color:#fff;
-	text-decoration: underline;
+    color:#fff;
+    text-decoration: underline;
 }
 .BrandButton{
-	width: 90%;
+    width: 90%;
 }
 
 
 .Offers{
 }
 .OfferSection{
-	position: relative;
-	top: 45vh;
-	transform: translateY(-50%);
-	color: #fff;
-	padding:5% 5%;
-	background-color: rgba(164,196,208,0.6);
+    position: relative;
+    top: 45vh;
+    transform: translateY(-50%);
+    color: #fff;
+    padding:5% 5%;
+    background-color: rgba(164,196,208,0.6);
 }
 .Offers .OfferSection .Title{
-	background-color: rgba(131,163,195,0.9);
-	padding: 5px;
+    background-color: rgba(131,163,195,0.9);
+    padding: 5px;
 }
 .Offers .OfferSection .BrandList{
-	font-size: 27px;
+    font-size: 27px;
 }
 .Offers .OfferSection .BrandList li{
-	padding: 1px 0;
+    padding: 1px 0;
 }
 .Offers .OfferSection .BrandButton{
-	width: auto;
-	background-color: rgba(51,109,157,0.4);
-	border: none;
+    width: auto;
+    background-color: rgba(51,109,157,0.4);
+    border: none;
 }
 
 .Gallery{
-	background-color: #B2C5D6;
-	position: relative;
+    background-color: #B2C5D6;
+    position: relative;
 }
 .ThumbrnailContainer{
-	overflow: hidden;
+    overflow: hidden;
 }
 .ThumbrnailContainer .SmallImgContainer{
-	overflow-y: scroll;
-	max-height: 70vh;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 .ThumbrnailContainer .Title{
-	color: #fff;
-	text-decoration: underline;
-	padding-top:1vw;
-	font-size: 30px;
+    color: #fff;
+    text-decoration: underline;
+    padding-top:1vw;
+    font-size: 30px;
 }
 .prev,
 .next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: auto;
-	padding: 14px;
-	border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 14px;
+    border-radius: 0 3px 3px 0;
 }
 .mySlides {
-	display: none;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: bottom;
+    display: none;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 .cursor {
-	cursor: pointer;
+    cursor: pointer;
 }
 .next {
-	right: 0;
-	border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 .prev:hover,
 .next:hover {
-	background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .SmallImg{
-	width: 35%;
-	height:0;
-	padding-bottom: 32%;
-	margin:30px 0;
-	opacity: 0.6;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+    width: 35%;
+    height:0;
+    padding-bottom: 32%;
+    margin:30px 0;
+    opacity: 0.6;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .active,
 .SmallImg:hover {
-	opacity: 1;
+    opacity: 1;
 }
 .BigimageContainer{
-	position: relative;
-	height: inherit;
-	padding: 0;
+    position: relative;
+    height: inherit;
+    padding: 0;
 }
 .Gallery .arrow {
-	width: 4vw;
-	fill: white;
-	stroke: #fff;
+    width: 4vw;
+    fill: white;
+    stroke: #fff;
 }
 .Gallery .button{
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	font-size: 17px;
-	bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+    bottom: 20px;
 }
 
 
 .Contact{
-	height: 100vh ;
+    height: 100vh ;
 }
 .ContactTrideContent {
-	height: 250px;
-	width:100%;
-	background-color: rgba(54,62,70,0.6);
+    height: 250px;
+    width:100%;
+    background-color: rgba(54,62,70,0.6);
 }
 .ContactPadding{
-	padding:0 40px;
+    padding:0 40px;
 }
 .ContactList{
-	padding: 15px;
-	list-style-type: none;
+    padding: 15px;
+    list-style-type: none;
 }
 .ContactList li{
-	font-size: 24px;
-	font-weight: 200;
-	color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    color: #fff;
 }
 .ContactList li a{
-	color: #fff;
+    color: #fff;
 }
 .SecondTride  li{
-	padding: 15px;
-	font-size: 20px;
+    padding: 15px;
+    font-size: 20px;
 }
 .Contact .FooterRow{
-	position: relative;
-	top: 20vh;
+    position: relative;
+    top: 20vh;
 }
 .Contact .FooterLogo{
-	width: 10vw;
-	fill: #16164F;
-	margin-left: 50px;
+    width: 10vw;
+    fill: #16164F;
+    margin-left: 50px;
 }
 .Contact .Truncate{
-	max-width: 100%;
+    max-width: 100%;
 }
 
 
@@ -710,134 +714,134 @@ body{
 /*Offer Page*/
 
 .offerTitle{
-	height: 100vh;
+    height: 100vh;
 }
 .offerTitle .Title{
-	font-size: 45px;
-	position: relative;
-	top: 35vh;
+    font-size: 45px;
+    position: relative;
+    top: 35vh;
 }
 .fixed{
-	position: fixed;
+    position: fixed;
 }
 .OffersList{
-	color: #fff;
-	font-size: 24px;
-	position: relative;
-	min-height: 100vh;
+    color: #fff;
+    font-size: 24px;
+    position: relative;
+    min-height: 100vh;
 }
 .offerPageList ul{
-	list-style-type: none;
-	padding-left: 5vw;
-	padding-top: 5vh;
-	vertical-align: top;
+    list-style-type: none;
+    padding-left: 5vw;
+    padding-top: 5vh;
+    vertical-align: top;
 }
 .offerPageList ul li{
-	position: relative;
-	padding:15px;
+    position: relative;
+    padding:15px;
 }
 .offerPageList ul li .Price{
-	position: absolute;
-	right: 0;
-	top: 50%;
-	transform: translateY(-55%);
-	left: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-55%);
+    left: auto;
 }
 .OfferPageText{
-	max-width: 300px;
-	word-wrap: break-word;
+    max-width: 300px;
+    word-wrap: break-word;
 }
 
 .BackIcon .CloseIcon{
-	padding: 0px;
-	margin-top: 30px;
-	margin-left: 50%;
-	transform: translateX(-50%);
-	max-width: 42px;
-	fill: #16164F;
-	cursor: pointer;
+    padding: 0px;
+    margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 42px;
+    fill: #16164F;
+    cursor: pointer;
 }
 /*Saff*/
 .height{
-	min-height: 100vh;
+    min-height: 100vh;
 }
 .StaffPage .height .RightSlideText{
-	display: block;
-	background: #1e7e34;
+    display: block;
+    background: #1e7e34;
 }
 .StaffPage .Title{
-	font-size: 28px;
-	font-weight: 400;
+    font-size: 28px;
+    font-weight: 400;
 }
 .StaffPage .StaffName{
-	font-weight: 100;
+    font-weight: 100;
 }
 .StaffPage .NameContainer{
-	position: absolute;
-	bottom: 0;
-	top: auto;
+    position: absolute;
+    bottom: 0;
+    top: auto;
 }
 .StaffPage .TrideText{
-	height: 40vh;
+    height: 40vh;
 }
 .StaffPage .SliderImgDiv{
-	height: 60vh;
+    height: 60vh;
 }
 .StaffPage .StaffBigText{
-	padding-top: 10vh;
-	padding-left: 2vw;
+    padding-top: 10vh;
+    padding-left: 2vw;
 }
 
 .StaffPage .StaffTextContainer{
-	padding-top: 10vh;
-	padding-left: 2vw;
-	font-size: 14px;
-	font-weight: 700;
+    padding-top: 10vh;
+    padding-left: 2vw;
+    font-size: 14px;
+    font-weight: 700;
 }
 .TopFilter{
-	background-color: rgba(178, 197, 214,0.5);
-	min-height: 100vh;
+    background-color: rgba(178, 197, 214,0.5);
+    min-height: 100vh;
 }
 /* all staff */
 .AllStaff .CardTextContainer{
-	padding: 2vh 0;
+    padding: 2vh 0;
 }
 .AllStaff .CardTextContainer .SlideName{
-	color: #fff;
-	font-weight: 200;
-	font-size: 20px;
+    color: #fff;
+    font-weight: 200;
+    font-size: 20px;
 }
 .AllStaff .CardTextContainer .Profession{
-	color: #fff;
-	font-weight: 100;
-	font-size: 14px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 14px;
 }
 
 .AllStaff .button{
-	font-size: 14px;
-	outline: none;
-	border: none;
-	border-radius: 0;
-	background-color: #487385;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    background-color: #487385;
 
 }
 .StaffCard img{
-	border-radius: 0;
+    border-radius: 0;
 }
 .StaffCard{
-	margin: 20px;
-	width: 12vw;
-	border-radius: 0;
-	display: inline-block;
-	vertical-align: top;
+    margin: 20px;
+    width: 12vw;
+    border-radius: 0;
+    display: inline-block;
+    vertical-align: top;
 }
 .AllStaff .Title{
-	color: #FFF;
-	font-weight: 400;
-	padding: 10px;
+    color: #FFF;
+    font-weight: 400;
+    padding: 10px;
 }
 .staffContainer{
-	padding-right: 10vw;
+    padding-right: 10vw;
 }
 
 
@@ -847,47 +851,57 @@ body{
 
 }
 .BrandsPage .TopFilter{
-	background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.7);
 }
+
 .BrandsPage .Title , .specOffers .Title{
-	color: #487385;
-	padding: 3%;
-	font-weight: 400;
+    color: #487385;
+    padding: 3%;
+    font-weight: 400;
 }
 .BrandsPage .BrandTitle{
-	font-size: 17px;
+    font-size: 17px;
 }
 .BrandsPage .Logo{
-	width: 12vw;
-	fill: #16164F;
+    fill: #16164F;
+    width: inherit;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.BrandsPage .StaffCard {
+    object-fit: cover;
+    width: 15vw;
+    height: 15vw;
 }
 
 /* special offers */
 .specOfferContent{
-	width: 60%;
-	margin-left: 3vw;
-	padding-top: 5vh;
+    width: 60%;
+    margin-left: 3vw;
+    padding-top: 5vh;
 }
 .specOfferContent .Title{
-	color: #fff;
-	padding: 0;
+    color: #fff;
+    padding: 0;
 }
 .specOfferContent .Content{
-	font-size: 14px;
-	font-weight: 700;
-	padding-top: 2vh;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 2vh;
 }
 .specOfferContainer{
-	display: flex;
-	justify-content: space-between;
-	padding:5vh 0;
+    display: flex;
+    justify-content: space-between;
+    padding:5vh 0;
 }
 .specOfferContainer .imageContainer{
-	width: 20vw;
-	height: 20vw;
-	background-size: cover;
-	background-repeat: no-repeat;
-	border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 }
 
 
@@ -896,404 +910,409 @@ body{
 
 
 @media (min-width: 1500px) {
-	.button{
-		font-size: 24px;
-	}
+    .button{
+        font-size: 24px;
+    }
 
-	#collapsibleNavbar ul li{
-		font-size: 27px;
-	}
-	/* Header*/
-	.Logo{
-		width: 30px;
-	}
-	.HeaderContent .Title{
-		font-size: 32px;
-	}
-	.HeaderContent .HeaderContentText{
-		font-size: 25px;
-	}
-	#Long{
-		display: none;
-		font-size: 25px;
-	}
-	.HeaderContent {
-		margin-top: 10vh;
-	}
-	/* Slider*/
-	.TrideText{
-		padding-top:1%;
-	}
-	.TrideTitle{
-		padding: 1%;
-		font-size: 28px;
-	}
-	.TrideList{
-		padding: 9px;
-	}
-	.Slide .button{
-		font-size: 24px;
-		padding: 0 8px;
-	}
-	.owl-next{
-		width: 97px;
-	}
+    #collapsibleNavbar ul li{
+        font-size: 27px;
+    }
+    /* Header*/
+    .Logo{
+        width: 30px;
+    }
+    .HeaderContent .Title{
+        font-size: 32px;
+    }
+    .HeaderContent .HeaderContentText{
+        font-size: 25px;
+    }
+    #Long{
+        display: none;
+        font-size: 25px;
+    }
+    .HeaderContent {
+        margin-top: 10vh;
+    }
+    /* Slider*/
+    .TrideText{
+        padding-top:1%;
+    }
+    .TrideTitle{
+        padding: 1%;
+        font-size: 28px;
+    }
+    .TrideList{
+        padding: 9px;
+    }
+    .Slide .button{
+        font-size: 24px;
+        padding: 0 8px;
+    }
+    .owl-next{
+        width: 97px;
+    }
 
-	/*Specialist*/
-	.LeftContent .SectionText{
-		font-size: 24px;
-	}
-	/*Brands*/
-	.Brands .Title{
-		font-size: 35px;
-	}
-	.Brands .BrandList{
-		font-size: 22px;
-	}
-	/*contact*/
+    /*Specialist*/
+    .LeftContent .SectionText{
+        font-size: 24px;
+    }
+    /*Brands*/
+    .Brands .Title{
+        font-size: 35px;
+    }
+    .Brands .BrandList{
+        font-size: 22px;
+    }
+    /*contact*/
 
-	.ContactTrideContent {
-		height: 250px;
-		width:100%;
-	}
-	.ContactPadding{
-		padding:0 80px;
-	}
+    .ContactTrideContent {
+        height: 250px;
+        width:100%;
+    }
+    .ContactPadding{
+        padding:0 80px;
+    }
 }
 @media (max-width: 1200px) {
-	/*Specialist*/
-	.Specialist .LeftContent, .Specialist .RightContent{
-		margin-top: 15vh;
-	}
-	/*Offers*/
-	.Offers .OfferSection .Title{
-		font-size: 23px;
-	}
-	/*Contact*/
-	.Contact .ContactTride{
-		margin-left: -7px;
-	}
-	.Contact .ContactList li{
-		font-size: 21px;
-	}
-	.Contact .SecondTride  li{
-		font-size: 19px;
-	}
+    /*Specialist*/
+    .Specialist .LeftContent, .Specialist .RightContent{
+        margin-top: 15vh;
+    }
+    /*Offers*/
+    .Offers .OfferSection .Title{
+        font-size: 23px;
+    }
+    /*Contact*/
+    .Contact .ContactTride{
+        margin-left: -7px;
+    }
+    .Contact .ContactList li{
+        font-size: 21px;
+    }
+    .Contact .SecondTride  li{
+        font-size: 19px;
+    }
 }
 @media(max-width: 1024px){
-	/*Slider*/
-	.TrideText{
-		max-width: 250px;
-	}
-	/*offer*/
-	.Offers .OfferSection{
-		padding: 25px;
-	}
-	/*Gallery*/
+    /*Slider*/
+    .TrideText{
+        max-width: 250px;
+    }
+    /*offer*/
+    .Offers .OfferSection{
+        padding: 25px;
+    }
+    /*Gallery*/
 
-	.GalleryButton{
-		font-size: 18px;
-	}
-	.Gallery .SmallImg{
-		width: 45%;
-		height: 17%;
-	}
-	/*Contact*/
-	.Contact .ContactTride{
-		margin-left: -7px;
-	}
-	.Contact .ContactList li{
-		font-size: 20px;
-	}
-	.Contact .SecondTride  li{
-		font-size: 19px;
-	}
+    .GalleryButton{
+        font-size: 18px;
+    }
+    .Gallery .SmallImg{
+        width: 45%;
+        height: 17%;
+    }
+    /*Contact*/
+    .Contact .ContactTride{
+        margin-left: -7px;
+    }
+    .Contact .ContactList li{
+        font-size: 20px;
+    }
+    .Contact .SecondTride  li{
+        font-size: 19px;
+    }
 }
 @media (max-width: 992px) {
-	/* .Specialist */
-	.RightContent .RightContentInner .prev,
-	.RightContent .RightContentInner .next {
-		top: 50%;
-		left: 0px;
-		right: auto;
-	}
-	.RightContent .RightContentInner .next{
-		left: auto;
-		right: 0px;
-	}
-	.RightSlide{
-		height: 220px;
-	}
-	/*contact*/
-	.Contact .ContactList  li{
-		font-size: 17px;
-	}
-	.Contact .SecondTride li{
-		padding: 10px;
-		font-size: 17px;
-	}
+    /* .Specialist */
+    .RightContent .RightContentInner .prev,
+    .RightContent .RightContentInner .next {
+        top: 50%;
+        left: 0px;
+        right: auto;
+    }
+    .RightContent .RightContentInner .next{
+        left: auto;
+        right: 0px;
+    }
+    .RightSlide{
+        height: 220px;
+    }
+    /*contact*/
+    .Contact .ContactList  li{
+        font-size: 17px;
+    }
+    .Contact .SecondTride li{
+        padding: 10px;
+        font-size: 17px;
+    }
 
 }
 @media (max-width: 767px) {
-	/*Social*/
-	.SocialContainer{
-		position: absolute;
-		top: auto;
-		bottom: 0px;
-		left: 50vw;
-		right: auto;
-		-webkit-transform: translateX(-50%);
-		-moz-transform: translateX(-50%);
-		-ms-transform: translateX(-50%);
-		-o-transform: translateX(-50%);
-		transform: translateX(-50%);
-	}
-	.SocialContainer ul li{
-		display: inline-block;
-	}
-
-	#collapsibleNavbar ul li{
-		font-size: 25px;
-		padding: 5px 0;
-	}
-	.PageHeight , .Gallery .GalleryHeight{
-		/*min-height: calc(100vh - 55px);*/
-		min-height: 0;
-		height: auto;
-	}
-	.Filter {
-		padding-bottom: 50px;
-	}
-	.button{
-		font-size: 20px;
-	}
-	/* . Header */
-	.HeaderContent .Title{
-		font-size: 30px;
-	}
-	#Long{
-		max-height: none;
-	}
-	.HeaderContent .HeaderContentText{
-		font-size: 20px;
-	}
-	/* #BurgerToggle */
-	#BurgerToggle {
-		margin-left: auto;
-		width: 35px;
-		height: 30px;
-	}
-	#BurgerToggle span {
-		display: inline-block;
-		position: fixed;
-		height: 5px;
-	}
-
-	/* .Slide */
-	.Slide .PageHeight{
-		min-height: inherit;
-	}
-
-	.forcentering{
-		position: static;
-		top: auto;
-		transform: none;
-
-		padding: 30px 0;
-	}
-
-	.TrideText .button {
-		position: static;
-		display: inline-block;
-		margin-top: 20px;
-	}
-	.Slide .TrideText .TrideTitle{
-		font-size: 25px;
-	}
-	.Slide .TrideText .TrideList{
-		font-size: 16px;
-	}
-	.Slide .TrideText .button{
-		font-size: 16px;
-	}
-	.Gallery .PageHeight {
-		height: 0;
-		padding-bottom: 56%;
-	}
-
-	.OfferSection {
-		position: static;
-		top: auto;
-		transform: none;
-	}
+    /*Social*/
+    .SocialContainer{
+        display: none;
+    }
+    .Contact .BottomIcons{
+        display: block;
+    }
+    .BottomIcons .SocialContainer{
+        display: block;
+        position: relative;
+        top: 0;
+        bottom: auto;
+        width: auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    .BottomIcons .SocialContainer ul li{
+        display: inline-block;
+    }
+    .BottomIcons .SocialContainer ul a .SocialIcons{
+        width:40px;
+        height:40px;
+    }
 
 
+    #collapsibleNavbar ul li{
+        font-size: 25px;
+        padding: 5px 0;
+    }
+    .PageHeight , .Gallery .GalleryHeight{
+        /*min-height: calc(100vh - 55px);*/
+        min-height: 0;
+        height: auto;
+    }
+    .Filter {
+        padding-bottom: 50px;
+    }
+    .button{
+        font-size: 20px;
+    }
+    /* . Header */
+    .HeaderContent .Title{
+        font-size: 30px;
+    }
+    #Long{
+        max-height: none;
+    }
+    .HeaderContent .HeaderContentText{
+        font-size: 20px;
+    }
+    /* #BurgerToggle */
+    #BurgerToggle {
+        margin-left: auto;
+        width: 35px;
+        height: 30px;
+    }
+    #BurgerToggle span {
+        display: inline-block;
+        position: fixed;
+        height: 5px;
+    }
+
+    /* .Slide */
+    .Slide .PageHeight{
+        min-height: inherit;
+    }
+
+    .forcentering{
+        position: static;
+        top: auto;
+        transform: none;
+
+        padding: 30px 0;
+    }
+
+    .TrideText .button {
+        position: static;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .Slide .TrideText .TrideTitle{
+        font-size: 25px;
+    }
+    .Slide .TrideText .TrideList{
+        font-size: 16px;
+    }
+    .Slide .TrideText .button{
+        font-size: 16px;
+    }
+    .Gallery .PageHeight {
+        height: 0;
+        padding-bottom: 56%;
+    }
+
+    .OfferSection {
+        position: static;
+        top: auto;
+        transform: none;
+    }
 
 
-	/*Specialist*/
-	.Specialist.PageHeight{
-		min-height: 0;
-		height: auto;
-	}
-
-	.Specialist .RightContent{
-		margin-top: 35vh ;
-	}
-	.Specialist .LeftContent{
-		height: auto;
-	}
-	.Specialist .RightSlide{
-		background-color: blue;
-		width: 300px;
-		height: 300px;
-	}
-	.Specialist  .RightSlideText{
-		margin-top: 20px;
-		width: 80%;
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
-
-	}
-
-	.Specialist .RightContent .RightContentInner .prev,
-	.Specialist .RightContent .RightContentInner .next {
-		top: 50%;
-		left: 50px;
-	}
-	.Specialist .RightContent .RightContentInner .next{
-		left: auto;
-		right: 50px;
-	}
-	/*brands */
-
-	.BrandImageContainer{
-		display: none;
-	}
-	.Brands .BrandListContainer , .Brands .Title{
-		text-align: center !important;
-	}
-	.Brands .BrandList{
-		list-style-type: none;
-		font-size: 18px;
-	}
-	.BrandList li{
-		padding: 5px 0;
-	}
-	.BrandList li a{
-		color:#fff;
-		text-decoration: underline;
-	}
-	.BrandButton{
-		width: 90%;
-	}
-
-	/*Gallery*/
-	.Gallery .GalleryHeight{
-	}
-	.Gallery .ThumbrnailContainer .Title{
-		padding: 10px 0;
-		font-size: 30px;
-	}
-	.Gallery .ThumbrnailContainer{
-		position: relative;
-		height: 60vh;
-		background-color: #B2C5D6;
-	}
-
-	.ThumbrnailContainer{
-	}
-	.ThumbrnailContainer .SmallImgContainer{
-		overflow: hidden;
-		overflow-x: scroll;
-		max-height: 70vh;
-		white-space: nowrap;
-	}
-	.ThumbrnailContainer .SmallImgContainer .SmallImg{
-		display: inline-block;
-	}
 
 
-	.Gallery .prev,
-	.Gallery .next {
-		background-color: rgba(0, 0, 0, 0.4);
-	}
-	.Gallery .SmallImg{
-		width: 25%;
-		height:0;
-		padding-bottom: 25%;
-		margin:0 25px;
-		position: relative;
-		left: 50vw;
-		transform: translateX(-50vw);
+    /*Specialist*/
+    .Specialist.PageHeight{
+        min-height: 0;
+        height: auto;
+    }
 
-		display: inline-block;
-	}
-	.Gallery .button{
-		position: relative;
-		top: 10px;
-		left: 0;
-	}
-	/*contact*/
-	.Contact#ContactID{
-		padding-top: 50px;
-	}
-	.Contact .Filter{
+    .Specialist .RightContent{
+        margin-top: 35vh ;
+    }
+    .Specialist .LeftContent{
+        height: auto;
+    }
+    .Specialist .RightSlide{
+        background-color: blue;
+        width: 300px;
+        height: 300px;
+    }
+    .Specialist  .RightSlideText{
+        margin-top: 20px;
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
 
-	}
-	.Contact.PageHeight{
-		height: 190vh;
-		padding-bottom: 80px;
-	}
-	.Contact .ContactTrideContent {
-		height: 250px;
-		width:100%;
-		background-color: rgba(54,62,70,0.6);
-	}
-	.Contact .ContactPadding{
-		padding:0 40px;
-	}
-	.ContactList{
-		padding: 15px;
-		list-style-type: none;
-	}
-	.ContactList li{
-		font-size: 24px;
-	}
-	.SecondTride  li{
-		padding: 15px;
-		font-size: 20px;
-	}
-	.Contact .FooterRow{
-		position: relative;
-		top: 0;
-	}
-	.Contact .container .FooterLogoContainer{
-		display: none;
-	}
+    }
+
+    .Specialist .RightContent .RightContentInner .prev,
+    .Specialist .RightContent .RightContentInner .next {
+        top: 50%;
+        left: 50px;
+    }
+    .Specialist .RightContent .RightContentInner .next{
+        left: auto;
+        right: 50px;
+    }
+    /*brands */
+
+    .BrandImageContainer{
+        display: none;
+    }
+    .Brands .BrandListContainer , .Brands .Title{
+        text-align: center !important;
+    }
+    .Brands .BrandList{
+        list-style-type: none;
+        font-size: 18px;
+    }
+    .BrandList li{
+        padding: 5px 0;
+    }
+    .BrandList li a{
+        color:#fff;
+        text-decoration: underline;
+    }
+    .BrandButton{
+        width: 90%;
+    }
+
+    /*Gallery*/
+    .Gallery .GalleryHeight{
+    }
+    .Gallery .ThumbrnailContainer .Title{
+        padding: 10px 0;
+        font-size: 30px;
+    }
+    .Gallery .ThumbrnailContainer{
+        position: relative;
+        height: 60vh;
+        background-color: #B2C5D6;
+    }
+
+    .ThumbrnailContainer{
+    }
+    .ThumbrnailContainer .SmallImgContainer{
+        overflow: hidden;
+        overflow-x: scroll;
+        max-height: 70vh;
+        white-space: nowrap;
+    }
+    .ThumbrnailContainer .SmallImgContainer .SmallImg{
+        display: inline-block;
+    }
+
+
+    .Gallery .prev,
+    .Gallery .next {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .Gallery .SmallImg{
+        width: 25%;
+        height:0;
+        padding-bottom: 25%;
+        margin:0 25px;
+        position: relative;
+        left: 50vw;
+        transform: translateX(-50vw);
+
+        display: inline-block;
+    }
+    .Gallery .button{
+        position: relative;
+        top: 10px;
+        left: 0;
+    }
+    /*contact*/
+    .Contact#ContactID{
+        padding-top: 50px;
+    }
+    .Contact .Filter{
+
+    }
+    .Contact.PageHeight{
+        height: auto;
+        padding-bottom: 80px;
+    }
+    .Contact .ContactTrideContent {
+        height: 250px;
+        width:100%;
+        background-color: rgba(54,62,70,0.6);
+    }
+    .Contact .ContactPadding{
+        padding:0 40px;
+    }
+    .ContactList{
+        padding: 15px;
+        list-style-type: none;
+    }
+    .ContactList li{
+        font-size: 24px;
+    }
+    .SecondTride  li{
+        padding: 15px;
+        font-size: 20px;
+    }
+    .Contact .FooterRow{
+        position: relative;
+        top: 0;
+    }
+    .Contact .container .FooterLogoContainer{
+        display: none;
+    }
 }
 @media (max-width: 576px) {
-	/*Gallery*/
-	.Gallery .ThumbrnailContainer{
-		height: 50vh;
-	}
-	.Gallery .SmallImg{
-		width: 27%;
-		margin:0 10px;
-	}
-	/*Contact*/
+    /*Gallery*/
+    .Gallery .ThumbrnailContainer{
+        height: 50vh;
+    }
+    .Gallery .SmallImg{
+        width: 27%;
+        margin:0 10px;
+    }
+    /*Contact*/
+    /*Footer*/
 
-	.Contact.PageHeight{
-		height: 190vh;
-	}
-	/*Footer*/
-
-	.Footer{
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-	}
-	.Footer .FooterTride{
-		display: inline-block;
-	}
+    .Footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    .Footer .FooterTride{
+        display: inline-block;
+    }
 }

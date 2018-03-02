@@ -2,11 +2,11 @@
     <section class="col-md-8 col-sm-12 HeaderContent text-center">
         <h1 class="text-uppercase Title">{!! (!empty($about_us) && !empty($about_us->title)) ? $about_us->title : '' !!}</h1>
 
-        <p class="HeaderContentText scrollClass" id="Short">
+        <p class="HeaderContentText" id="Short">
             {{ (!empty($about_us) && !empty($about_us->description)) ? $about_us->description : ''}}
         </p>
 
-        <div class="HeaderContentText" id="Long">
+        <div class="HeaderContentText scrollClass" id="Long">
             {!! (!empty($about_us) && !empty($about_us->text)) ? $about_us->text : '' !!}
         </div>
 
