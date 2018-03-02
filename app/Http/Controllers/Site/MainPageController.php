@@ -9,6 +9,7 @@ use App\Brand;
 use App\Contact;
 use App\Gallery;
 use App\Service;
+use App\SocialIcon;
 use App\SpecialOffer;
 use App\Staff;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ class MainPageController extends Controller
     protected $brand;
     protected $gallery;
     protected $contact;
+    protected $social;
 
     public function __construct(){
         $this->background_images = new BackgroundImage();
@@ -35,6 +37,7 @@ class MainPageController extends Controller
         $this->brand = new Brand();
         $this->gallery = new Gallery();
         $this->contact = new Contact();
+        $this->social = new SocialIcon();
     }
 
     public function index(){
@@ -52,6 +55,7 @@ class MainPageController extends Controller
         $data['brands'] = $this->brand->orderBy('created_at', 'desc')->limit(5)->get();
         $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(2)->get();
         $data['contact'] = $this->contact->first();
+        $data['social'] = $this->social->pluck('link')->all();
 
         return view('site.main', $data);
     }

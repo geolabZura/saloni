@@ -6,7 +6,6 @@
     {{--social icom menu--}}
     @include('site.partials.social')
 
-
     {{--slider services content--}}
     @include('site.partials.slider')
 
