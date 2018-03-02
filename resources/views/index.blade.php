@@ -16,7 +16,7 @@
 <body style="	background-image: url({{ !empty($body_image) ? asset('/image/'.$body_image) : ''}});">
 
     {{--main content--}}
-    @yield('content');
+    @yield('content')
 
     <script type="application/javascript" src="{{asset('/site/js/jquery-3.3.1.min.js')}}"></script>
     <script type="application/javascript" src="{{asset('/site/js/bootstrap.min.js')}}"></script>

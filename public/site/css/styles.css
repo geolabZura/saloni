@@ -74,9 +74,6 @@ body{
 .HeaderContent .Title{
 	font-weight: 100;
 	font-size: 2.5vw;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 .HeaderContent .Title:after{
 	display: block;
@@ -92,8 +89,10 @@ body{
 	font-size: 3vh;
 }
 #Long{
+	max-height: 30vh;
 	display: none;
 	font-size: 3vh;
+	overflow-y: scroll;
 }
 #Short{
 	display: block;
@@ -204,7 +203,7 @@ body{
 	transition: 1s;
 }
 #collapsibleNavbar ul li{
-	font-size: 2.2vw;
+	font-size: 2.4vw;
 	padding: 5px 0;
 }
 #collapsibleNavbar ul li a{
@@ -219,7 +218,8 @@ body{
 	bottom: 0;
 	border-top: 5px solid #B2C5D6;
 	box-sizing: border-box;
-	padding: 15px 0;
+	padding-bottom: 15px;
+	padding-top: 15px;
 	background-color: #4F7090;
 	color: #fff;
 	font-size: 17px;
@@ -244,7 +244,7 @@ body{
 /*Social*/
 .SocialContainer{
 	position: absolute;
-	top: 50vh;
+	top: 40vh;
 	transform: translateY(-50%);
 	left: auto;
 	right: 3vw;
@@ -392,22 +392,21 @@ body{
 	overflow-y: scroll;
 }
 
-#scrollId::-webkit-scrollbar-track
+.scrollClass::-webkit-scrollbar-track
 {
 	border: none ;
 	background-color: transparent;
 }
 
-#scrollId::-webkit-scrollbar
+.scrollClass::-webkit-scrollbar
 {
 	width: 10px;
 	background-color: transparent;
 }
 
-#scrollId::-webkit-scrollbar-thumb
+.scrollClass::-webkit-scrollbar-thumb
 {    background-color: #487385;
 }
-
 .LeftSection{
 }
 .LeftContent .Title{
@@ -542,6 +541,8 @@ body{
 .BrandList{
 	list-style-type: none;
 	font-size: 18px;
+	max-height: 40vh;
+	overflow: hidden;
 }
 .BrandList li{
 	padding: 5px 0;
@@ -584,6 +585,13 @@ body{
 .Gallery{
 	background-color: #B2C5D6;
 	position: relative;
+}
+.ThumbrnailContainer{
+	overflow: hidden;
+}
+.ThumbrnailContainer .SmallImgContainer{
+	overflow-y: scroll;
+	max-height: 70vh;
 }
 .ThumbrnailContainer .Title{
 	color: #fff;
@@ -891,6 +899,10 @@ body{
 	.button{
 		font-size: 24px;
 	}
+
+	#collapsibleNavbar ul li{
+		font-size: 27px;
+	}
 	/* Header*/
 	.Logo{
 		width: 30px;
@@ -967,10 +979,6 @@ body{
 	.Contact .SecondTride  li{
 		font-size: 19px;
 	}
-	.Contact .FooterLogo {
-		position: relative;
-		top: -10vh;
-	}
 }
 @media(max-width: 1024px){
 	/*Slider*/
@@ -1000,10 +1008,6 @@ body{
 	.Contact .SecondTride  li{
 		font-size: 19px;
 	}
-	.Contact .FooterLogo{
-		position: relative;
-		top: -10vh;
-	}
 }
 @media (max-width: 992px) {
 	/* .Specialist */
@@ -1030,13 +1034,45 @@ body{
 	}
 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+	/*Social*/
+	.SocialContainer{
+		position: absolute;
+		top: auto;
+		bottom: 0px;
+		left: 50vw;
+		right: auto;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	.SocialContainer ul li{
+		display: inline-block;
+	}
+
+	#collapsibleNavbar ul li{
+		font-size: 25px;
+		padding: 5px 0;
+	}
+	.PageHeight , .Gallery .GalleryHeight{
+		/*min-height: calc(100vh - 55px);*/
+		min-height: 0;
+		height: auto;
+	}
+	.Filter {
+		padding-bottom: 50px;
+	}
 	.button{
 		font-size: 20px;
 	}
 	/* . Header */
 	.HeaderContent .Title{
 		font-size: 30px;
+	}
+	#Long{
+		max-height: none;
 	}
 	.HeaderContent .HeaderContentText{
 		font-size: 20px;
@@ -1057,22 +1093,54 @@ body{
 	.Slide .PageHeight{
 		min-height: inherit;
 	}
-	.Slide .PageHeight:after{
-		clear: both;
-		content: '';
-		font-size: 0;
+
+	.forcentering{
+		position: static;
+		top: auto;
+		transform: none;
+
+		padding: 30px 0;
 	}
-	.owl-prev, .owl-next{
-		width: 40px;
+
+	.TrideText .button {
+		position: static;
+		display: inline-block;
+		margin-top: 20px;
 	}
+	.Slide .TrideText .TrideTitle{
+		font-size: 25px;
+	}
+	.Slide .TrideText .TrideList{
+		font-size: 16px;
+	}
+	.Slide .TrideText .button{
+		font-size: 16px;
+	}
+	.Gallery .PageHeight {
+		height: 0;
+		padding-bottom: 56%;
+	}
+
+	.OfferSection {
+		position: static;
+		top: auto;
+		transform: none;
+	}
+
+
+
 
 	/*Specialist*/
 	.Specialist.PageHeight{
-		height: calc(200vh - 90px);
+		min-height: 0;
+		height: auto;
 	}
 
 	.Specialist .RightContent{
 		margin-top: 35vh ;
+	}
+	.Specialist .LeftContent{
+		height: auto;
 	}
 	.Specialist .RightSlide{
 		background-color: blue;
@@ -1105,7 +1173,7 @@ body{
 	.Brands .BrandListContainer , .Brands .Title{
 		text-align: center !important;
 	}
-	.BrandList{
+	.Brands .BrandList{
 		list-style-type: none;
 		font-size: 18px;
 	}
@@ -1132,6 +1200,20 @@ body{
 		height: 60vh;
 		background-color: #B2C5D6;
 	}
+
+	.ThumbrnailContainer{
+	}
+	.ThumbrnailContainer .SmallImgContainer{
+		overflow: hidden;
+		overflow-x: scroll;
+		max-height: 70vh;
+		white-space: nowrap;
+	}
+	.ThumbrnailContainer .SmallImgContainer .SmallImg{
+		display: inline-block;
+	}
+
+
 	.Gallery .prev,
 	.Gallery .next {
 		background-color: rgba(0, 0, 0, 0.4);
@@ -1191,30 +1273,6 @@ body{
 	}
 }
 @media (max-width: 576px) {
-	.TrideTitle{
-		font-size: 30px;
-	}
-	.TrideList{
-		font-size: 24px;
-	}
-	.Slide .TrideText .button{
-		font-size: 18px;
-	}
-	.TrideText{
-		margin: 0 auto;
-		top: 50%;
-		transform:translateY(-50%);
-	}
-	.SliderImgDiv{
-		display: none;
-	}
-	.SlideTride{
-		height: 100%;
-		width: 100%;
-	}
-	.TrideText .button{
-		font-size: 16px;
-	}
 	/*Gallery*/
 	.Gallery .ThumbrnailContainer{
 		height: 50vh;
@@ -1231,13 +1289,11 @@ body{
 	/*Footer*/
 
 	.Footer{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
 	}
 	.Footer .FooterTride{
-		text-align: left;
-		-webkit-transform: translateX(40vw);
-		-moz-transform: translateX(40vw);
-		-ms-transform: translateX(40vw);
-		-o-transform: translateX(40vw);
-		transform: translateX(40vw);
+		display: inline-block;
 	}
 }

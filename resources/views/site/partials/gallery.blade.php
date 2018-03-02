@@ -1,5 +1,5 @@
-<div class="Gallery PageHeight Filter" id="GalleryID">
-    <div class="container-fluid Filter">
+<div class="Gallery" id="GalleryID">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-9  BigimageContainer">
                 @if(!empty($gallery_images))
@@ -28,7 +28,7 @@
 
             </div>
 
-            <div class="col-md-3 text-center ThumbrnailContainer" style="overflow-y: scroll">
+            <div class="col-md-3 text-center ThumbrnailContainer">
                 <h2 class="text-uppercase Title">галерея</h2>
                 @if(!empty($gallery_images))
                     @php($count = 1)

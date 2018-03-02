@@ -3,8 +3,9 @@
     {{--header menu, about us content--}}
     @include('site.partials.header.header')
 
-    {{--footer menu content--}}
-    @include('site.partials.footer')
+    {{--social icom menu--}}
+    @include('site.partials.social')
+
 
     {{--slider services content--}}
     @include('site.partials.slider')
@@ -23,4 +24,7 @@
 
     {{--contact and map content--}}
     @include('site.partials.contact')
+
+    {{--footer menu content--}}
+    @include('site.partials.footer')
 @endsection
