@@ -17,7 +17,7 @@ class StaffController extends Controller
     }
 
     public function index(){
-        $data['staffs'] = $this->staff->paginate(10);
+        $data['staffs'] = $this->staff->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.pages.staff.index', $data);
     }
 

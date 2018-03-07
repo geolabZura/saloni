@@ -21,7 +21,7 @@ class ServiceController extends Controller
     }
 
     public function index(){
-        $data['services'] = $this->service->paginate(10);
+        $data['services'] = $this->service->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.pages.service.index', $data);
     }
 

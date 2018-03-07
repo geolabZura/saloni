@@ -16,7 +16,7 @@ class GalleryController extends Controller
     }
 
     public function index(){
-        $data['images'] = $this->gallery->paginate(15);
+        $data['images'] = $this->gallery->orderBy('created_at', 'desc')->paginate(15);
         return view('admin.pages.gallery.index', $data);
     }
 

@@ -17,7 +17,7 @@ class SpecialOfferController extends Controller
     }
 
     public function index(){
-        $data['offers'] = $this->offer->paginate(10);
+        $data['offers'] = $this->offer->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.pages.offer.index', $data);
     }
 
