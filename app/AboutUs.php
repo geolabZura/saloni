@@ -13,7 +13,7 @@ class AboutUs extends Model
     ];
 
     public function edit($request){
-        $about_ud_info = $this->where('id',1)->first();
+        $about_us_info = $this->where('id',1)->first();
 
         if(is_null($request->title)){
             $request->title = '';
@@ -25,21 +25,21 @@ class AboutUs extends Model
             $request->text = '';
         }
 
-        if(!empty($about_ud_info)){
-            $upadet_info = $about_ud_info->update([
+        if(!empty($about_us_info)){
+            $update_info = $about_us_info->update([
                 'title'=>$request->title,
                 'description'=>$request->description,
                 'text'=>$request->text
             ]);
         }else{
-            $upadet_info = $this->create([
+            $update_info = $this->create([
                 'title'=>$request->title,
                 'description'=>$request->description,
                 'text'=>$request->text
             ]);
         }
 
-        if($upadet_info){
+        if($update_info){
             return true;
         }else{
             return false;

@@ -5,13 +5,14 @@
         myPlacemark;
 
     function init() {
+        console.log('asdasd');
         myMap = new ymaps.Map("map", {
-            center: [55.808, 37.46],
+            center: [lang, lat],
             zoom: 14
         });
 
-        myPlacemark = new ymaps.Placemark([55.808, 37.47], {
-            hintContent: 'Moscow!', balloonContent: 'Capital of Russia'
+        myPlacemark = new ymaps.Placemark([lang, lat], {
+            hintContent: hint, balloonContent: balloon
         });
 
         myMap.geoObjects.add(myPlacemark);

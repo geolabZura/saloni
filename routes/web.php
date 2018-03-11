@@ -142,4 +142,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
     Route::get('/contact', ['as'=>'admin.contact', 'uses'=>'ContactController@index']);
     Route::post('/contact/update', ['as'=>'admin.contact.update', 'uses'=>'ContactController@contactUpdate']);
 
+    //map Add/Delete/Edit
+    Route::get('/map', ['as'=>'admin.map', 'uses'=>'MapController@index']);
+    Route::post('/map/update', ['as'=>'admin.map.update', 'uses'=>'MapController@mapUpdate']);
+
 });

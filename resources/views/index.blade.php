@@ -18,6 +18,12 @@
     {{--main content--}}
     @yield('content')
 
+    <script>
+        var lang = parseFloat({{!empty($map->lang) ? $map->lang : ''}});
+        var lat = parseFloat({{!empty($map->lat) ? $map->lat : ''}});
+        var hint = '{{!empty($map->hint) ? $map->hint : ''}}';
+        var balloon = '{{!empty($map->balloon) ? $map->balloon : ''}}';
+    </script>
     <script type="application/javascript" src="{{asset('/site/js/jquery-3.3.1.min.js')}}"></script>
     <script type="application/javascript" src="{{asset('/site/js/bootstrap.min.js')}}"></script>
     <script type="application/javascript" src="{{asset('/site/js/bootstrap.bundle.min.js')}}"></script>

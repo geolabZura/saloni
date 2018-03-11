@@ -8,6 +8,7 @@ use App\BackgroundImage;
 use App\Brand;
 use App\Contact;
 use App\Gallery;
+use App\Map;
 use App\Service;
 use App\SocialIcon;
 use App\SpecialOffer;
@@ -26,6 +27,7 @@ class MainPageController extends Controller
     protected $gallery;
     protected $contact;
     protected $social;
+    protected $map;
 
     public function __construct(){
         $this->background_images = new BackgroundImage();
@@ -38,6 +40,7 @@ class MainPageController extends Controller
         $this->gallery = new Gallery();
         $this->contact = new Contact();
         $this->social = new SocialIcon();
+        $this->map = new Map();
     }
 
     public function index(){
@@ -56,6 +59,7 @@ class MainPageController extends Controller
         $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(2)->get();
         $data['contact'] = $this->contact->first();
         $data['social'] = $this->social->pluck('link')->all();
+        $data['map'] = $this->map->first();
 
         return view('site.main', $data);
     }

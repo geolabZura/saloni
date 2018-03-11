@@ -91,6 +91,12 @@
                 </a>
             </li>
 
+            <li class="{{Request::is('admin/map') ? 'active ' : ''}}">
+                <a href="{{route('admin.map')}}">
+                    <i class="fa fa-dashboard"></i> <span>Map</span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->
