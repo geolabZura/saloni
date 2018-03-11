@@ -1,14 +1,24 @@
+
 @font-face {
-    font-family: 'Conv_Glen Jan - Sreda';
-    src: url('fonts/Glen Jan - Sreda.eot');
-    src: local('☺'), url('fonts/Glen Jan - Sreda.woff') format('woff'), url('fonts/Glen Jan - Sreda.ttf') format('truetype'), url('fonts/Glen Jan - Sreda.svg') format('svg');
+    font-family: 'Sreda';
+    src: url('fonts/Sreda.woff') format('woff'),
+    url('fonts/Sreda.ttf') format('truetype'),
+    url('fonts/Sreda.svg#Sreda') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sreda';
+    src: url('fonts/Sreda_1.woff') format('woff'),
+    url('fonts/Sreda_1.ttf') format('truetype'),
+    url('fonts/Sreda_1.svg#Sreda') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 *{
     margin:0;
     padding:0;
-    font-family: 'Conv_Glen Jan - Sreda', sans-serif;
+    font-family: 'Sreda', sans-serif;
 }
 .green{
     background-color: green;
@@ -864,10 +874,14 @@ body{
 .brandsbrands{
 
 }
+
 .BrandsPage .TopFilter{
     background-color: rgba(255,255,255,0.7);
 }
-
+.BrandsPage .StaffCard a{
+    color: black;
+    text-decoration: none;
+}
 .BrandsPage .Title , .specOffers .Title{
     color: #487385;
     padding: 3%;
@@ -917,6 +931,16 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
+}
+
+/*Branddescription */
+.StaffPage .BrandTitle{
+    font-size: 20px;
+    color: #000000;
+}
+.StaffPage .Title.BrandTitle{
+    color: #487385;
+    font-size: 22px;
 }
 /*checked*/
 @media (min-width: 1500px) {
@@ -1382,6 +1406,10 @@ body{
     .Gallery .SmallImg{
         width: 27%;
         margin:0 10px;
+    }
+    .Slide .TrideText .TrideList{
+        font-size: 20px;
+        font-weight: 400;
     }
     /*Contact*/
     /*Footer*/

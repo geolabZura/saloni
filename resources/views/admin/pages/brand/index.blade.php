@@ -39,11 +39,14 @@
                         <table id="mytable" class="table table-bordred table-striped">
 
                             <thead>
-                            <th>Brand Image</th>
-                            <th>Brand Title</th>
-                            <th>Brand Link</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                                <tr>
+                                    <th>Brand Image</th>
+                                    <th>Brand Title</th>
+                                    <th>Brand Link</th>
+                                    <th>Description</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
                             </thead>
 
                             <tbody>
@@ -51,9 +54,10 @@
                                 @foreach($brands as $brand)
                                     <tr>
                                         <td style="display: none;" class="brand_id">{{$brand->id}}</td>
-                                        <td class="brand_image"><img src="{{asset('/image/'.$brand['image'])}}" style="width:100px; height:auto;"</td>
+                                        <td class="brand_image"><img src="{{asset('/image/'.$brand['image'])}}" style="width:100px; height:auto;"></td>
                                         <td class="brand_title">{{$brand->title}}</td>
                                         <td class="brand_link">{{$brand->link}}</td>
+                                        <td class="brand_description">{{$brand->description}}</td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="{{route('admin.brand.edit',$brand->id)}}"><button class="btn btn-primary btn-xs edit" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></p></td>
                                         <td><p class="delete" data-placement="top" data-toggle="tooltip" title="Delete" data-id="{{route('admin.brand.delete',$brand->id)}}"><button class="btn btn-danger btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                                     </tr>

@@ -27,6 +27,7 @@ class RequestBrandEdit extends FormRequest
             'image'=>'nullable|mimes:png,jpeg,jpg|max:10000',
             'editTitle'=>'required',
             'editLink'=>'required',
+            'description'=>'required'
         ];
     }
 }

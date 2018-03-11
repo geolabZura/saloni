@@ -20,5 +20,6 @@ class BrandPageController extends Controller
 
     public function singleBrand($id){
         $data['brand'] = $this->brand->where('id', $id)->firstOrFail();
+        return view('site.singlebrand', $data);
     }
 }

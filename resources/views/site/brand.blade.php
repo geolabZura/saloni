@@ -11,7 +11,7 @@
                             <div class="StaffCard">
                                 <div style="background-image: url({{asset('/image/'.$brand->image)}})" class="Logo"></div>
                                 <p class="card-text BrandTitle text-center">
-                                    {{$brand->title}}
+                                    <a href="{{route('site.single.brand', $brand->id)}}">{{$brand->title}}</a>
                                 </p>
                             </div>
                         @endforeach

@@ -51,7 +51,6 @@
                                         </span>
                                     <input type="text" class="form-control" readonly name="readonly_image" value="">
                                 </div>
-                                <img src="" class="show">
                             </div>
 
                             <div class="form-group">
@@ -64,6 +63,11 @@
                                 <input type="text" class="form-control" id="brandLink" name="link"  value="">
                             </div>
 
+                            <div class="form-group">
+                                <label for="staffDescription">Brand Description</label>
+                                @include('admin.partials.wysiwyg', ['about_us_text_name'=>'description', 'about_us_text'=>''])
+                            </div>
+
                             <button class="btn btn-block btn-success btn-flat">Success</button>
 
                         </form>
@@ -74,6 +78,8 @@
         </div>
     </section>
     <script>
+        $('.wysihtml5-toolbar').css({'display':'none'});
+
         $('#image').change(function(){
             var tmppath = $(this).val();
             $(this).parent().parent().next().val(tmppath);

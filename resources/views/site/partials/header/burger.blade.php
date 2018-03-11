@@ -7,12 +7,12 @@
 
 <nav id="collapsibleNavbar">
     <ul>
-        <li><a href="#HeaderID">Улавная страница</a></li>
+        <li><a href="#HeaderID">Главная страница</a></li>
         <li><a href="#SlideID">Услуги</a></li>
         <li><a href="#SpecialistID">Специалисты</a></li>
-        <li><a href="#OffersID">Предложение</a></li>
+        <li><a href="#BrandsID">Бренды</a></li>
+        <li><a href="#OffersID">Сpeциальные Предложение</a></li>
         <li><a href="#GalleryID">Галерея</a></li>
         <li><a href="#ContactID">Коннтакты</a></li>
-        <li><a href="{{route('login')}}">Login</a></li>
     </ul>
 </nav>

@@ -27,6 +27,7 @@ class RequestBrand extends FormRequest
             'image'=>'required|mimes:jpeg,jpg,png|max:10000',
             'title'=>'required',
             'link'=>'required',
+            'description'=>'required'
         ];
     }
 }

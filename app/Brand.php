@@ -10,7 +10,7 @@ class Brand extends Model
     protected $table = 'brand';
     
     protected $fillable = [
-        'image', 'title', 'link', 'created_at', 'update_at'
+        'image', 'title', 'link', 'description', 'created_at', 'update_at'
     ];
 
     public function add($request){
@@ -18,6 +18,7 @@ class Brand extends Model
             'image'=>$request->upload_image,
             'title'=>$request->title,
             'link'=>$request->link,
+            'description'=>$request->description
         ]);
 
         if($upload_brand){
@@ -34,13 +35,15 @@ class Brand extends Model
             $upload_brand= $current_item->update([
                 'image'=>$request->upload_image,
                 'title' => $request->editTitle,
-                'link' => $request->editLink
+                'link' => $request->editLink,
+                'description'=>$request->description
             ]);
         }
         else{
             $upload_brand = $current_item->update([
                 'title' => $request->editTitle,
-                'link' => $request->editLink
+                'link' => $request->editLink,
+                'description'=>$request->description
             ]);
         }
 
