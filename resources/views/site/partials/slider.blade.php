@@ -10,7 +10,7 @@
                             <section class="SlideTride text-center">
                                 <div class="TrideText">
                                     <div class="forcentering">
-                                        <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
+                                        <h2 class="text-center TrideTitle">{{$service->title}}</h2>
                                         @if(!empty($service->categories))
                                             @foreach($service->categories as $category)
                                                 @if($loop->iteration>3)
@@ -25,7 +25,6 @@
                                                 @endif
                                             @endforeach
                                         @endif
-                                        {{--aq unda iyos offerebis page route--}}
                                         <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
                                     </div>
                                 </div>
@@ -38,7 +37,7 @@
                                 <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
                                 <div class="TrideText">
                                     <div class="forcentering">
-                                        <h2 class="text-center TrideTitle">{{$loop->iteration}} СПА Зона</h2>
+                                        <h2 class="text-center TrideTitle">{{$service->title}}</h2>
                                         @if(!empty($service->categories))
                                             @foreach($service->categories as $category)
                                                 @if($loop->iteration>3)
