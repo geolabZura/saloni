@@ -25,7 +25,7 @@ class UploadImage
     public function handle(Image $current_file)
     {
         $current_file_name = $current_file->image->getClientOriginalName();
-        $uploaded_file_name = time().str_replace_last(' ', '',$current_file_name);
+        $uploaded_file_name = time().md5($current_file_name);
         $current_file->image->move(public_path('/image/'), $uploaded_file_name);
 
         return $uploaded_file_name;
