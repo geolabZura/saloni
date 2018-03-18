@@ -35,7 +35,7 @@
                 <div  class="col-lg-12 col-md-12 col-sm-12 text-center  BottomIcons">
                     <nav class="SocialContainer">
                         <ul>
-                            <li><a href="https://www.instagram.com">
+                            <li><a href="{{$social[1]}}" target="_blank">
                                     <svg class="SocialIcons" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                          y="0px"
                                          viewBox="74.4 867.7 420.4 312.9" enable-background="new 74.4 867.7 420.4 312.9" xml:space="preserve">
@@ -49,7 +49,7 @@
 </g>
 </svg>
                                 </a></li>
-                            <li><a href="https://vk.com">
+                            <li><a href="{{$social[2]}}" target="_blank">
                                     <svg class="SocialIcons" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          viewBox="74.4 117.7 420.4 312.9" enable-background="new 74.4 117.7 420.4 312.9" xml:space="preserve">
@@ -76,7 +76,7 @@
 </g>
 </svg>
                                 </a></li>
-                            <li><a href="https://facebook.com">
+                            <li><a href="{{$social[0]}}" target="_blank">
                                     <svg class="SocialIcons" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                          viewBox="74.4 483.7 420.4 312.9" enable-background="new 74.4 483.7 420.4 312.9" xml:space="preserve">

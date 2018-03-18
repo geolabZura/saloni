@@ -56,7 +56,7 @@ class MainPageController extends Controller
         $data['about_staff'] = $this->about_staff->first();
         $data['about_us'] = $this->about_us->first();
         $data['brands'] = $this->brand->orderBy('created_at', 'desc')->limit(5)->get();
-        $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(2)->get();
+        $data['gallery_images'] = $this->gallery->orderBy('created_at', 'desc')->limit(4)->get();
         $data['contact'] = $this->contact->first();
         $data['social'] = $this->social->pluck('link')->all();
         $data['map'] = $this->map->first();

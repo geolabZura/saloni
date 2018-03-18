@@ -195,7 +195,7 @@
     }
 
     $(document).ready(function(){
-        var offset = 2;
+        var offset = 4;
         $('#gallery_image').click(function(){
             $.ajax({
                 url:'/gallery/'+offset,

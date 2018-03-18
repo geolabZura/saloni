@@ -1,24 +1,7 @@
-
-@font-face {
-    font-family: 'Sreda';
-    src: url('fonts/Sreda.woff') format('woff'),
-    url('fonts/Sreda.ttf') format('truetype'),
-    url('fonts/Sreda.svg#Sreda') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Sreda';
-    src: url('fonts/Sreda_1.woff') format('woff'),
-    url('fonts/Sreda_1.ttf') format('truetype'),
-    url('fonts/Sreda_1.svg#Sreda') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 *{
     margin:0;
     padding:0;
-    font-family: 'Sreda', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .green{
     background-color: green;
@@ -275,13 +258,35 @@ body{
 }
 .SocialContainer ul li{
     padding: 15px;
+    /*display: inline-block;*/
 }
 .SocialContainer ul a .SocialIcons{
     width:40px;
     height:40px;
 }
-.Contact .BottomIcons{
-    display: none;
+.Contact .SocialContainer{
+    position: relative;
+    top: 50%;
+    left: 33%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    right: auto;
+    display: inline-block;
+}
+.Contact .SocialContainer ul{
+    display: inline-block;
+    padding: 0px;
+}
+.Contact .SocialContainer ul li{
+    padding:  0 15px;
+    display: inline-block;
+}
+.Contact .SocialContainer ul a .SocialIcons{
+    width: 50px;
+    height:50px;
 }
 /* .Slide */
 .Slide{
@@ -719,9 +724,13 @@ body{
     top: 20vh;
 }
 .Contact .FooterLogo{
-    width: 10vw;
+    width: 11vw;
     fill: #16164F;
     margin-left: 50px;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    top: 50%;
 }
 .Contact .Truncate{
     max-width: 100%;
@@ -936,6 +945,7 @@ body{
 /*Branddescription */
 .StaffPage .BrandTitle{
     font-size: 20px;
+    font-weight: 400;
     color: #000000;
 }
 .StaffPage .Title.BrandTitle{
@@ -1354,8 +1364,12 @@ body{
         position: relative;
         top: 0;
     }
-    .Contact .container .FooterLogoContainer{
+    .Contact .FooterLogo{
         display: none;
+    }
+    .Contact .BottomIcons{
+        text-align: center;
+        padding: 5% 0;
     }
     .AllStaff .StaffCard {
         width: 90%;
