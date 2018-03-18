@@ -28,13 +28,13 @@
                                         <a class="text-uppercase button" href="{{route('site.service', $service->id)}}">ВСЕ УСЛУГИ</a>
                                     </div>
                                 </div>
-                                <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.str_replace(' ', '', $service->image))}})"></div>
+                                <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
                             </section>
                         </div>
                     @else
                         <div class="PageHeight SlideSectionContainerSlide">
                             <section class="SlideTride text-center">
-                                <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.str_replace(' ', '', $service->image))}})"></div>
+                                <div class="SliderImgDiv" style="background-image:url({{asset('/image/'.$service->image)}})"></div>
                                 <div class="TrideText">
                                     <div class="forcentering">
                                         <h2 class="text-center TrideTitle">{{$service->title}}</h2>
